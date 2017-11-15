@@ -13,7 +13,7 @@
   <artifactId>laf-persist</artifactId>
   <version>1.0-SNAPSHOT</version>
   
-  <name>laf-dao</name>
+  <name>laf-persist</name>
   <url>http://maven.apache.org</url>
   
   <properties>
