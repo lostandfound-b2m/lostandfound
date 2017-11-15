@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   
-  <groupId>org.b2m.lostandfound.parsers</groupId>
+  <groupId>org.b2m.lostandfound</groupId>
   <artifactId>laf-parsers</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -21,7 +21,7 @@
   
   <dependencies>
    <dependency>
-		<groupId>org.b2m.lostandfound.model</groupId>
+		<groupId>org.b2m.lostandfound</groupId>
 		<artifactId>laf-model</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</dependency>

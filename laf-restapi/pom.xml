@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   
-  <groupId>org.b2m.lostandfound.restapi</groupId>
+  <groupId>org.b2m.lostandfound</groupId>
   <artifactId>laf-restapi</artifactId>
   <version>1.0-SNAPSHOT</version>
   

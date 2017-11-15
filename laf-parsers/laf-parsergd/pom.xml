@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   
   <parent>
-    <groupId>org.b2m.lostandfound.parsers</groupId>
+    <groupId>org.b2m.lostandfound</groupId>
     <artifactId>laf-parsers</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   
-  <groupId>org.b2m.lostandfound.parsers.gd</groupId>
+  <groupId>org.b2m.lostandfound</groupId>
   <artifactId>laf-parsergd</artifactId>
   <version>1.0-SNAPSHOT</version>
   
@@ -21,7 +21,11 @@
   </properties>
   
   <dependencies>
-   
+	  <dependency>
+		<groupId>org.b2m.lostandfound</groupId>
+		<artifactId>laf-parsers-all</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		</dependency>
   </dependencies>
   
 </project>
