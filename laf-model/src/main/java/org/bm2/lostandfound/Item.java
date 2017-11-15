@@ -8,16 +8,18 @@ public class Item {
     private Date itemReceiveDate;
     private String itemCityCode;
     private String itemFindPlace;
+    private String itemCityname;
 
     public Item() {
     }
 
-    public Item(String itemName, Date itemFindDate, Date itemReceiveDate, String itemCityCode, String itemFindPlace) {
+    public Item(String itemName, Date itemFindDate, Date itemReceiveDate, String itemCityCode, String itemFindPlace, String itemCityname) {
         this.itemName = itemName;
         this.itemFindDate = itemFindDate;
         this.itemReceiveDate = itemReceiveDate;
         this.itemCityCode = itemCityCode;
         this.itemFindPlace = itemFindPlace;
+        this.itemCityname = itemCityname;
     }
 
     public String getItemName() {
@@ -40,6 +42,22 @@ public class Item {
         return itemFindPlace;
     }
 
+    public String getItemCityname() {
+        return itemCityname;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemName='" + itemName + '\'' +
+                ", itemFindDate=" + itemFindDate +
+                ", itemReceiveDate=" + itemReceiveDate +
+                ", itemCityCode='" + itemCityCode + '\'' +
+                ", itemFindPlace='" + itemFindPlace + '\'' +
+                ", itemCityname='" + itemCityname + '\'' +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,7 +69,8 @@ public class Item {
         if (!itemFindDate.equals(item.itemFindDate)) return false;
         if (!itemReceiveDate.equals(item.itemReceiveDate)) return false;
         if (!itemCityCode.equals(item.itemCityCode)) return false;
-        return itemFindPlace.equals(item.itemFindPlace);
+        if (!itemFindPlace.equals(item.itemFindPlace)) return false;
+        return itemCityname.equals(item.itemCityname);
     }
 
     @Override
@@ -61,17 +80,7 @@ public class Item {
         result = 31 * result + itemReceiveDate.hashCode();
         result = 31 * result + itemCityCode.hashCode();
         result = 31 * result + itemFindPlace.hashCode();
+        result = 31 * result + itemCityname.hashCode();
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "itemName='" + itemName + '\'' +
-                ", itemFindDate=" + itemFindDate +
-                ", itemReceiveDate=" + itemReceiveDate +
-                ", itemCityCode='" + itemCityCode + '\'' +
-                ", itemFindPlace='" + itemFindPlace + '\'' +
-                '}';
     }
 }

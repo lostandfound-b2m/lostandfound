@@ -3,4 +3,7 @@
 **/target/*
 **/target/**
 **/.idea
-.iml
+*/*.iml
+**/*.iml
+***/*.iml
+
