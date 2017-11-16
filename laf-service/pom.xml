@@ -16,12 +16,27 @@
   <dependencies>
     <dependency>
       <groupId>org.b2m.lostandfound.parsers</groupId>
-      <artifactId>laf-parsers</artifactId>
+      <artifactId>laf-parser-waw</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.b2m.lostandfound.parsers</groupId>
+      <artifactId>laf-parser-krk</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.b2m.lostandfound.parsers</groupId>
+      <artifactId>laf-parser-gd</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>org.b2m.lostandfound.persist</groupId>
       <artifactId>laf-persist</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.b2m.lostandfound.persist</groupId>
+      <artifactId>laf-parser-common</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
