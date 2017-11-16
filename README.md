@@ -1,11 +1,11 @@
 # Lost_n_found
 ## Structure:
 * laf-root
-  * laf-model
   * laf-parsers
-    * laf-parserwaw
-    * laf-parserkrk
-    * laf-parsergd
-    * laf-parsers-all
+    * laf-parser-waw
+    * laf-parser-krk
+    * laf-parser-gd
+    * laf-parser-common
   * laf-persist
   * laf-restapi
+  * laf-service

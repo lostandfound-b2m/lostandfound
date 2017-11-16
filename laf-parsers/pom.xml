@@ -5,33 +5,19 @@
   <parent>
     <groupId>org.b2m.lostandfound</groupId>
     <artifactId>laf-root</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${project.version}</version>
   </parent>
   
   <groupId>org.b2m.lostandfound.parsers</groupId>
   <artifactId>laf-parsers</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>${project.version}</version>
   <packaging>pom</packaging>
-
-  <name>laf-parsers</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  
-  <dependencies>
-   <dependency>
-		<groupId>org.b2m.lostandfound.model</groupId>
-		<artifactId>laf-model</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</dependency>
-  </dependencies>
   
   <modules>
-    <module>laf-parserwaw</module>
-    <module>laf-parserkrk</module>
-    <module>laf-parsergd</module>
-    <module>laf-parsers-all</module>
+    <module>laf-parser-waw</module>
+    <module>laf-parser-krk</module>
+    <module>laf-parser-gd</module>
+    <module>laf-parser-common</module>
   </modules>
   
 </project>

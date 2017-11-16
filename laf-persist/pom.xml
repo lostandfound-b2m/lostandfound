@@ -6,22 +6,11 @@
   <parent>
     <groupId>org.b2m.lostandfound</groupId>
     <artifactId>laf-root</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${project.version}</version>
   </parent>
   
   <groupId>org.b2m.lostandfound.persist</groupId>
   <artifactId>laf-persist</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  
-  <name>laf-persist</name>
-  <url>http://maven.apache.org</url>
-  
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  
-  <dependencies>
-    
-  </dependencies>
+  <version>${project.version}</version>
   
 </project>
