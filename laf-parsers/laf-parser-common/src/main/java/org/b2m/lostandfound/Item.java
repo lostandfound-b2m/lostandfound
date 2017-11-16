@@ -22,6 +22,13 @@ public class Item {
         this.cityName = cityName;
     }
 
+    public Item(String name, Date findDate, String cityCode, String cityName) {
+        this.name = name;
+        this.findDate = findDate;
+        this.cityCode = cityCode;
+        this.cityName = cityName;
+    }
+
     public String getName() {
         return name;
     }
