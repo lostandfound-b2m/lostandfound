@@ -5,7 +5,7 @@ import java.text.ParseException;
 
 import org.apache.log4j.PropertyConfigurator;
 /**
- * Hello world!
+ * As for now, we're only testing here our new classes.
  *
  */
 public class App 
@@ -15,7 +15,8 @@ public class App
         // Configure Log4J
         //PropertyConfigurator.configure(App.class.getClassLoader().getResource("log4j.properties"));
 
-        PdfFile file=new PdfRetriever().retrieve("https://www.bip.krakow.pl/zalaczniki/dokumenty/n/189876/karta");
+        PdfFile file=new PdfFile();
+        new PdfRetriever().retrieve("https://www.bip.krakow.pl/zalaczniki/dokumenty/n/189876/karta", file);
         System.out.println("ok: " + file.getUrl());
 
     }

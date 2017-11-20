@@ -23,24 +23,29 @@ public class PdfRetriever {
 
     private static Logger log = Logger.getLogger(PdfRetriever.class);
 
-    public PdfFile retrieve(String url) throws IOException, ParseException {
+    public static void retrieve(String url, PdfFile fileToBeFound) throws IOException, ParseException {
         log.info("Retrieving HTML");
         Document doc=Jsoup.connect(url).get();
         Element content = doc.getElementById("mainDiv");
-
-        PdfFile fileToBeFound=new PdfFile();
 
         /* Attempt to find URL */
         Elements urls = content.getElementsByTag("a");
         for (Element urlToBeFound : urls)
             if (Objects.equals(urlToBeFound.text(), "zobacz"))
-                fileToBeFound.setUrl("https://www.bip.krakow.pl" + urlToBeFound.attr("href"));
+                fileToBeFound.setUrl(urlToBeFound.attr("abs:href"));
 
-
-        return fileToBeFound;
+        /* Attempt to find last update's date */
+        Elements infos = content.getElementsByClass("metka_td3");
+        int nr = 0;
+        for (Element info : infos) {
+            if (nr==5) {
+                fileToBeFound.setLastUpdate(StringToDate(infos.get(nr).text()));
+            }
+            ++nr;
+        }
     }
 
-    private Date StringToDate(String strDate) throws ParseException {
+    private static Date StringToDate(String strDate) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.parse(strDate);
     }
