@@ -1,11 +1,9 @@
 package org.b2m.lostandfound;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,31 +22,50 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class ParserKrk implements Parser{
-    private  InputStream inputStream;
+public class ParserKrk implements ParserInterface {
 
-    public ParserKrk(URL url) throws IOException {
-        inputStream = url.openStream();
-    }
-    public ParserKrk(String string) throws IOException{
-        File file = new File(string);
-        inputStream = new FileInputStream(file);
+    public ParserKrk() {
     }
 
-
-    private String getFromFile(InputStream inputStream) throws IOException{
+    public String getFromURL(URL inputURL)throws IOException{
         String  output;
-        PDDocument document = PDDocument.load(inputStream);
+        InputStream input = inputURL.openStream();
+        PDDocument pddDocument = PDDocument.load(input);
+        PDFTextStripper textStripper = new PDFTextStripper();
+        output = textStripper.getText(pddDocument);
+        pddDocument.close();
+        System.out.println(output);
+        return output;
+    }
+
+    public String getFromFile(String pathToPDF) throws IOException{
+        String  output;
+        File file = new File(pathToPDF);
+        PDDocument document = PDDocument.load(file);
         PDFTextStripper pdfTextStripper = new PDFTextStripper();
         output = pdfTextStripper.getText(document);
         return output;
     }
 
     @Override
-    public List<Item> getItemList() throws IOException{
-        return getAllItems(getFromFile(inputStream));
+    public List<Item> getItemList() {
+
+        return null;
     }
 
+    @Override
+    public List<Item> getItemListStaticSource() {
+        int i = 0, j = 0, k = 0 ;
+        String inputPDF = null;
+        try {
+            inputPDF = getFromFile("/home/luke/Pulpit/a.pdf");
+            return getAllItems(inputPDF);
+        }
+        catch (IOException e)
+        {
+            return null;
+        }
+    }
 
     private List<Item> getAllItems(String inputPDF)
     {
@@ -58,9 +75,7 @@ public class ParserKrk implements Parser{
         String  itemName = null, cityCode = null;
         Date    findDate = null;
         Item tempItem;
-        Pattern pattern_cityCode = Pattern.compile ("SA-03\\.5314\\.[0-9]+\\.[0-9]+\\.[0-9]+");
-        Pattern pattern_foundDate1 = Pattern.compile("[0-9]{2}-[0-9]{2}-[0-9]{4}");
-        Pattern pattern_foundDate2 = Pattern.compile("[0-9]{2}.[0-9]{2}.[0-9]{4}");
+        Pattern pattern;
         Matcher matcher;
         endOfText = inputPDF.lastIndexOf("\n");
         do {
@@ -70,19 +85,22 @@ public class ParserKrk implements Parser{
             temp = inputPDF.substring(beginOfLine,endOfLine);
             if(Character.isDigit(temp.charAt(0))){
                 temp = temp.substring (temp.indexOf (" ") + 1);
-                matcher = pattern_cityCode.matcher (temp);
+                pattern = Pattern.compile ("SA-03\\.5314\\.[0-9]+\\.[0-9]+\\.[0-9]+");
+                matcher = pattern.matcher (temp);
                 if (matcher.find ()) {
                     endOfTemp = matcher.end ();
                     cityCode = temp.substring (0, endOfTemp++);
                 }
 
-                matcher = pattern_foundDate1.matcher(temp);
+                pattern = Pattern.compile("[0-9]{2}-[0-9]{2}-[0-9]{4}");
+                matcher = pattern.matcher(temp);
                 if(matcher.find()) {
                     temp.replaceAll("-", ".");
-                    itemName = temp.substring(endOfTemp, matcher.start() - 1);
+                    itemName = temp.substring(endOfTemp, matcher.start()-1);
                     findDate = getDate(temp.substring(matcher.start(), matcher.end()));
                 }
-                matcher = pattern_foundDate2.matcher(temp);
+                pattern = Pattern.compile("[0-9]{2}.[0-9]{2}.[0-9]{4}");
+                matcher = pattern.matcher(temp);
 
                 if(matcher.find()) {
                     itemName = temp.substring(endOfTemp, matcher.start()-1);
@@ -92,6 +110,8 @@ public class ParserKrk implements Parser{
             }
             allItems.add(new Item(itemName,findDate,cityCode,"Kraków"));
         }while (endOfLine != endOfText);
+
+
         return allItems;
     }
 
