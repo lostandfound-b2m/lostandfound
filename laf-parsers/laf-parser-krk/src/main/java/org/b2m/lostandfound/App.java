@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
-import org.apache.log4j.PropertyConfigurator;
+
 /**
  * As for now, we're only testing here our new classes.
  *

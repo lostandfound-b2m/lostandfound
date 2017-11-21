@@ -6,16 +6,14 @@
   <parent>
     <groupId>org.b2m.lostandfound</groupId>
     <artifactId>laf-root</artifactId>
-    <version>${project.version}</version>
+    <version>0.1-SNAPSHOT</version>
   </parent>
-  
-  <groupId>org.b2m.lostandfound.restapi</groupId>
+
   <artifactId>laf-restapi</artifactId>
-  <version>${project.version}</version>
   
   <dependencies>
     <dependency>
-	  <groupId>org.b2m.lostandfound.service</groupId>
+	  <groupId>org.b2m.lostandfound</groupId>
       <artifactId>laf-service</artifactId>
       <version>${project.version}</version>
     </dependency>

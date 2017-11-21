@@ -6,36 +6,34 @@
   <parent>
     <groupId>org.b2m.lostandfound</groupId>
     <artifactId>laf-root</artifactId>
-    <version>${project.version}</version>
+    <version>0.1-SNAPSHOT</version>
   </parent>
-  
-  <groupId>org.b2m.lostandfound.service</groupId>
+
   <artifactId>laf-service</artifactId>
-  <version>${project.version}</version>
   
   <dependencies>
     <dependency>
-      <groupId>org.b2m.lostandfound.parsers</groupId>
+      <groupId>org.b2m.lostandfound</groupId>
       <artifactId>laf-parser-waw</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.b2m.lostandfound.parsers</groupId>
+      <groupId>org.b2m.lostandfound</groupId>
       <artifactId>laf-parser-krk</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.b2m.lostandfound.parsers</groupId>
+      <groupId>org.b2m.lostandfound</groupId>
       <artifactId>laf-parser-gd</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.b2m.lostandfound.persist</groupId>
+      <groupId>org.b2m.lostandfound</groupId>
       <artifactId>laf-persist</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.b2m.lostandfound.persist</groupId>
+      <groupId>org.b2m.lostandfound</groupId>
       <artifactId>laf-parser-common</artifactId>
       <version>${project.version}</version>
     </dependency>

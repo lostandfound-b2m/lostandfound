@@ -5,12 +5,10 @@
   <parent>
     <groupId>org.b2m.lostandfound</groupId>
     <artifactId>laf-root</artifactId>
-    <version>${project.version}</version>
+    <version>0.1-SNAPSHOT</version>
   </parent>
-  
-  <groupId>org.b2m.lostandfound.parsers</groupId>
+
   <artifactId>laf-parsers</artifactId>
-  <version>${project.version}</version>
   <packaging>pom</packaging>
   
   <modules>

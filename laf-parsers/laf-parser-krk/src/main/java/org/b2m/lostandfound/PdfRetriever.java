@@ -1,6 +1,5 @@
 package org.b2m.lostandfound;
 
-import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,8 +18,6 @@ import java.util.*;
  *
  */
 public class PdfRetriever {
-
-    private static Logger log = Logger.getLogger(PdfRetriever.class);
 
 
    public static List<PdfFile> retrieve(String url) throws IOException, ParseException {
@@ -42,7 +39,7 @@ public class PdfRetriever {
    }
 
     private static void retrieveUrl(String url, PdfFile fileToBeFound) throws IOException, ParseException {
-        log.info("Retrieving HTML");
+        
         Document doc=Jsoup.connect(url).get();
         Element content = doc.getElementById("mainDiv");
 
