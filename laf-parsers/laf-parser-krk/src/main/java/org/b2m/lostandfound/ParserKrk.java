@@ -26,7 +26,7 @@ import java.net.URLConnection;
 
 public class ParserKrk implements Parser{
     private  InputStream inputStream;
-    
+
     public ParserKrk(URL url) throws IOException {
         inputStream = url.openStream();
     }
