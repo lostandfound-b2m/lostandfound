@@ -11,17 +11,10 @@ import java.util.List;
  */
 public class App 
 {
-
     public static void main( String[] args ) throws IOException, ParseException {
-        // Configure Log4J
-        //PropertyConfigurator.configure(App.class.getClassLoader().getResource("log4j.properties"));
-
-
-        List<PdfFile> files = new PdfRetriever().retrieve("https://www.bip.krakow.pl/?dok_id=19964");
-        for (PdfFile file : files) {
+        List<SourceFile> files = new PdfRetriever().retrieve("https://www.bip.krakow.pl/?dok_id=19964");
+        for (SourceFile file : files) {
             System.out.println(file.getUrl());
         }
-
-
     }
 }

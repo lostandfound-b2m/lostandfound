@@ -7,18 +7,18 @@ import java.util.Date;
  * along with file's name and last update date. Those attributes can be used later
  * to check if file was updated since last time we parsed data from it.
  */
-public class PdfFile {
+public class SourceFile {
     private String url;
     private String name;
-    private Date lastUpdate;
+    private String updateChecker;
 
-    public PdfFile() {
+    public SourceFile() {
     }
 
-    public PdfFile(String url, String name, Date lastUpdate) {
+    public SourceFile(String url, String name, String updateChecker) {
         this.url=url;
         this.name=name;
-        this.lastUpdate=lastUpdate;
+        this.updateChecker=updateChecker;
     }
 
     public String getUrl() {return url;}
@@ -31,9 +31,9 @@ public class PdfFile {
         this.name=name;
     }
 
-    public Date getLastUpdate() {return lastUpdate;}
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate=lastUpdate;
+    public String getUpdateChecker() {return updateChecker;}
+    public void setUpdateChecker(String updateChecker) {
+        this.updateChecker=updateChecker;
     }
 
 }
