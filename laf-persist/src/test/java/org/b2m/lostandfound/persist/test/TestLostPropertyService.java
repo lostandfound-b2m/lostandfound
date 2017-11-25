@@ -3,9 +3,7 @@ package org.b2m.lostandfound.persist.test;
 import org.b2m.lostandfound.persist.LostItem;
 import org.b2m.lostandfound.persist.LostPropertyDao;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class TestLostPropertyService {

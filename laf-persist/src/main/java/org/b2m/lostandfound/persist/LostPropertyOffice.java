@@ -3,7 +3,7 @@ package org.b2m.lostandfound.persist;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+
 
 @Entity(name = "LostPropertyOffice")
 @Table(name = "lostpropertyoffice")

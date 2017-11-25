@@ -8,8 +8,6 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
-import java.awt.print.Book;
-import java.util.List;
 
 public class LostPropertyDao implements LostPropertyRepository {
 

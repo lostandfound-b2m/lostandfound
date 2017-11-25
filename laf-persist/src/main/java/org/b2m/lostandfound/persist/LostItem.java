@@ -2,6 +2,7 @@ package org.b2m.lostandfound.persist;
 
 import javax.persistence.*;
 import java.util.Date;
+
 @Entity
 @Table(name = "lostitem")
 public class LostItem {

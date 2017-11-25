@@ -21,10 +21,10 @@ public class MainTest {
         test.checkItemsInOffice(warsawLostPropertyOffice);
 
         //usuwamy wszystkie przedmioty z biura
-        /*lostPropertyService.deleteLostItems(warsawLostPropertyOffice,warsawLostPropertyOffice.getLostItems());
+        lostPropertyService.deleteLostItems(warsawLostPropertyOffice,warsawLostPropertyOffice.getLostItems());
 
         test.checkItemsInOffice(warsawLostPropertyOffice);
-*/
+
 
     }
 }

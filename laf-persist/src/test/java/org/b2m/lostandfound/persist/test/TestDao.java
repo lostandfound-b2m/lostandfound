@@ -2,9 +2,6 @@ package org.b2m.lostandfound.persist.test;
 
 import org.b2m.lostandfound.persist.LostItem;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
-
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.*;
 
 public class TestDao {
