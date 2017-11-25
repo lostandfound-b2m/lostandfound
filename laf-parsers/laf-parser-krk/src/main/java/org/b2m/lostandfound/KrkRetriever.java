@@ -15,7 +15,7 @@ import java.util.*;
  * and then, retrieves from it all attributes of SourceFile objects and returns them as List.
  *
  */
-public class PdfRetriever implements FileRetriever {
+public class KrkRetriever implements FileRetriever {
 
 
    public List<SourceFile> retrieve(String url) {

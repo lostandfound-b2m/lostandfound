@@ -12,7 +12,7 @@ import java.util.List;
 public class App 
 {
     public static void main( String[] args ) throws IOException, ParseException {
-        List<SourceFile> files = new PdfRetriever().retrieve("https://www.bip.krakow.pl/?dok_id=19964");
+        List<SourceFile> files = new KrkRetriever().retrieve("https://www.bip.krakow.pl/?dok_id=19964");
         for (SourceFile file : files) {
             System.out.println(file.getUrl());
         }
