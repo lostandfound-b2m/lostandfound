@@ -19,7 +19,7 @@ public class KrkRetriever implements FileRetriever {
 
 
    public List<SourceFile> retrieve(String url) {
-       List<SourceFile> resultList = new ArrayList<SourceFile>();
+       List<SourceFile> resultList = new ArrayList<>();
        Document doc;
        try {
            doc = Jsoup.connect(url).get();
