@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,12 +16,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-import org.apache.pdfbox.io.RandomAccessRead;
-import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import java.net.URL;
-import java.net.URLConnection;
 
 public class ParserKrk implements Parser{
     private  InputStream inputStream;
@@ -52,7 +48,7 @@ public class ParserKrk implements Parser{
 
     private List<Item> getAllItems(String inputPDF)
     {
-        List<Item> allItems = new LinkedList<Item>();
+        List<Item> allItems = new LinkedList<>();
         int i = 0 , beginOfLine = 0 , endOfLine = 0, endOfText = 0, endOfTemp = 0;
         String temp;
         String  itemName = null, cityCode = null;

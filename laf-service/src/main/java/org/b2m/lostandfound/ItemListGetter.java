@@ -20,11 +20,11 @@ public class ItemListGetter {
          * z DAO powinna do nas zaktualizowana List<SourceFile> z tylko tymi linkami,
          * które prowadzą do nowych/zaktualizowanych plików.
          */
-        List<Item> urls = new ArrayList<Item>();
+        List<Item> items = new ArrayList<>();
         for (SourceFile file : files) {
-            urls.addAll(new ParserKrk(new URL(file.getUrl())).getItemList());
+            items.addAll(new ParserKrk(new URL(file.getUrl())).getItemList());
         }
-        getJson(urls);
+        getJson(items);
     }
 
     static void getJson(List<Item> items) throws IOException {

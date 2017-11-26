@@ -40,9 +40,7 @@ public class TestLostPropertyService {
         lostPropertyDao.openCurrentSessionwithTransaction();
 
         List<LostItem> toRemove = new ArrayList<>();
-        for (LostItem olditem : lostItems) {
-            toRemove.add(olditem);
-        }
+        toRemove.addAll(lostItems);
         lostItems.removeAll(toRemove);
 
         lostPropertyDao.update(lostPropertyOffice);
