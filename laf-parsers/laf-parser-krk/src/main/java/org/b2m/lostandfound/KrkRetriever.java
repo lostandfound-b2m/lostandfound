@@ -6,6 +6,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
 
 /*
@@ -15,10 +17,17 @@ import java.util.*;
  * and then, retrieves from it all attributes of SourceFile objects and returns them as List.
  *
  */
-public class KrkRetriever implements FileRetriever {
+public class KrkRetriever implements Retriever {
 
+    public List<Item> retrieveItemsFromFiles(List<SourceFile> files) throws IOException{
+        List<Item> items = new ArrayList<>();
+        for (SourceFile file : files) {
+            items.addAll(new ParserKrk(new URL(file.getUrl())).getItemList());
+        }
+        return items;
+    }
 
-   public List<SourceFile> retrieve(String url) {
+   public List<SourceFile> retrieveFiles(String url) {
        List<SourceFile> resultList = new ArrayList<>();
        Document doc;
        try {

@@ -20,7 +20,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import java.net.URL;
 
-public class ParserKrk implements Parser{
+public class ParserKrk{
     private  InputStream inputStream;
 
     public ParserKrk(URL url) throws IOException {
@@ -39,8 +39,7 @@ public class ParserKrk implements Parser{
         output = pdfTextStripper.getText(document);
         return output;
     }
-
-    @Override
+    
     public List<Item> getItemList() throws IOException{
         return getAllItems(getFromFile(inputStream));
     }
