@@ -11,7 +11,7 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
         KrkRetriever KrkRetriever = new KrkRetriever();
-        ItemListGetter.getList(KrkRetriever);
+        ItemListGetter.simpleGetList(KrkRetriever);
 
     }
 }
