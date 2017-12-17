@@ -82,5 +82,8 @@ public class KrkRetriever implements Retriever {
         }
     }
 
+    public String getOfficeName() {
+        return "Kraków";
+    }
 
 }
