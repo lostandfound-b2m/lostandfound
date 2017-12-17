@@ -11,8 +11,8 @@ import com.google.gson.GsonBuilder;
 public class ItemListGetter {
 
 
-    public static void getList(KrkRetriever retriever) throws IOException{
-        List<SourceFile> files = retriever.retrieveFiles("https://www.bip.krakow.pl/?dok_id=19964");
+    public static void getList(Retriever retriever) throws IOException{
+        List<SourceFile> files = retriever.retrieveFiles();
         /*
          * Tutaj będziemy chcieli sprawdzić, czy jest sens aktualizować wszystkie pliki,
          * z DAO powinna do nas zaktualizowana List<SourceFile> z tylko tymi linkami,

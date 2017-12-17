@@ -672,12 +672,6 @@
     "cityName": "Kraków"
   },
   {
-    "name": "PORTFEL Z ZAW., 68 UAH",
-    "foundDate": "Feb 2, 2017 12:00:00 AM",
-    "cityCode": "SA-03.5314.1.183.2017",
-    "cityName": "Kraków"
-  },
-  {
     "name": "TEL. NOKIA",
     "foundDate": "Feb 2, 2017 12:00:00 AM",
     "cityCode": "SA-03.5314.1.184.2017",
@@ -3942,9 +3936,873 @@
     "cityName": "Kraków"
   },
   {
-    "name": "KWOTA 365,05 ZŁ, KLUCZ Z BRELOKIEM",
+    "name": "TEL. IPHONE 6S RÓŻOWY",
+    "foundDate": "Jun 22, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1147.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "PĘK KLUCZY (20 SZT.)",
+    "foundDate": "Aug 7, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1148.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "PORTFEL Z ZAW.",
+    "foundDate": "Sep 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1149.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "PORTFEL Z ZAW.",
+    "foundDate": "Sep 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1150.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "OBRĄCZKA MĘSKA, KOL. ZŁOTY",
+    "foundDate": "Sep 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1151.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE SE SPACE GREY",
+    "foundDate": "Aug 8, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1152.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. ALCATEL",
+    "foundDate": "Aug 31, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1153.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI",
+    "foundDate": "Jul 31, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1154.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 20 USD, 61 UAH",
+    "foundDate": "Sep 30, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1155.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 2EURO, 2 ZŁ",
+    "foundDate": "Jul 31, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1156.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 23,04 FUNTÓW",
+    "foundDate": "Jul 31, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1157.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 0,42 ZŁ",
+    "foundDate": "Jul 31, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1158.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "PORTFEL Z ZAW.",
+    "foundDate": "Sep 12, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1159.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KURTKA, 2 ZŁ",
+    "foundDate": "Sep 13, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1161.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "PORTFEL Z ZAW.",
+    "foundDate": "Sep 15, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1162.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Sep 15, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1163.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "PORTFEL Z ZAW.",
+    "foundDate": "Sep 16, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1164.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "SASZETKA Z ZAW.",
+    "foundDate": "Sep 15, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1166.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "PORTFEL Z ZAW.",
+    "foundDate": "Sep 18, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1169.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KURTKA Z ZAW.",
+    "foundDate": "Sep 15, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1172.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TORBA Z ZAW.",
+    "foundDate": "Sep 18, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1173.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "PORTFEL Z ZAW.",
+    "foundDate": "Sep 18, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1174.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. LG",
+    "foundDate": "Sep 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1175.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "MONITOR TV MANTA",
+    "foundDate": "Sep 11, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1176.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE",
+    "foundDate": "May 17, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1177.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 50 ZŁ",
+    "foundDate": "Sep 5, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1178.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 10 ZŁ",
+    "foundDate": "Sep 5, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1179.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MICROSOFT",
     "foundDate": "Sep 1, 2017 12:00:00 AM",
-    "cityCode": "SA-03.5314.1.1146.2017",
+    "cityCode": "SA-03.5314.1.1180.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. KIANO ELEGANCE 5.1",
+    "foundDate": "Aug 23, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1181.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. NOKIA",
+    "foundDate": "Sep 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1182.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MICROSOFT",
+    "foundDate": "Sep 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1183.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE SE",
+    "foundDate": "Oct 2, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1184.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "ROWER GIANT",
+    "foundDate": "Sep 6, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1185.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "ROWER OSCA",
+    "foundDate": "Sep 6, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1186.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 100 ZŁ",
+    "foundDate": "Aug 9, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1187.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 5C",
+    "foundDate": "Aug 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1188.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************8825",
+    "foundDate": "Sep 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1190.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. NOKIA, IMEI ****************9812",
+    "foundDate": "Oct 4, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1191.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "APARAT OLYMPUS",
+    "foundDate": "Sep 16, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1192.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 2000 ZŁ",
+    "foundDate": "Sep 6, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1193.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. LG",
+    "foundDate": "Sep 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1195.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "OBRĄCZKA KOL. ZŁOTEGO",
+    "foundDate": "Sep 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1197.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Sep 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1198.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI",
+    "foundDate": "Sep 22, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1206.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE",
+    "foundDate": "Sep 23, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1208.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TABLET LARK",
+    "foundDate": "Sep 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1212.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 120 ZŁ",
+    "foundDate": "Oct 9, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1229.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************5018",
+    "foundDate": "Sep 29, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1230.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 5, IMEI ****************7424",
+    "foundDate": "Aug 29, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1231.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. LENOVO, IMEI ****************1744",
+    "foundDate": "Aug 29, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1232.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 6, IMEI ****************0981",
+    "foundDate": "Sep 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1234.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************2970",
+    "foundDate": "Sep 9, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1235.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 4, IMEI ****************1706",
+    "foundDate": "Sep 12, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1236.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI, IMEI ****************0842",
+    "foundDate": "Sep 9, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1237.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************1540",
+    "foundDate": "Sep 22, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1238.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI",
+    "foundDate": "Oct 9, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1246.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MAXCOM",
+    "foundDate": "Oct 10, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1249.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TV PANASONIC 50\"",
+    "foundDate": "Oct 11, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1251.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Oct 11, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1254.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. ASUS",
+    "foundDate": "Sep 19, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1271.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI, IMEI ****************5168",
+    "foundDate": "Oct 18, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1274.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************5576",
+    "foundDate": "Oct 11, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1275.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "LAPTOP HP PAWILION, NR SERYJNY *****NH",
+    "foundDate": "Oct 9, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1276.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "LAPTOP HP ELITEBOOK 840",
+    "foundDate": "Sep 23, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1277.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 3GS CZARNY",
+    "foundDate": "Oct 12, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1278.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 230 ZŁ",
+    "foundDate": "Oct 14, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1279.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE SE, IMEI ****************6691",
+    "foundDate": "Oct 30, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1280.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE SE, IMEI ****************4430",
+    "foundDate": "Oct 30, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1281.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE, IMEI *******6383, TEL. BLACKBERRY, IMEI ***2226",
+    "foundDate": "Oct 6, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1282.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE, IMEI ****************3594",
+    "foundDate": "Oct 12, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1283.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MANTA, IMEI ****************7635",
+    "foundDate": "Oct 23, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1284.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI, IMEI ****************6556",
+    "foundDate": "Oct 17, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1286.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Sep 22, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1288.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "ZEGAREK MĘSKI TIMEX",
+    "foundDate": "Oct 15, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1289.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TABLET",
+    "foundDate": "Sep 24, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1292.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Oct 4, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1294.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "WYZRYNARKA BOSH",
+    "foundDate": "Oct 5, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1295.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL.. IPHONE 5, IMEI ****************5732",
+    "foundDate": "Nov 3, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1296.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 270,40 ZŁ",
+    "foundDate": "Oct 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1297.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "ROWERY 6 SZT.",
+    "foundDate": "Nov 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1298.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 160 ZŁ",
+    "foundDate": "Oct 14, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1299.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 31 ZŁ, 40 GBP",
+    "foundDate": "Nov 3, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1300.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. LG, IPHONE 6, IPHONE 7, BQ",
+    "foundDate": "Oct 11, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1301.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************0215",
+    "foundDate": "Sep 22, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1302.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MOTOROLA, IMEI ****************7466",
+    "foundDate": "Oct 18, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1303.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 7, IMEI ****************1471, KWOTA 5 EURO",
+    "foundDate": "Oct 16, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1304.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HTC, IMEI ****************6860",
+    "foundDate": "Oct 16, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1305.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. LG, IMEI ****************6499",
+    "foundDate": "Oct 18, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1308.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************8246",
+    "foundDate": "Oct 11, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1312.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI, IMEI ****************8856",
+    "foundDate": "Oct 21, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1314.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. ALCATEL, IMEI ****************4000",
+    "foundDate": "Oct 22, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1316.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. PRESTIGIO, IMEI ****************6862",
+    "foundDate": "Oct 21, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1318.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. GIONEE, IMEI ****************9569",
+    "foundDate": "Oct 21, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1319.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HTC, IMEI ****************4454",
+    "foundDate": "Oct 21, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1320.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************7053",
+    "foundDate": "Oct 20, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1322.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. NOKIA, IMEI ****************3916",
+    "foundDate": "Oct 23, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1324.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TABLET SAMSUNG",
+    "foundDate": "Oct 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1335.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************7201",
+    "foundDate": "Oct 27, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1340.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************9012",
+    "foundDate": "Oct 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1341.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************0186",
+    "foundDate": "Oct 31, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1344.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. PRESTIGIO, IMEI ****************1253",
+    "foundDate": "Oct 31, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1349.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI, IMEI ****************1659",
+    "foundDate": "Oct 31, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1350.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI, IMEI ****************2286",
+    "foundDate": "Nov 1, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1360.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MICROSOFT, IMEI ****************4422",
+    "foundDate": "Nov 2, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1361.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. XIAOMI, IMEI ****************3609",
+    "foundDate": "Nov 4, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1363.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "ROWER B\u0027TWIN, NR RAMY ****8312",
+    "foundDate": "Jun 25, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1370.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "ROWER, NR RAMY****1970",
+    "foundDate": "Oct 16, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1371.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************9847",
+    "foundDate": "Oct 27, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1372.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE, IMEI ****************4371",
+    "foundDate": "Nov 8, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1373.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MAXCOM",
+    "foundDate": "Nov 6, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1377.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TORBA, LAPTOP LENOVO",
+    "foundDate": "Nov 7, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1380.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "APARAT FOT. NIKON",
+    "foundDate": "Nov 12, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1384.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Nov 11, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1389.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 225 GBP",
+    "foundDate": "Oct 27, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1393.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. NOKIA",
+    "foundDate": "Nov 19, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1394.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "IPAD, KSIĄŻKA",
+    "foundDate": "Nov 23, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1395.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "APARAT FOT. NIKON",
+    "foundDate": "Nov 3, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1397.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE SE4956",
+    "foundDate": "Oct 1, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1399.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 6",
+    "foundDate": "Nov 9, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1400.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************8660",
+    "foundDate": "Oct 1, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1401.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************3041",
+    "foundDate": "Oct 1, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1402.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI, IMEI ****************9200",
+    "foundDate": "Oct 18, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1403.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 6S, IMEI ****************3234",
+    "foundDate": "Nov 8, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1405.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Oct 7, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1406.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SONY XPERIA CZARNY",
+    "foundDate": "Oct 10, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1407.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "ZEGAREK ADRIATICA",
+    "foundDate": "Nov 4, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1408.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. LG",
+    "foundDate": "Sep 2, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1409.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. LG",
+    "foundDate": "Jun 28, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1410.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. PRESTIGIO",
+    "foundDate": "Jun 24, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1411.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Jun 24, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1412.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG",
+    "foundDate": "Jul 15, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1413.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. HUAWEI",
+    "foundDate": "Sep 24, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1414.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. LG",
+    "foundDate": "Sep 29, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1416.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MICROSOFT, IMEI ****************8027",
+    "foundDate": "Nov 16, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1431.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************2436",
+    "foundDate": "Nov 17, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1437.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************9805",
+    "foundDate": "Nov 17, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1439.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE SE, IMEI ****************6767",
+    "foundDate": "Nov 19, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1440.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SAMSUNG, IMEI ****************1787",
+    "foundDate": "Nov 22, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1444.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. SONY XPERIA CZARNY",
+    "foundDate": "Nov 21, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1448.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 100,02 ZŁ",
+    "foundDate": "Oct 8, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1452.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TABLET BRAVIS",
+    "foundDate": "Oct 12, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1453.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. IPHONE 5, IMEI ****************4962",
+    "foundDate": "Oct 24, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1454.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "KWOTA 410 EUR, 20 ZŁ",
+    "foundDate": "Nov 5, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1455.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MAXCOM BRĄZOWY, IMEI ****************9428",
+    "foundDate": "Nov 25, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1457.2017",
+    "cityName": "Kraków"
+  },
+  {
+    "name": "TEL. MAXCOM BRĄZOWY, IMEI ****************9428",
+    "foundDate": "Nov 25, 2017 12:00:00 AM",
+    "cityCode": "SA-03.5314.1.1457.2017",
     "cityName": "Kraków"
   },
   {

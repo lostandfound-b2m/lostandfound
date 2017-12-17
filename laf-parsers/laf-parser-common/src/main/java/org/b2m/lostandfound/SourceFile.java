@@ -9,6 +9,7 @@ public class SourceFile {
     private String url;
     private String name;
     private String updateChecker;
+    private String officeName;
 
     public String getUrl() {return url;}
     public void setUrl(String url) {
@@ -25,4 +26,8 @@ public class SourceFile {
         this.updateChecker=updateChecker;
     }
 
+    public String getOfficeName() {return officeName;}
+    public void setOfficeName(String officeName) {
+        this.officeName=officeName;
+    }
 }

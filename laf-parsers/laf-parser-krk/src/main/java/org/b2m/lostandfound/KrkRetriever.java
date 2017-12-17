@@ -6,7 +6,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
 
@@ -27,7 +26,8 @@ public class KrkRetriever implements Retriever {
         return items;
     }
 
-   public List<SourceFile> retrieveFiles(String url) {
+   public List<SourceFile> retrieveFiles() {
+       String url = "https://www.bip.krakow.pl/?dok_id=19964";
        List<SourceFile> resultList = new ArrayList<>();
        Document doc;
        try {
@@ -52,6 +52,9 @@ public class KrkRetriever implements Retriever {
                }
                resultList.add(file);
            }
+       }
+       for (SourceFile file : resultList) {
+           file.setOfficeName("Kraków");
        }
        return resultList;
    }

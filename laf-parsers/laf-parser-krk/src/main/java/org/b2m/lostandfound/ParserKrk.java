@@ -18,75 +18,76 @@ import java.util.regex.Pattern;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
+
 import java.net.URL;
 
-public class ParserKrk{
-    private  InputStream inputStream;
+public class ParserKrk {
+    private InputStream inputStream;
 
     public ParserKrk(URL url) throws IOException {
         inputStream = url.openStream();
     }
-    public ParserKrk(String string) throws IOException{
+
+    public ParserKrk(String string) throws IOException {
         File file = new File(string);
         inputStream = new FileInputStream(file);
     }
 
 
-    private String getFromFile(InputStream inputStream) throws IOException{
-        String  output;
+    private String getFromFile(InputStream inputStream) throws IOException {
+        String output;
         PDDocument document = PDDocument.load(inputStream);
         PDFTextStripper pdfTextStripper = new PDFTextStripper();
         output = pdfTextStripper.getText(document);
         return output;
     }
-    
-    public List<Item> getItemList() throws IOException{
+
+    public List<Item> getItemList() throws IOException {
         return getAllItems(getFromFile(inputStream));
     }
 
 
-    private List<Item> getAllItems(String inputPDF)
-    {
+    private List<Item> getAllItems(String inputPDF) {
         List<Item> allItems = new LinkedList<>();
-        int i = 0 , beginOfLine = 0 , endOfLine = 0, endOfText = 0, endOfTemp = 0;
+        int i = 0, beginOfLine = 0, endOfLine = 0, endOfText = 0, endOfTemp = 0;
         String temp;
-        String  itemName = null, cityCode = null;
-        Date    findDate = null;
+        String itemName = null, cityCode = null;
+        Date findDate = null;
         Item tempItem;
-        Pattern pattern_cityCode = Pattern.compile ("SA-03\\.5314\\.[0-9]+\\.[0-9]+\\.[0-9]+");
+        Pattern pattern_cityCode = Pattern.compile("SA-03\\.5314\\.[0-9]+\\.[0-9]+\\.[0-9]+");
         Pattern pattern_foundDate1 = Pattern.compile("[0-9]{2}-[0-9]{2}-[0-9]{4}");
         Pattern pattern_foundDate2 = Pattern.compile("[0-9]{2}.[0-9]{2}.[0-9]{4}");
         Matcher matcher;
         endOfText = inputPDF.lastIndexOf("\n");
         do {
-            beginOfLine = inputPDF.indexOf("\n",endOfLine);
+            beginOfLine = inputPDF.indexOf("\n", endOfLine);
             beginOfLine++;
-            endOfLine = inputPDF.indexOf("\n",beginOfLine);
-            temp = inputPDF.substring(beginOfLine,endOfLine);
-            if(Character.isDigit(temp.charAt(0))){
-                temp = temp.substring (temp.indexOf (" ") + 1);
-                matcher = pattern_cityCode.matcher (temp);
-                if (matcher.find ()) {
-                    endOfTemp = matcher.end ();
-                    cityCode = temp.substring (0, endOfTemp++);
+            endOfLine = inputPDF.indexOf("\n", beginOfLine);
+            temp = inputPDF.substring(beginOfLine, endOfLine);
+            if (Character.isDigit(temp.charAt(0))) {
+                temp = temp.substring(temp.indexOf(" ") + 1);
+                matcher = pattern_cityCode.matcher(temp);
+                if (matcher.find()) {
+                    endOfTemp = matcher.end();
+                    cityCode = temp.substring(0, endOfTemp++);
                 }
 
                 matcher = pattern_foundDate1.matcher(temp);
-                if(matcher.find()) {
+                if (matcher.find()) {
                     temp.replaceAll("-", ".");
                     itemName = temp.substring(endOfTemp, matcher.start() - 1);
                     findDate = getDate(temp.substring(matcher.start(), matcher.end()));
                 }
                 matcher = pattern_foundDate2.matcher(temp);
 
-                if(matcher.find()) {
-                    itemName = temp.substring(endOfTemp, matcher.start()-1);
+                if (matcher.find()) {
+                    itemName = temp.substring(endOfTemp, matcher.start() - 1);
                     findDate = getDate(temp.substring(matcher.start(), matcher.end()));
                 }
 
             }
-            allItems.add(new Item(itemName,findDate,cityCode,"Kraków"));
-        }while (endOfLine != endOfText);
+            allItems.add(new Item(itemName, findDate, cityCode, "Kraków"));
+        } while (endOfLine != endOfText);
         return allItems;
     }
 
@@ -97,7 +98,7 @@ public class ParserKrk{
             date = df.parse(input);
         } catch (ParseException e) {
             e.printStackTrace();
-            date=null;
+            date = null;
         }
         return date;
     }

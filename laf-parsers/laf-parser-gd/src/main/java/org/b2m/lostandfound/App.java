@@ -1,4 +1,4 @@
-package org.b2m.lostandfound.parsergd;
+package org.b2m.lostandfound.parser;
 
 /**
  * Hello world!

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface Retriever {
-    List<SourceFile> retrieveFiles(String url);
+    List<SourceFile> retrieveFiles();
     List<Item> retrieveItemsFromFiles(List<SourceFile> files) throws IOException;
 
 }
