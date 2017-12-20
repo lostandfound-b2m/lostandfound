@@ -1,14 +1,16 @@
 package org.b2m.lostandfound.persist;
 
-public interface LostPropertyRepository<T> {
+import java.util.List;
 
-    public void persist(T entity);
-    public void update(T entity);
-    public void delete(T entity);
-    //public List<T> findByItemDescription(String description);
+public interface LostPropertyRepository {
 
+    public void persist(Object entity);
 
+    public void delete(Object entity);
 
+    public List<ItemDao> findByItemDescription(String itemDescription, String officeName);
+
+    public List<ItemDao> returnAllItems(String objectName);
 
 }
 

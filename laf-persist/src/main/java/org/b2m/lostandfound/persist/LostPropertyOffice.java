@@ -1,35 +1,29 @@
 package org.b2m.lostandfound.persist;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity(name = "LostPropertyOffice")
-@Table(name = "lostpropertyoffice")
+@Table(name = "lost_property_office")
 public class LostPropertyOffice {
 
     @Id
-    @Column(name="officename")
+    @Column(name = "offic_ename")
     private String officeName;
-
-    @OneToMany(
-            mappedBy = "lostPropertyOffice",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<LostItem> lostItems = new ArrayList<>();
 
     @Column(name="city")
     private String city;
 
-    @Column(name="postalcode")
+    @Column(name = "postal_code")
     private String postalCode;
 
-    @Column(name="contactnumber")
+    @Column(name = "contact_number")
     private String contactNumber;
 
-    @Column(name="emailaddress")
+    @Column(name = "email_address")
     private String email;
 
     public LostPropertyOffice() {
@@ -41,19 +35,6 @@ public class LostPropertyOffice {
         this.postalCode = postalCode;
         this.contactNumber = contactNumber;
         this.email = email;
-    }
-    public void addLostItem(LostItem newLostItem) {
-        lostItems.add(newLostItem);
-
-    }
-
-    public void removeLostItem(LostItem oldLostItem) {
-        lostItems.remove(oldLostItem);
-
-    }
-
-    public List<LostItem> getLostItems(){
-        return lostItems;
     }
 
     public String getOfficeName() {
@@ -75,4 +56,11 @@ public class LostPropertyOffice {
     public String getEmail() {
         return email;
     }
+
+    public String toString() {
+        return getOfficeName();
+    }
+
+
+
 }
