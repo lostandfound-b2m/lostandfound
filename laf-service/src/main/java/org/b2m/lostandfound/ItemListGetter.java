@@ -95,9 +95,14 @@ public class ItemListGetter {
         getJson(retriever.retrieveItemsFromFiles(files));
     }
 
-    public static void simpleGetList(Retriever retriever) throws IOException {
+    public static void simpleGetListAndSaveInJson(Retriever retriever) throws IOException {
         List<SourceFile> files = retriever.retrieveFiles();
         getJson(retriever.retrieveItemsFromFiles(files));
+    }
+
+    public static List<Item> simpleGetList(Retriever retriever) throws IOException {
+        List<SourceFile> files = retriever.retrieveFiles();
+        return retriever.retrieveItemsFromFiles(files);
     }
 
     private static void getJson(List<Item> items) throws IOException {
