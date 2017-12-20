@@ -1,13 +1,13 @@
 package org.b2m.lostandfound;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class ItemListGetter {
 
@@ -27,7 +27,7 @@ public class ItemListGetter {
         boolean isFileStillAvailable;
 
         /*
-         * SourceFile objects are divided into few lists:
+         * SourceFileDao objects are divided into few lists:
          * 1. newFiles : list of SourceFiles that appeared on office's site for the first time
          * 2. filesToBeUpdated and FileInDatabaseToBeUpdated :
          *      lists of SourceFiles that has been updated since last time
@@ -35,7 +35,7 @@ public class ItemListGetter {
          *      office's site anymore
          */
 
-        /* SourceFile was removed from office's site or updated */
+        /* SourceFileDao was removed from office's site or updated */
         for (SourceFile fileInDatabase : filesInDatabase) {
             isFileStillAvailable = false;
             for (SourceFile file : files){
@@ -54,7 +54,7 @@ public class ItemListGetter {
             }
         }
 
-        /* SourceFile is listed on office's site but we don't have it in database yet */
+        /* SourceFileDao is listed on office's site but we don't have it in database yet */
         for (SourceFile file : files) {
             if (!filesInDatabase.contains(file)) {
                 newFiles.add(file);

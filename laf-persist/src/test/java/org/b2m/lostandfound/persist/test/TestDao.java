@@ -3,9 +3,7 @@ package org.b2m.lostandfound.persist.test;
 import org.b2m.lostandfound.persist.ItemDao;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class TestDao {
 
@@ -17,11 +15,11 @@ public class TestDao {
 
     public List<ItemDao> createItemList(LostPropertyOffice lostPropertyOffice) {
 
-        LocalDate dateOfFound1 = LocalDate.of(2017, 10, 2);
-        LocalDate dateOfFound2 = LocalDate.of(2017, 1, 20);
-        LocalDate dateOfFound3 = LocalDate.of(2017, 8, 5);
-        LocalDate dateOfFound4 = LocalDate.of(2017, 4, 19);
-        LocalDate dateOfFound5 = LocalDate.of(2017, 2, 28);
+        Date dateOfFound1 = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+        Date dateOfFound2 = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+        Date dateOfFound3 = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+        Date dateOfFound4 = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+        Date dateOfFound5 = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
 
         ItemDao item1 = new ItemDao("zegarek", dateOfFound1, "00-753", "Warszawa", lostPropertyOffice);
         ItemDao item2 = new ItemDao("zegarek", dateOfFound2, "00-753", "Warszawa", lostPropertyOffice);

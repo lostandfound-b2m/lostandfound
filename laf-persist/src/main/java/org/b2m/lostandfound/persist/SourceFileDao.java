@@ -26,7 +26,7 @@ public class SourceFileDao {
     }
 
     ;
-    
+
     public SourceFileDao(String fileName, LostPropertyOffice lostPropertyOffice, LocalDate fileDate, String updateChecker, String urlAddress) {
         this.fileName = fileName;
         this.lostPropertyOffice = lostPropertyOffice;

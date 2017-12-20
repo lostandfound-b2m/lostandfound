@@ -1,11 +1,12 @@
 package org.b2m.lostandfound;
 
+
 import java.util.Date;
 
 public class Item {
     private String  name;
-    private Date    foundDate;
-    private Date    receiveDate;
+    private Date foundDate;
+    private Date receiveDate;
     private String  cityCode;
     private String  foundPlace;
     private String  cityName;

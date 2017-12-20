@@ -1,5 +1,7 @@
 package org.b2m.lostandfound;
 
+import java.time.LocalDate;
+
 /**
  * Class for keeping URLs to PDF files found on Krakow L&F Office (PdfFilesRetriever Class),
  * along with file name and last update date. Those attributes can be used later
@@ -10,7 +12,11 @@ public class SourceFile {
     private String name;
     private String updateChecker;
     private String officeName;
+    private LocalDate fileDate;
 
+    public LocalDate getFileDate() {
+        return fileDate;
+    }
     public String getUrl() {return url;}
     public void setUrl(String url) {
         this.url=url;

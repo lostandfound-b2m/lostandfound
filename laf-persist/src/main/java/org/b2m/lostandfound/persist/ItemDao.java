@@ -1,7 +1,7 @@
 package org.b2m.lostandfound.persist;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "lostitem")
@@ -14,18 +14,18 @@ public class ItemDao {
     @JoinColumn(name = "office_name")
     private LostPropertyOffice lostPropertyOffice;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "file_name")
-    private SourceFileDao sourceFileDao;
+    //@ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "file_name")
+    //private SourceFileDao sourceFileDao;
 
     @Column(name="name")
     private String name;
 
     @Column(name = "date_found")
-    private LocalDate dateFound;
+    private Date dateFound;
 
     @Column(name = "date_received")
-    private LocalDate dateReceived;
+    private Date dateReceived;
 
     @Column(name = "city_code")
     private String cityCode;
@@ -39,7 +39,7 @@ public class ItemDao {
     public ItemDao() {
     }
 
-    public ItemDao(String name, LocalDate dateFound, LocalDate dateReceived, String cityCode, String placeFound, String cityName, SourceFileDao sourceFileDao) {
+    public ItemDao(String name, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName) {
 
         this.name = name;
         this.dateFound = dateFound;
@@ -47,10 +47,10 @@ public class ItemDao {
         this.cityCode = cityCode;
         this.placeFound = placeFound;
         this.cityName = cityName;
-        this.sourceFileDao = sourceFileDao;
+        //this.sourceFileDao = sourceFileDao;
     }
 
-    public ItemDao(String name, LocalDate dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
+    public ItemDao(String name, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
         this.name = name;
         this.dateFound = dateFound;
         this.cityCode = cityCode;
@@ -62,11 +62,11 @@ public class ItemDao {
         return name;
     }
 
-    public LocalDate getFindDate() {
+    public Date getFindDate() {
         return dateFound;
     }
 
-    public LocalDate getReceiveDate() {
+    public Date getReceiveDate() {
         return dateReceived;
     }
 
