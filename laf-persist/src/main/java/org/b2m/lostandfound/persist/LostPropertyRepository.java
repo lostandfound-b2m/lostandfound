@@ -8,9 +8,9 @@ public interface LostPropertyRepository {
 
     public void delete(Object entity);
 
-    public List<ItemDao> findByItemDescription(String itemDescription, String officeName);
+    public List<LostItemDao> findByItemDescription(String itemDescription, String officeName);
 
-    public List<ItemDao> returnAllItems(String objectName);
+    public List<LostItemDao> returnAllItems(String objectName);
 
 }
 

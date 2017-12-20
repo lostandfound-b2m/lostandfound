@@ -10,8 +10,7 @@ import java.io.IOException;
 public class App 
 {
     public static void main( String[] args ) throws IOException {
-        KrkRetriever KrkRetriever = new KrkRetriever();
-        ItemListGetter.simpleGetList(KrkRetriever);
+        ItemListGetter.simpleGetListKrk();
 
     }
 }

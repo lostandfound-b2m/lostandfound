@@ -6,13 +6,12 @@ import com.google.gson.GsonBuilder;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ItemListGetter {
 
 
-    public static void getList(Retriever retriever) throws IOException{
+   /* public static void getList(Retriever retriever) throws IOException{
         DaoService daoService = new DaoService();
         List<SourceFile> files = retriever.retrieveFiles();
         List<SourceFile> filesInDatabase = daoService.getSourceFiles(retriever.getOfficeName());
@@ -26,16 +25,8 @@ public class ItemListGetter {
         List<Item> itemsToBeDeleted = new ArrayList<>();
         boolean isFileStillAvailable;
 
-        /*
-         * SourceFileDao objects are divided into few lists:
-         * 1. newFiles : list of SourceFiles that appeared on office's site for the first time
-         * 2. filesToBeUpdated and FileInDatabaseToBeUpdated :
-         *      lists of SourceFiles that has been updated since last time
-         * 3. filesToBeDeletedFromDatabase : list of files that are not listed on the
-         *      office's site anymore
-         */
 
-        /* SourceFileDao was removed from office's site or updated */
+        //SourceFileDao was removed from office's site or updated
         for (SourceFile fileInDatabase : filesInDatabase) {
             isFileStillAvailable = false;
             for (SourceFile file : files){
@@ -54,19 +45,13 @@ public class ItemListGetter {
             }
         }
 
-        /* SourceFileDao is listed on office's site but we don't have it in database yet */
+        //SourceFileDao is listed on office's site but we don't have it in database yet
         for (SourceFile file : files) {
             if (!filesInDatabase.contains(file)) {
                 newFiles.add(file);
             }
         }
 
-        /*
-         * Taking care of updated files: we get lists of Items from both
-         * new and old version of file and compare them.
-         * Items that haven't changed are ignored, Items that have been removed
-         * are added to itemsToBeDeleted list, new Items to itemsToAdd list.
-         */
 
         itemsToBeAnalized = retriever.retrieveItemsFromFiles(filesToBeUpdated);
         itemsInDatabaseToBeAnalized = daoService.getItemsListedOnSourceFile(filesInDatabaseToBeUpdated);
@@ -81,19 +66,19 @@ public class ItemListGetter {
         }
         itemsToBeDeleted.addAll(itemsInDatabaseToBeAnalized);
 
-        /* Items from new files are added ti itemsToAdd list */
+        // Items from new files are added ti itemsToAdd list
         itemsToAdd.addAll(retriever.retrieveItemsFromFiles(newFiles));
 
-        /* Unnecessary Items and SourceFiles removed */
+        // Unnecessary Items and SourceFiles removed
         daoService.deleteItemsListedOnSourceFile(filesToBeDeletedFromDatabase);
         daoService.deleteItems(itemsToBeDeleted);
         daoService.deleteSourceFile(filesToBeDeletedFromDatabase);
 
-        /* New Items and new/modified SourceFiles added */
+        // New Items and new/modified SourceFiles added
         daoService.addSourceFiles(newFiles);
         daoService.addItems(itemsToAdd);
         getJson(retriever.retrieveItemsFromFiles(files));
-    }
+    }*/
 
     public static void simpleGetListAndSaveInJson(Retriever retriever) throws IOException {
         List<SourceFile> files = retriever.retrieveFiles();
@@ -103,6 +88,11 @@ public class ItemListGetter {
     public static List<Item> simpleGetList(Retriever retriever) throws IOException {
         List<SourceFile> files = retriever.retrieveFiles();
         return retriever.retrieveItemsFromFiles(files);
+    }
+
+    public static List<Item> simpleGetListKrk() throws IOException {
+        KrkRetriever retriever = new KrkRetriever();
+        return simpleGetList(retriever);
     }
 
     private static void getJson(List<Item> items) throws IOException {

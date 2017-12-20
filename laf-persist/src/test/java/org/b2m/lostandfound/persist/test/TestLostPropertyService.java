@@ -1,6 +1,6 @@
 package org.b2m.lostandfound.persist.test;
 
-import org.b2m.lostandfound.persist.ItemDao;
+import org.b2m.lostandfound.persist.LostItemDao;
 import org.b2m.lostandfound.persist.LostPropertyDao;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
 
@@ -25,10 +25,10 @@ public class TestLostPropertyService {
 
     }
 
-    public void persistLostItems(List<ItemDao> itemDaos) {
+    public void persistLostItems(List<LostItemDao> lostItemDaos) {
 
         lostPropertyDao.openCurrentSessionwithTransaction();
-        for (ItemDao newItem : itemDaos)
+        for (LostItemDao newItem : lostItemDaos)
         {
             lostPropertyDao.persist(newItem);
         }
@@ -36,28 +36,28 @@ public class TestLostPropertyService {
 
     }
 
-    public void deleteLostItems(LostPropertyOffice lostPropertyOffice, List<ItemDao> itemDaos) {
+    public void deleteLostItems(LostPropertyOffice lostPropertyOffice, List<LostItemDao> lostItemDaos) {
         lostPropertyDao.openCurrentSessionwithTransaction();
 
-        List<ItemDao> toRemove = new ArrayList<>();
-        toRemove.addAll(itemDaos);
-        itemDaos.removeAll(toRemove);
+        List<LostItemDao> toRemove = new ArrayList<>();
+        toRemove.addAll(lostItemDaos);
+        lostItemDaos.removeAll(toRemove);
 
         lostPropertyDao.update(lostPropertyOffice);
         lostPropertyDao.closeCurrentSessionwithTransaction();
 
     }
 
-    public List<ItemDao> findItems(String description, String cityName) {
+    public List<LostItemDao> findItems(String description, String cityName) {
         lostPropertyDao.openCurrentSessionwithTransaction();
-        List<ItemDao> itemDaos = lostPropertyDao.findByItemDescription(description, cityName);
+        List<LostItemDao> lostItemDaos = lostPropertyDao.findByItemDescription(description, cityName);
         lostPropertyDao.closeCurrentSessionwithTransaction();
-        return itemDaos;
+        return lostItemDaos;
     }
 
-    public List<ItemDao> returnAllItems(String officeName) {
+    public List<LostItemDao> returnAllItems(String officeName) {
         lostPropertyDao.openCurrentSessionwithTransaction();
-        List<ItemDao> allItems = lostPropertyDao.returnAllItems(officeName);
+        List<LostItemDao> allItems = lostPropertyDao.returnAllItems(officeName);
         lostPropertyDao.closeCurrentSessionwithTransaction();
         return allItems;
     }

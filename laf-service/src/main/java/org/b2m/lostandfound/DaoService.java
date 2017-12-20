@@ -1,34 +1,37 @@
 package org.b2m.lostandfound;
 
-import org.b2m.lostandfound.persist.ItemDao;
+import org.b2m.lostandfound.persist.LostItemDao;
 import org.b2m.lostandfound.persist.LostPropertyDao;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
 import org.b2m.lostandfound.persist.SourceFileDao;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
+import java.util.*;
 
 public class DaoService {
 
     private static LostPropertyDao lostPropertyDao;
-    private static ItemListGetter itemListGetter;
+
 
     public DaoService() {
 
         lostPropertyDao = new LostPropertyDao();
-        itemListGetter = new ItemListGetter();
+
     }
 
+    Date dateOfFound4 = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+    LostItemDao myItem = new LostItemDao("walizka", dateOfFound4, dateOfFound4, "00-753", "Warszawa", "Warszawa");
 
-    List<ItemDao> rewriteItemData(LostPropertyOffice lostPropertyOffice) {
+    List<LostItemDao> rewriteItemData(LostPropertyOffice lostPropertyOffice) throws IOException {
 
         //SourceFileDao sourceFileDao = rewriteSourceFileData(sourceFile,lostPropertyOffice);
-        List<Item> itemsFromParser = null;
-        List<ItemDao> itemsDao = null;
+        List<Item> itemsFromParser = ItemListGetter.simpleGetListKrk();
+        List<LostItemDao> itemsDao = new ArrayList<>();
         for (Item itemFromParser : itemsFromParser) {
-            ItemDao newItemDao = new ItemDao(itemFromParser.getName(), itemFromParser.getFoundDate(), itemFromParser.getReceiveDate(), itemFromParser.getCityCode(), itemFromParser.getFoundPlace(), itemFromParser.getCityName());
-            itemsDao.add(newItemDao);
+            LostItemDao newLostItemDao = new LostItemDao(itemFromParser.getName(), itemFromParser.getFoundDate(), itemFromParser.getReceiveDate(), itemFromParser.getCityCode(), itemFromParser.getFoundPlace(), itemFromParser.getCityName());
+            itemsDao.add(newLostItemDao);
         }
+
         return itemsDao;
     }
 
@@ -78,7 +81,13 @@ public class DaoService {
         }
     }
 
-    void addItems(List<Item> itemList) {
+    void addItems(List<LostItemDao> itemList) {
+        lostPropertyDao.openCurrentSessionwithTransaction();
+        for (LostItemDao newItem : itemList) {
+            lostPropertyDao.persist(newItem);
+        }
+        lostPropertyDao.closeCurrentSessionwithTransaction();
+
 
     }
 
@@ -91,9 +100,9 @@ public class DaoService {
         }
     }
 
-    public List<ItemDao> findItems(String description, String cityName) {
+    public List<LostItemDao> findItems(String description, String cityName) {
         lostPropertyDao.openCurrentSessionwithTransaction();
-        List<ItemDao> itemsDao = lostPropertyDao.findByItemDescription(description, cityName);
+        List<LostItemDao> itemsDao = lostPropertyDao.findByItemDescription(description, cityName);
         lostPropertyDao.closeCurrentSessionwithTransaction();
         return itemsDao;
     }
