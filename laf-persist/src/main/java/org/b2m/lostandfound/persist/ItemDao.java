@@ -1,40 +1,45 @@
 package org.b2m.lostandfound.persist;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "lostitem")
-public class LostItem {
+public class ItemDao {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "officename_id")
+    @JoinColumn(name = "office_name")
     private LostPropertyOffice lostPropertyOffice;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "file_name")
+    private SourceFileDao sourceFileDao;
 
     @Column(name="name")
     private String name;
 
-    @Column(name="datefound")
-    private Date dateFound;
+    @Column(name = "date_found")
+    private LocalDate dateFound;
 
-    @Column(name="datereceived")
-    private Date dateReceived;
+    @Column(name = "date_received")
+    private LocalDate dateReceived;
 
-    @Column(name="citycode")
+    @Column(name = "city_code")
     private String cityCode;
 
-    @Column(name="placefound")
+    @Column(name = "place_found")
     private String placeFound;
 
-    @Column(name="cityname")
+    @Column(name = "city_name")
     private String cityName;
 
-    public LostItem() { }
+    public ItemDao() {
+    }
 
-    public LostItem(String name, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName) {
+    public ItemDao(String name, LocalDate dateFound, LocalDate dateReceived, String cityCode, String placeFound, String cityName, SourceFileDao sourceFileDao) {
 
         this.name = name;
         this.dateFound = dateFound;
@@ -42,9 +47,10 @@ public class LostItem {
         this.cityCode = cityCode;
         this.placeFound = placeFound;
         this.cityName = cityName;
+        this.sourceFileDao = sourceFileDao;
     }
 
-    public LostItem(String name, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
+    public ItemDao(String name, LocalDate dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
         this.name = name;
         this.dateFound = dateFound;
         this.cityCode = cityCode;
@@ -56,11 +62,11 @@ public class LostItem {
         return name;
     }
 
-    public Date getFindDate() {
+    public LocalDate getFindDate() {
         return dateFound;
     }
 
-    public Date getReceiveDate() {
+    public LocalDate getReceiveDate() {
         return dateReceived;
     }
 
@@ -81,7 +87,7 @@ public class LostItem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        LostItem item = (LostItem) o;
+        ItemDao item = (ItemDao) o;
 
         if (name != null ? !name.equals(item.name) : item.name != null) return false;
         if (dateFound != null ? !dateFound.equals(item.dateFound) : item.dateFound != null) return false;
@@ -104,7 +110,7 @@ public class LostItem {
 
     @Override
     public String toString() {
-        return "LostItem{" +
+        return "ItemDao{" +
                 "name='" + name + '\'' +
                 ", dateFound=" + dateFound +
                 ", dateReceived=" + dateReceived +

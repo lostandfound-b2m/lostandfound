@@ -8,6 +8,8 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
+import java.util.List;
+
 
 public class LostPropertyDao implements LostPropertyRepository {
 
@@ -53,11 +55,19 @@ public class LostPropertyDao implements LostPropertyRepository {
     public void delete(Object entity) {
         getCurrentSession().delete(entity);
     }
-    /*public List<LostItem> findByItemDescription(String itemDescription){
-        List<LostItem> items = (List<LostItem>)getCurrentSession().createQuery("from LostItem where name = :description").setParameter("name",itemDescription).list();
+
+    public List<ItemDao> findByItemDescription(String itemDescription, String cityName) {
+        List<ItemDao> items = (List<ItemDao>) getCurrentSession().createQuery("FROM ItemDao WHERE name = :name AND cityName = :lostPropertyOffice").setParameter("name", itemDescription).setParameter("lostPropertyOffice", cityName).list();
         return items;
 
-    }*/
+    }
+
+    public List<ItemDao> returnAllItems(String officeName) {
+        List<ItemDao> items = (List<ItemDao>) getCurrentSession().createQuery("FROM ItemDao WHERE lostPropertyOffice.officeName = :officeName").setParameter("officeName", officeName).list();
+        return items;
+
+    }
+
 
 
 
