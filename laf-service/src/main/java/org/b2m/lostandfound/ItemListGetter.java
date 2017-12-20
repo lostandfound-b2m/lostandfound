@@ -105,6 +105,11 @@ public class ItemListGetter {
         return retriever.retrieveItemsFromFiles(files);
     }
 
+    public static List<Item> simpleGetListKrk() throws IOException {
+        KrkRetriever retriever = new KrkRetriever();
+        return simpleGetList(retriever);
+    }
+
     private static void getJson(List<Item> items) throws IOException {
         Writer writer = new FileWriter("Output.json");
 
