@@ -26,7 +26,7 @@ public class TestDao {
         ItemDao item1 = new ItemDao("zegarek", dateOfFound1, "00-753", "Warszawa", lostPropertyOffice);
         ItemDao item2 = new ItemDao("zegarek", dateOfFound2, "00-753", "Warszawa", lostPropertyOffice);
         ItemDao item3 = new ItemDao("plecak", dateOfFound3, "00-753", "Warszawa", lostPropertyOffice);
-        ItemDao item4 = new ItemDao("walizka", dateOfFound4, "00-753", "Warszawa", lostPropertyOffice);
+        ItemDao item4 = new ItemDao("walizka", dateOfFound4, "00-753", "Warszawa",   lostPropertyOffice);
         ItemDao item5 = new ItemDao("kurtka", dateOfFound5, "00-753", "Warszawa", lostPropertyOffice);
         ItemDao item6 = new ItemDao("kurtka", dateOfFound2, "00-753", "Krakow", lostPropertyOffice);
 
