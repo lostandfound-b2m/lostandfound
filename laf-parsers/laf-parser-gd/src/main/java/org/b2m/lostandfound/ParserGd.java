@@ -6,9 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -68,6 +66,9 @@ public class ParserGd {
 
     private Date getDate(String input) {
         Date date;
+        if (input.length()>10) {
+            input=input.substring(3);
+        }
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         try {
             date = df.parse(input);
