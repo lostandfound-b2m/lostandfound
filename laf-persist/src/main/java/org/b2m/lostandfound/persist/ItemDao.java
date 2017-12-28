@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "lostitem")
-public class LostItemDao {
+public class LostItem {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
@@ -18,8 +18,8 @@ public class LostItemDao {
     //@JoinColumn(name = "file_name")
     //private SourceFileDao sourceFileDao;
 
-    @Column(name = "item_description")
-    private String itemDescription;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "date_found")
     private Date dateFound;
@@ -36,12 +36,12 @@ public class LostItemDao {
     @Column(name = "city_name")
     private String cityName;
 
-    public LostItemDao() {
+    public LostItem() {
     }
 
-    public LostItemDao(String itemDescription, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName) {
+    public LostItem(String name, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName) {
 
-        this.itemDescription = itemDescription;
+        this.name = name;
         this.dateFound = dateFound;
         this.dateReceived = dateReceived;
         this.cityCode = cityCode;
@@ -50,8 +50,8 @@ public class LostItemDao {
         //this.sourceFileDao = sourceFileDao;
     }
 
-    public LostItemDao(String itemDescription, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
-        this.itemDescription = itemDescription;
+    public LostItem(String name, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
+        this.name = name;
         this.dateFound = dateFound;
         this.cityCode = cityCode;
         this.cityName = cityName;
@@ -59,7 +59,7 @@ public class LostItemDao {
     }
 
     public String getName() {
-        return itemDescription;
+        return name;
     }
 
     public Date getFindDate() {
@@ -87,9 +87,9 @@ public class LostItemDao {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        LostItemDao item = (LostItemDao) o;
+        LostItem item = (LostItem) o;
 
-        if (itemDescription != null ? !itemDescription.equals(item.itemDescription) : item.itemDescription != null)
+        if (name != null ? !name.equals(item.name) : item.name != null)
             return false;
         if (dateFound != null ? !dateFound.equals(item.dateFound) : item.dateFound != null) return false;
         if (dateReceived != null ? !dateReceived.equals(item.dateReceived) : item.dateReceived != null) return false;
@@ -100,7 +100,7 @@ public class LostItemDao {
 
     @Override
     public int hashCode() {
-        int result = itemDescription != null ? itemDescription.hashCode() : 0;
+        int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (dateFound != null ? dateFound.hashCode() : 0);
         result = 31 * result + (dateReceived != null ? dateReceived.hashCode() : 0);
         result = 31 * result + (cityCode != null ? cityCode.hashCode() : 0);
@@ -111,8 +111,8 @@ public class LostItemDao {
 
     @Override
     public String toString() {
-        return "LostItemDao{" +
-                "itemDescription='" + itemDescription + '\'' +
+        return "LostItem{" +
+                "name='" + name + '\'' +
                 ", dateFound=" + dateFound +
                 ", dateReceived=" + dateReceived +
                 ", cityCode='" + cityCode + '\'' +

@@ -13,6 +13,9 @@ public class Item {
 
     public Item() {
     }
+    public Item(String cityName) {
+        this.cityName = cityName;
+    }
 
     public Item(String name, Date foundDate, Date receiveDate, String cityCode, String foundPlace, String cityName) {
         this.name = name;

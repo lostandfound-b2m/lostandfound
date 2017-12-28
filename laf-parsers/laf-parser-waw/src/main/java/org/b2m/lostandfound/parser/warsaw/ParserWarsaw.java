@@ -104,15 +104,15 @@ public class ParserWarsaw {
         return currentDate;
     }
 
-    public List<Item> getLostItemsFromParser() throws IOException, ParseException {
+    public void getLostItemsFromParser() throws IOException, ParseException {
 
         List<Item> itemsFromParser = new ArrayList<>();
         for (Row currentRow : worksheet) {
             Item newItem = new Item(getItemDescriptionFromFile(currentRow), getFoundDateFromFile(currentRow), getDateReceivedFromFile(currentRow), "02-798", getFoundPlaceFromFile(currentRow), "Warszawa");
             itemsFromParser.add(newItem);
-            //System.out.println(newItem);
+            System.out.println(newItem);
         }
-        return itemsFromParser;
+        //return itemsFromParser;
     }
 
 }
