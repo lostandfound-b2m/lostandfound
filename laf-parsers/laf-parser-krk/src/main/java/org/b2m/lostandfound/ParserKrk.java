@@ -1,25 +1,21 @@
 package org.b2m.lostandfound;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import java.io.InputStream;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.text.PDFTextStripper;
-
-import java.net.URL;
 
 public class ParserKrk {
     private InputStream inputStream;
@@ -54,12 +50,15 @@ public class ParserKrk {
         String itemName = null, cityCode = null;
         Date findDate = null;
         Item tempItem;
-        Pattern pattern_cityCode = Pattern.compile("SA-03\\.5314\\.[0-9]+\\.[0-9]+\\.[0-9]+");
-        Pattern pattern_foundDate1 = Pattern.compile("[0-9]{2}-[0-9]{2}-[0-9]{4}");
-        Pattern pattern_foundDate2 = Pattern.compile("[0-9]{2}.[0-9]{2}.[0-9]{4}");
+        Pattern pattern_cityCode = Pattern.compile("SA[[.]-]03\\.5314(\\.[0-9]+){1,2}\\.20[0-9]{2}");
+        Pattern pattern_foundDate1 = Pattern.compile("[0-9]{0,2}-*[0-9]{2}-20[0-9]{2}");
+        Pattern pattern_foundDate2 = Pattern.compile("[0-9]{0,2}\\.*[0-9]{2}\\.20[0-9]{2}");
         Matcher matcher;
         endOfText = inputPDF.lastIndexOf("\n");
         do {
+            findDate = null;
+            itemName = null;
+            cityCode = null;
             beginOfLine = inputPDF.indexOf("\n", endOfLine);
             beginOfLine++;
             endOfLine = inputPDF.indexOf("\n", beginOfLine);
@@ -71,34 +70,39 @@ public class ParserKrk {
                     endOfTemp = matcher.end();
                     cityCode = temp.substring(0, endOfTemp++);
                 }
-
+                temp = temp.substring(endOfTemp,temp.length());
                 matcher = pattern_foundDate1.matcher(temp);
+                //System.out.println("temp1: "+ temp);
                 if (matcher.find()) {
-                    temp.replaceAll("-", ".");
-                    itemName = temp.substring(endOfTemp, matcher.start() - 1);
+                    temp = temp.replace("-",".");
+                    //System.out.println("temp2: "+ temp);
+                    itemName = temp.substring(0, matcher.start() );
                     findDate = getDate(temp.substring(matcher.start(), matcher.end()));
                 }
                 matcher = pattern_foundDate2.matcher(temp);
-
                 if (matcher.find()) {
-                    itemName = temp.substring(endOfTemp, matcher.start() - 1);
+                    itemName = temp.substring(0, matcher.start() );
                     findDate = getDate(temp.substring(matcher.start(), matcher.end()));
                 }
-
             }
-            allItems.add(new Item(itemName, findDate, cityCode, "Kraków"));
+            if(itemName != null && cityCode!=null)
+                allItems.add(new Item(itemName, findDate, cityCode, "Kraków"));
         } while (endOfLine != endOfText);
         return allItems;
     }
 
     private Date getDate(String input) {
         Date date;
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         try {
             date = df.parse(input);
         } catch (ParseException e) {
-            e.printStackTrace();
-            date = null;
+            DateFormat df2 = new SimpleDateFormat("MM.yyyy");
+            try {
+                date = df2.parse(input);
+            } catch (ParseException e1) {
+                date = null;
+            }
         }
         return date;
     }
