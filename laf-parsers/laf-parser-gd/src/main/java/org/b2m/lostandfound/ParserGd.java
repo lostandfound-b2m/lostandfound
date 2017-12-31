@@ -24,7 +24,7 @@ public class ParserGd {
             document = Jsoup.connect(url.toString()).get();
         }
         catch(IOException e) {
-            return;
+            document = null;
         }
     }
 
@@ -34,7 +34,7 @@ public class ParserGd {
             document = Jsoup.parse(file, "UTF-8", "http://bip.gdansk.pl/urzad-miejski/");
         }
         catch(IOException e) {
-            return;
+            document = null;
         }
     }
 
@@ -60,7 +60,6 @@ public class ParserGd {
                 allItems.add(item);
             }
         }
-        System.out.println(allItems.get(2));
         return allItems;
     }
 
@@ -73,7 +72,6 @@ public class ParserGd {
         try {
             date = df.parse(input);
         } catch (ParseException e) {
-            e.printStackTrace();
             date = null;
         }
         return date;
