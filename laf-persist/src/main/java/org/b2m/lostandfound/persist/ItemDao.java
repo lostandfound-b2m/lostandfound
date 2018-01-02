@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "lostitem")
-public class LostItem {
+public class ItemDao {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
@@ -36,10 +36,10 @@ public class LostItem {
     @Column(name = "city_name")
     private String cityName;
 
-    public LostItem() {
+    public ItemDao() {
     }
 
-    public LostItem(String name, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName) {
+    public ItemDao(String name, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName) {
 
         this.name = name;
         this.dateFound = dateFound;
@@ -50,7 +50,7 @@ public class LostItem {
         //this.sourceFileDao = sourceFileDao;
     }
 
-    public LostItem(String name, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
+    public ItemDao(String name, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
         this.name = name;
         this.dateFound = dateFound;
         this.cityCode = cityCode;
@@ -87,7 +87,7 @@ public class LostItem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        LostItem item = (LostItem) o;
+        ItemDao item = (ItemDao) o;
 
         if (name != null ? !name.equals(item.name) : item.name != null)
             return false;
