@@ -18,7 +18,7 @@ public class RestApiController {
     List<ItemDao> findDaoList ;
     Service Service = new Service();
     /** To call this request we have should use following path:
-       http://localhost:8080/request?city="cityName"&desc="description"
+       http://localhost:8080/request?city=cityName&desc=description
        This is GET method and  will list all Items suited to your request
        with given city name and description from database
      */
@@ -33,7 +33,7 @@ public class RestApiController {
         return findDaoList;
     }
     /** To call this request we have should use following path:
-       http://localhost:8080/request?city="cityName"
+       http://localhost:8080/request?city=cityName
        This is GET method and will list all Items suited to your request
        with given city name from database
      */
