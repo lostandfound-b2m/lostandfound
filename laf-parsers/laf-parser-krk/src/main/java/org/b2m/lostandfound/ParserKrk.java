@@ -35,6 +35,7 @@ public class ParserKrk {
         PDDocument document = PDDocument.load(inputStream);
         PDFTextStripper pdfTextStripper = new PDFTextStripper();
         output = pdfTextStripper.getText(document);
+        inputStream.close();
         return output;
     }
 
