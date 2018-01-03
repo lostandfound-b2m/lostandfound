@@ -6,5 +6,6 @@ import java.util.List;
 public interface Retriever {
     List<SourceFile> retrieveFiles();
     List<Item> retrieveItemsFromFiles(List<SourceFile> files) throws IOException;
+    String getOfficeName();
 
 }
