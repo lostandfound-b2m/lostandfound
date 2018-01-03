@@ -21,6 +21,7 @@
     <module>laf-persist</module>
     <module>laf-restapi</module>
     <module>laf-service</module>
+    <module>laf-scheduler</module>
   </modules>
   
   <build>
