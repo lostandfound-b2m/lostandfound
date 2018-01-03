@@ -139,7 +139,7 @@ public class Service {
         return lostPropertyRepository.findByItemDescription(itemDescription,cityName);
     }
 
-    List<ItemDao> returnAllItemsFromOffice(LostPropertyOffice office){
+    List<ItemDao> returnAllItemsFromOffice(String office){
         return  lostPropertyRepository.returnAllItemsFromOffice(office);
     }
 
