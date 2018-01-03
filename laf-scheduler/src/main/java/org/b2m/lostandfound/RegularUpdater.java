@@ -9,11 +9,11 @@ import java.util.List;
 public class RegularUpdater {
     Retriever retriever;
     Service daoService;
-    private RegularUpdater(Retriever retriever, Service daoService){
+    RegularUpdater(Retriever retriever, Service daoService){
         this.retriever=retriever;
         this.daoService=daoService;
     }
-    private void doScheduledUpdate() throws IOException{
+    void doScheduledUpdate() throws IOException{
         List<SourceFile> filesFromRetriever = retriever.retrieveFiles();
         List<SourceFile> filesInDatabase = daoService.getSourceFiles(retriever.getOfficeName());
         List<SourceFile> newFiles = new ArrayList<>();
