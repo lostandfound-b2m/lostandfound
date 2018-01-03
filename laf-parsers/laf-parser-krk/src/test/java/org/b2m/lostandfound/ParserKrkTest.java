@@ -1,6 +1,6 @@
 package org.b2m.lostandfound;
 
-import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -12,7 +12,7 @@ public class ParserKrkTest {
     private List<Item> staticList = null;
     private List<Item> webList = null;
 
-    @Test
+    @Before
     public void getItemListfromStatic() throws Exception {
         ParserKrk test = new ParserKrk("/home/luke/Dokumenty/GS/lostandfound/laf-parsers/laf-parser-krk/src/main/resources/2017_2.pdf");
         staticList= test.getItemList();
@@ -20,7 +20,7 @@ public class ParserKrkTest {
         assertNotNull("empty list",staticList);
     }
 
-    @Test
+    @Before
     public void getItemListfromWeb() throws Exception {
         KrkRetriever retriever = new KrkRetriever();
         List<SourceFile> files = retriever.retrieveFiles();
@@ -38,4 +38,8 @@ public class ParserKrkTest {
         for (Item item: webList) System.out.println(item);
     }
 
+    @Test
+    public void checkList() {
+        assertNotNull("lists are not the same",webList.equals(staticList));
+    }
 }
