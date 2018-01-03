@@ -14,7 +14,7 @@ public class ParserKrkTest {
 
     @Test
     public void getItemListfromStatic() throws Exception {
-        ParserKrk test = new ParserKrk("/home/luke/Dokumenty/GS/lostandfound/laf-parsers/laf-parser-krk/src/main/resources/2017_2.pdf");
+        ParserKrk test = new ParserKrk("src/main/resources/2017_2.pdf");
         staticList= test.getItemList();
         for (Item item: staticList) System.out.println(item);
         assertNotNull("empty list",staticList);

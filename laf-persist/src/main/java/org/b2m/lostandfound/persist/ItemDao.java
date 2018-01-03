@@ -11,7 +11,7 @@ public class ItemDao {
     private int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "office_name")
+    @JoinColumn(name = "office")
     private LostPropertyOffice lostPropertyOffice;
 
     //@ManyToOne(fetch = FetchType.LAZY)
@@ -30,11 +30,14 @@ public class ItemDao {
     @Column(name = "city_code")
     private String cityCode;
 
+    @Column(name = "city_name")
+    private String cityName;
+
     @Column(name = "place_found")
     private String placeFound;
 
-    @Column(name = "city_name")
-    private String cityName;
+    @Column(name = "office_name")
+    private String officeName;
 
     public ItemDao() {
     }
@@ -47,6 +50,7 @@ public class ItemDao {
         this.cityCode = cityCode;
         this.placeFound = placeFound;
         this.cityName = cityName;
+        this.officeName = cityName;
         //this.sourceFileDao = sourceFileDao;
     }
 

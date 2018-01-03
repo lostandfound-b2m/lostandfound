@@ -10,11 +10,13 @@ public class Item {
     private String  cityCode;
     private String  foundPlace;
     private String  cityName;
+    private String officeName;
 
     public Item() {
     }
     public Item(String cityName) {
         this.cityName = cityName;
+        this.officeName = officeName;
     }
 
     public Item(String name, Date foundDate, Date receiveDate, String cityCode, String foundPlace, String cityName) {
@@ -24,6 +26,7 @@ public class Item {
         this.cityCode = cityCode;
         this.foundPlace = foundPlace;
         this.cityName = cityName;
+        this.officeName = cityName;
     }
 
     public Item(String name, Date foundDate, String cityCode, String cityName) {
@@ -31,6 +34,7 @@ public class Item {
         this.foundDate = foundDate;
         this.cityCode = cityCode;
         this.cityName = cityName;
+        this.officeName = cityName;
     }
 
     public String getName() {

@@ -81,7 +81,7 @@ public class LostPropertyDao implements LostPropertyRepository {
     public List<ItemDao> returnAllItemsFromOffice(String officeName) {
         openCurrentSessionwithTransaction();
         //LostPropertyOffice office = (LostPropertyOffice) getCurrentSession().createQuery("FROM LostPropertyOffice WHERE office_name = :officeName").setParameter("officeName",officeName);
-        List<ItemDao> items = (List<ItemDao>) getCurrentSession().createQuery("FROM ItemDao WHERE lostPropertyOffice.officeName = :officeName").setParameter("officeName", officeName).list();
+        List<ItemDao> items = (List<ItemDao>) getCurrentSession().createQuery("FROM ItemDao WHERE cityName = :officeName").setParameter("officeName", officeName).list();
         closeCurrentSessionwithTransaction();
         return items;
 
@@ -89,7 +89,7 @@ public class LostPropertyDao implements LostPropertyRepository {
 
     public void deleteLostPropertyOffice(String officeName) {
         openCurrentSessionwithTransaction();
-        LostPropertyOffice office = (LostPropertyOffice) getCurrentSession().createQuery("FROM LostPropertyOffice WHERE office_name = :officeName").setParameter("officeName",officeName);
+        LostPropertyOffice office = (LostPropertyOffice) getCurrentSession().createQuery("FROM LostPropertyOffice WHERE officeName = :officeName").setParameter("officeName",officeName);
         delete(office);
         closeCurrentSessionwithTransaction();
     }
