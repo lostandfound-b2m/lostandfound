@@ -61,17 +61,17 @@ public class Service {
         return itemsDao;
     }
 
-    private SourceFileDao rewriteSourceFileData(SourceFile sourceFile, LostPropertyOffice lostPropertyOffice) {
+    private SourceFileDao rewriteSourceFileData(SourceFile sourceFile, String lostPropertyOffice) {
         SourceFileDao sourceFileDao = new SourceFileDao(sourceFile.getName(), lostPropertyOffice, sourceFile.getFileDate(), sourceFile.getUpdateChecker(), sourceFile.getUrl());
         return sourceFileDao;
     }
     List<SourceFile> getSourceFiles(String officeName) {
-        return  lostPropertyRepository.getSourceFile(officeName);
-
+        //return  lostPropertyRepository.getSourceFile(officeName);
+        return null;
     }
 
     void addSourceFiles(SourceFile sourceFile) {
-        return  lostPropertyRepository.addSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
+        //return  lostPropertyRepository.addSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
     }
 
     void addSourceFiles(List<SourceFile> sourceFileList) {
@@ -82,7 +82,7 @@ public class Service {
 
 
     void deleteSourceFile(SourceFile sourceFile) {
-        return  lostPropertyRepository.deleteSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
+        //return  lostPropertyRepository.deleteSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
     }
 
     void deleteSourceFile(List<SourceFile> sourceFileList) {
@@ -92,7 +92,8 @@ public class Service {
     }
 
     List<Item> getItemsListedOnSourceFile(SourceFile sourceFile) {
-        return  lostPropertyRepository.getItemsListedOnSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
+        //return  lostPropertyRepository.getItemsListedOnSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
+        return null;
     }
 
     List<Item> getItemsListedOnSourceFile(List<SourceFile> sourceFileList) {
@@ -104,7 +105,7 @@ public class Service {
     }
 
     void deleteItemsListedOnSourceFile(SourceFile sourceFile) {
-        return  lostPropertyRepository.deleteItemsListedOnSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
+        //return  lostPropertyRepository.deleteItemsListedOnSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
     }
 
     void deleteItemsListedOnSourceFile(List<SourceFile> sourceFileList) {
@@ -131,7 +132,7 @@ public class Service {
         lostPropertyRepository.deleteLostItems(itemList);
     }
 
-    void deleteLostPropertyOffice(LostPropertyOffice officeName){
+    void deleteLostPropertyOffice(String officeName){
         lostPropertyRepository.deleteLostPropertyOffice(officeName);
     }
 

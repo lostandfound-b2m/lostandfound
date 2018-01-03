@@ -4,13 +4,17 @@ import java.util.List;
 
 public interface LostPropertyRepository {
 
-    public void persist(Object entity);
+    void addLostItems(List<ItemDao> lostItemDaos);
 
-    public void delete(Object entity);
+    void addLostPropertyOffice(LostPropertyOffice office);
 
-    public List<ItemDao> findByItemDescription(String itemDescription, String officeName);
+    List<ItemDao> findByItemDescription(String itemDescription, String cityName);
 
-    public List<ItemDao> returnAllItems(String objectName);
+    List<ItemDao> returnAllItemsFromOffice(String office);
+
+    void deleteLostPropertyOffice(String officeName);
+
+    void deleteLostItems(List<ItemDao> items);
 
 }
 

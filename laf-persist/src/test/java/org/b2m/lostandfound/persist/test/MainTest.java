@@ -1,38 +1,45 @@
 package org.b2m.lostandfound.persist.test;
 
-import org.b2m.lostandfound.persist.LostItemDao;
+import org.b2m.lostandfound.persist.ItemDao;
+import org.b2m.lostandfound.persist.LostPropertyDao;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
 
+import java.text.ParseException;
 import java.util.List;
 
 public class MainTest {
-    public static void main(String args[]){
+    public static void main(String args[]) throws ParseException {
         TestDao test = new TestDao();
 
-        LostPropertyOffice warsawLostPropertyOffice = test.createLostPropertyOffice("Warsaw","biuro ztm warszawa","502402103","ztmWarszawa@gmail.com","00-753");
-        LostPropertyOffice krakowLostPropertyOffice = test.createLostPropertyOffice("Krakow","biuro ztm krakow","602452703","ztmKrakow@gmail.com","00-521");
+        LostPropertyOffice warsawLostPropertyOffice = test.createLostPropertyOffice("Warsaw","Warszawa","502402103","ztmWarszawa@gmail.com","00-753");
+        LostPropertyOffice krakowLostPropertyOffice = test.createLostPropertyOffice("Krakow","Kraków","602452703","ztmKrakow@gmail.com","00-521");
+        LostPropertyOffice gdanskLostPropertyOffice = test.createLostPropertyOffice("Gdańsk","Gdańsk","602452703","ztmGdansk@gmail.com","00-521");
 
-        List<LostItemDao> itemList = test.createItemList(warsawLostPropertyOffice);
+        List<ItemDao> itemList = test.createItemList(warsawLostPropertyOffice);
+        LostPropertyDao dao = new LostPropertyDao();
+        dao.addLostPropertyOffice(warsawLostPropertyOffice);
+        dao.addLostPropertyOffice(krakowLostPropertyOffice);
+        dao.addLostPropertyOffice(gdanskLostPropertyOffice);
+        dao.addLostItems(itemList);
+        itemList = dao.findByItemDescription("zegarek", "Warszawa");
 
-        TestLostPropertyService lostPropertyService = new TestLostPropertyService();
-
-        lostPropertyService.persistLostPropertyOffice(warsawLostPropertyOffice);
-        lostPropertyService.persistLostPropertyOffice(krakowLostPropertyOffice);
-        lostPropertyService.persistLostItems(itemList);
-
-
-        //test.checkItemsInOffice(warsawLostPropertyOffice);
-
-        //usuwamy wszystkie przedmioty z biura
-        //ostPropertyService.deleteLostItems(warsawLostPropertyOffice,warsawLostPropertyOffice.getLostItems());
-        List<LostItemDao> foundItems = lostPropertyService.findItems("kurtka", "Warszawa");
-        for (LostItemDao item : foundItems) {
+        for (ItemDao item : itemList) {
             System.out.println(item.getName());
             System.out.println(item.getFindDate());
             System.out.println(item.getCityName());
         }
 
-        //test.checkItemsInOffice(warsawLostPropertyOffice);
+        itemList = dao.returnAllItemsFromOffice("Warszawa");
+        System.out.println("All items.");
+        for (ItemDao item : itemList) {
+            System.out.println(item.getName());
+            System.out.println(item.getFindDate());
+            System.out.println(item.getCityName());
+        }
+
+        //dao.deleteLostItems(itemList);
+        //dao.deleteLostPropertyOffice(warsawLostPropertyOffice);
+
 
 
     }

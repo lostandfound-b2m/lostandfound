@@ -3,25 +3,32 @@ package org.b2m.lostandfound.persist.test;
 import org.b2m.lostandfound.persist.ItemDao;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class TestDao {
 
     public LostPropertyOffice createLostPropertyOffice(String city,String officeName,String contactNumber,String email,String postalCode ){
 
-        LostPropertyOffice lostPropertyOffice = new LostPropertyOffice(officeName,city,postalCode,contactNumber,email);
-        return lostPropertyOffice;
+        return new LostPropertyOffice(officeName,city,postalCode,contactNumber,email);
+
     }
 
-    public List<ItemDao> createItemList(LostPropertyOffice lostPropertyOffice) {
+    public List<ItemDao> createItemList(LostPropertyOffice lostPropertyOffice) throws ParseException {
 
-        LocalDate dateOfFound1 = LocalDate.of(2017, 10, 2);
+       /* LocalDate dateOfFound1 = LocalDate.of(2017, 10, 2);
         LocalDate dateOfFound2 = LocalDate.of(2017, 1, 20);
         LocalDate dateOfFound3 = LocalDate.of(2017, 8, 5);
         LocalDate dateOfFound4 = LocalDate.of(2017, 4, 19);
-        LocalDate dateOfFound5 = LocalDate.of(2017, 2, 28);
+        LocalDate dateOfFound5 = LocalDate.of(2017, 2, 28); */
+
+        Date dateOfFound1 = new SimpleDateFormat("yyyyMMdd").parse("20171002");
+        Date dateOfFound2 = new SimpleDateFormat("yyyyMMdd").parse("20170805");
+        Date dateOfFound3 = new SimpleDateFormat("yyyyMMdd").parse("20170831");
+        Date dateOfFound4 = new SimpleDateFormat("yyyyMMdd").parse("20170613");
+        Date dateOfFound5 = new SimpleDateFormat("yyyyMMdd").parse("20170901");
+
 
         ItemDao item1 = new ItemDao("zegarek", dateOfFound1, "00-753", "Warszawa", lostPropertyOffice);
         ItemDao item2 = new ItemDao("zegarek", dateOfFound2, "00-753", "Warszawa", lostPropertyOffice);

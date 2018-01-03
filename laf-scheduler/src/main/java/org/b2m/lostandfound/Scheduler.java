@@ -17,8 +17,10 @@ public class Scheduler {
             public void run() {
                 System.out.println("Scheduler starts now");
                 try {
-                    updaterGd.doScheduledUpdate();
-                    updaterKrk.doScheduledUpdate();
+                    //updaterGd.doScheduledUpdate();
+                    //updaterKrk.doScheduledUpdate();
+                    service.addItems(service.simpleGetList(retrieverGd));
+                    service.addItems(service.simpleGetList(retrieverKrk));
                 }
                 catch (IOException e) {
                     System.out.println("IOException");

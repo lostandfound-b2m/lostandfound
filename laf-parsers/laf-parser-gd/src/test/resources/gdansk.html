@@ -1,0 +1,3137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head><meta charset="utf-8">
+<title>Biuletyn Informacji Publicznej - Urząd Miejski w Gdańsku</title>
+<meta name="author" content="" />
+
+<script src="/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="/js/bootstrap/css/bootstrap.css" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="/js/bootstrap/ex-bootstrap.css" property="stylesheet" rel="stylesheet" type="text/css">
+
+<script src="/js/powiekszenie.js" type="text/javascript"></script>
+
+<link href="/less/style/global.css" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="/style/css/navigation.css" property="stylesheet" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&amp;subset=latin,latin-ext" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700&amp;subset=latin,latin-ext" property="stylesheet" rel="stylesheet" type="text/css">
+
+<script data-amd-map="lib:js/lib plugins:js/plugins" type="text/javascript" src="/js/amdloader.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js" type="text/javascript"></script>
+  <script src="/js/respond.min.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<base href="http://bip.gdansk.pl" target="_parent"><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68372931-1', 'auto');
+  ga('send', 'pageview');
+
+</script><!-- (C)2000-2017 Gemius SA - gemiusTraffic / ver 11.1 / Urzad miejski --> 
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gemius_identifier = new String('.KrqyHB5t_cmOJtwEhN3gJa2.q4doIdwyd65Z.RmW5f.k7');
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://bip.gdansk.pl/js/gemius.js"></script></head>
+<body><!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V2LSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5V2LSK');</script>
+<!-- End Google Tag Manager --><script src="/js/lib/hcontrast.js" type="text/javascript"></script>
+<script>
+$(window).bind("load", function()
+	{
+	checkCookie('hcontrast');
+	});
+</script>
+<div class="container-fluid" style="background-color:#505050; padding: 7px 0px;">
+    <div class="container">
+    <div class="row no-gutter">
+        <div class="col-md-12">
+            <a class="search" href="http://www.gdansk.pl/szukaj/bip?q=bip" target="_blank">Szukaj w BIP-e</a>
+            <div class="fontSize pull-right">             
+                <a href="javascript:void(0);" onclick="contrastoff();"><i class="glyphicon glyphicon-font"></i></a>
+                <a href="javascript:void(0);" onclick="contrast();"><i class="glyphicon glyphicon-text-background"></i></a>               
+                <a href="javascript:void(0);" data-run-module="lib/fontSize.down"><i class="glyphicon glyphicon-minus"></i></a>
+                <a href="javascript:void(0);" data-run-module="lib/fontSize.reset"><i class="glyphicon glyphicon-font"></i></a>
+                <a href="javascript:void(0);" data-run-module="lib/fontSize.up"><i class="glyphicon glyphicon-plus"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<header class="container background-white vignette">
+    <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-2"><a class="logo-bip pull-right" href="https://www.bip.gov.pl" title="Biuletyn Informacji Publicznej" target="_self"></a></div>
+        <div class="col-md-8 col-sm-8 col-xs-8">
+            <h2>BIULETYN INFORMACJI PUBLICZNEJ</h2>
+            <h2>Gmina Miasta Gdańska - Urząd Miejski w Gdańsku</h2>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2">
+            <a class="logo-gdansk pull-left" href="http://www.gdansk.pl" title="Portal www.gdansk.pl" target="_self"></a>
+
+        </div>
+    </div>
+</header>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Menu</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li  style=" margin-left:-30px;"><a href="start"><img src="../images/menu_home.png" alt="Home"/><span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="urzad-miejski/Informator-urzedowy,a,28984" title="Informator urzędowy">Informator urzędowy</a></li>
+                <li ><a href="rada-miasta" title="Rada Miasta">Rada Miasta Gdańska</a></li>
+                <li ><a href="prezydent-miasta" title="Prezydent Miasta">Prezydent</a></li>
+                <li ><a href="prawo-lokalne" title="Prawo lokalne">Prawo lokalne</a></li>
+                <li ><a href="jednostki-pomocnicze" title="Jednostki pomocnicze">Jednostki pomocnicze</a></li>
+                <li ><a href="procedury-urzedowe" title="Procedury urzędowe">Procedury urzędowe</a></li>
+                <li ><a href="nieruchomosci" title="Nieruchomości">Nieruchomości</a></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <main class="container">
+        <div class="row">
+				
+		            <div class="col-md-4">
+		                <div class="row no-gutter">
+		                    <div class="col-md-12 block"><div class="thumbnail">
+	<div class="caption">
+    	<span class="umg"><a href="urzad-miejski" title="Urząd Miejski w Gdańsku">Urząd Miejski w Gdańsku</a></span>
+        <img style=" border:0px; background-color: none; float:right; margin:0px 10px" src="../images/Gdansk.png" alt="Herb Gdańska">
+        <p style="margin-bottom:0px">ul. Nowe Ogrody 8/12<br />
+         80-803 Gdańsk<br />
+         <strong>tel. centrala:</strong> +48 58 323 60 00<br />
+         <strong>tel. informacja:</strong> +48 58 323 60 68<br />
+         <strong>fax</strong>: +48 58 302 39 41, <br />
+         <strong>e-mail: </strong><a href="mailto:umg@gdansk.gda.pl">umg@gdansk.gda.pl</a><br />
+         <strong>elek. skrzynka podawcza: </strong><a href="http://bip.gdansk.pl/urzad-miejski/Elektroniczna-skrzynka-podawcza-Urzedu-Miejskiego-w-Gdansku,a,25728" target="_blank">ePUAP</a><br>/UMGDA/SkrytkaESP</p>
+	</div>
+</div></div>
+		                </div>
+		                <div class="row">
+		                    <nav class="col-md-12 menu-subpage"><div class="bar"><div class="line"></div></div><ul><li><a href="http://bip.gdansk.pl/urzad-miejski/Informator-urzedowy,a,28984"><span>Informator urzędowy</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Komunikaty-Urzedu-Miejskiego-w-Gdansku,a,97"><span>Komunikaty Urzędu Miejskiego w Gdańsku</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Ksiazka-telefoniczna,a,1784"><span>Książka telefoniczna</span></a></li><li class="space"></li><li><a href="http://bip.gdansk.pl/link/54016/Zakres-dzialania-i-wewnetrzna-struktura-wydzialow"><span>Zakres działania i wewnętrzna struktura wydziałów</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Wydzialy-Urzedu-Miejskiego,a,22"><span>Wydziały Urzędu Miejskiego</span></a></li><li><a href="http://bip.gdansk.pl/link/54015/Regulamin-organizacyjny-Urzedu-Miejskiego"><span>Regulamin organizacyjny Urzędu Miejskiego</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Wykaz-kont-Urzedu-Miejskiego,a,28871"><span>Wykaz kont Urzędu Miejskiego</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Co-i-jak-w-urzedzie-najczesciej-zadawane-pytania,a,2465"><span>Co i jak w urzędzie - najczęściej zadawane pytania</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Zespoly-Obslugi-Mieszkancow,a,21"><span>Zespoły Obsługi Mieszkańców</span></a></li><li><a href="http://bip.gdansk.pl/link/31773/Podatki-i-oplaty-lokalne"><span>Podatki i opłaty lokalne</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Wplaty-na-rzecz-Miasta-dokonywane-bez-oplat-i-prowizji,a,28873"><span>Wpłaty na rzecz Miasta dokonywane bez opłat i prowizji </span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Jednostki-organizacyjne-miasta,a,5"><span>Jednostki organizacyjne miasta</span></a></li><li><a href="http://bip.gdansk.pl/link/47654/Spolki-z-udzialem-Gminy-Miasta-Gdanska"><span>Spółki z udziałem Gminy Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Dotacje-w-gdanskich-placowkach-oswiatowych,a,2835"><span>Dotacje w gdańskich placówkach oświatowych </span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Dyzurny-Inzynier-Miasta,a,31212"><span>Dyżurny Inżynier Miasta</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Kontrole,a,2588"><span>Kontrole</span></a></li><li><a href="http://bip.gdansk.pl/link/30620/Petycje"><span>Petycje</span></a></li><li><a href="http://bip.gdansk.pl/link/43633/Zgromadzenia-publiczne"><span>Zgromadzenia publiczne</span></a></li><li class="space"></li><li><a href="http://bip.gdansk.pl/link/40575/Rezerwuj-wizyte-w-Urzedzie"><span>Rezerwuj wizytę w Urzędzie</span></a></li><li><a href="http://bip.gdansk.pl/link/39867/Liczba-oczekujacych-Klientow"><span>Liczba oczekujących Klientów</span></a></li><li class="space"></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Konkursy,a,808"><span>Konkursy</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Gdansk-w-zwiazkach-i-stowarzyszeniach,a,1646"><span>Gdańsk w związkach i stowarzyszeniach</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Podzial-administracyjny-Gdanska,a,647"><span>Podział administracyjny Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/link/28891/GIS-System-Informacji-Przestrzennej"><span>GIS - System Informacji Przestrzennej</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Furtki-internetowe-w-Gdansku,a,9011"><span>Furtki internetowe w Gdańsku</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Polska-Klasyfikacja-Dzialalnosci-oznaczenia-i-opisy-kodow-PKD,a,28883"><span>Polska Klasyfikacja Działalności - oznaczenia i opisy kodów PKD</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Odpady-i-informacja-o-srodowisku,a,2750"><span>Odpady i informacja o środowisku</span></a></li></ul></nav>
+		                </div>
+		            </div>
+		            <div class="col-md-8 block">
+		                
+		                <article class="article">
+		                    		                    
+		                    <div class="bar"><div class="bar-line"></div><h2 class="bar-title">Informacje biura rzeczy znalezionych</h2></div><h3></h3><p></p>
+<table border="1" cellpadding="7" cellspacing="0" style="width: 756px; height: 7586px;"><colgroup><col width="174" /> <col width="364" /> <col width="155" /> <col width="194" /> </colgroup>
+<tbody>
+<tr>
+<td colspan="5" style="text-align: center; width: 130px;">
+<p><strong><br /></strong></p>
+<p></p>
+<p><a href="/pobierz/97667/Regulamin-Biura-Rzeczy-Znalezionych" title="">Regulamin Biura Rzeczy Znalezionych (556.4 KB)</a></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td colspan="5" style="text-align: center; width: 130px;">
+<p style="text-align: center;"><strong>WZYWA SIĘ OSOBY UPRAWNIONE DO ODIORU NIŻEJ WYMIENIONYCH RZECZY ZNALEZIONYCH <br />PRZECHOWYWANYCH W DEPOZYCIE<br />BIURA RZECZY ZNALEZIONYCH URZĘDU MIEJSKIEGO W GDAŃSKU<br /></strong></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;">
+<p></p>
+</td>
+<td style="text-align: center; width: 130px;">
+<p><strong>Data przyjęcia do biura</strong></p>
+</td>
+<td style="text-align: center; width: 155px;">
+<p><strong>Data zdarzenia</strong></p>
+</td>
+<td style="text-align: center; width: 250px;">
+<p><strong>Opis rzeczy</strong></p>
+</td>
+<td style="text-align: center;" width="194">
+<p><strong>Miejsce znalezienia - skąd przyjęto</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="5" style="text-align: center; width: 130px;">
+<p style="text-align: center;"><span style="font-family: 'Trebuchet MS', serif;"><span style="font-size: medium;"><strong>Rok 2017<br /></strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">29.12.2017</td>
+<td style="text-align: center; width: 130px;">25.12.2017</td>
+<td style="text-align: center; width: 130px;">Kwota pieniędzy</td>
+<td style="text-align: center; width: 130px;">Gdańsk Migowo</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">20.12.2017</td>
+<td style="text-align: center; width: 130px;">19.12.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung, Klucz do samochodu Audi</td>
+<td style="text-align: center; width: 130px;">Gdańsk Zaspa</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">19.12.2017</td>
+<td style="text-align: center; width: 130px;">16.12.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">10.12.2017</td>
+<td style="text-align: center; width: 130px;">Scyzoryk</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">08/09.12.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek WoMaGe</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">08/09.12.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio </td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">08.12.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">01.12.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">30.11.2017</td>
+<td style="text-align: center; width: 130px;">Pierścionek</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">30.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Esprit</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">28.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Festina</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">28.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek QMAX</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">28.11.2017</td>
+<td style="text-align: center; width: 130px;">Łańcuszek </td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">28.11.2017</td>
+<td style="text-align: center; width: 130px;">Pierścionek</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">27.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Citizen</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;"> 26.11.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Hilfiger</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">25.11.2017</td>
+<td style="text-align: center; width: 130px;">iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">24/25.11.2017</td>
+<td style="text-align: center; width: 130px;"><strong></strong>Zegarek Sekonda</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">22/23.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Leijona</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">22.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Perfect</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">22.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Atlantic</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">18.12.2017</td>
+<td style="text-align: center; width: 130px;">22.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Fossil</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">15.12.2017</td>
+<td style="text-align: center; width: 130px;">15.09.2017</td>
+<td style="text-align: center; width: 130px;">Rower Jumpmaster</td>
+<td style="text-align: center; width: 130px;">Osiedle studenckie</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">18/19.11.2017</td>
+<td style="text-align: center; width: 130px;">iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">18.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Sebago</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">17.11.2017</td>
+<td style="text-align: center; width: 130px;">Obrączka koloru srebrnego z grawerunkiem</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">17.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Citizen</td>
+<td style="text-align: center; width: 130px;"><strong></strong>Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">17.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">16.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek am:pm</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">13.11.2017</td>
+<td style="text-align: center; width: 130px;">Części samochodowe</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">08.11.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">08.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Orient</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">04/05.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Bisset</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">02.11.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Accurist</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">02.11.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Skagen</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">02.11.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Marc Jacobs</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">02.11.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Versace,</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">02.11.2017</td>
+<td style="text-align: center; width: 130px;">iPod</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">30/31.10.2017</td>
+<td style="text-align: center; width: 130px;">Smartwatch</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">30.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Sharp</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">29/30.12.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Fitbit</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">29/30.12.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Tommy Hilfiger</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">29/30.12.2017</td>
+<td style="text-align: center; width: 130px;">Telefon SONY</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">29.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">29.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek GM ALTAIR</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">24/25.12.2017</td>
+<td style="text-align: center; width: 130px;">Zegare Swatch</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">24.10.2017</td>
+<td style="text-align: center; width: 130px;">Laptop Dell</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">23.10.2017</td>
+<td style="text-align: center; width: 130px;">Pierścionek koloru srebrnego</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">06.12.2017</td>
+<td style="text-align: center; width: 130px;">21/22.10.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Huawei</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">29.11.2017</td>
+<td style="text-align: center; width: 130px;">14.11.2017</td>
+<td style="text-align: center; width: 130px;">Telefon HTC</td>
+<td style="text-align: center; width: 130px;">Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">28.11.2017</td>
+<td style="text-align: center; width: 130px;">27.11.2017</td>
+<td style="text-align: center; width: 130px;">Laptop Asus</td>
+<td style="text-align: center; width: 130px;">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">28.11.2017</td>
+<td style="text-align: center; width: 130px;">27.11.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">20.11.2017</td>
+<td style="text-align: center; width: 130px;">18.11.2017</td>
+<td style="text-align: center; width: 130px;">Kwota pieniędzy</td>
+<td style="text-align: center; width: 130px;">Gdańsk-Wrzeszcz</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">16.11.2017</td>
+<td style="text-align: center; width: 130px;">10.11.2017</td>
+<td style="text-align: center; width: 130px;">Kwota pieniędzy</td>
+<td style="text-align: center; width: 130px;">Gdańsk-Wrzeszcz</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">15.11.2017</td>
+<td style="text-align: center; width: 130px;">13.11.2017</td>
+<td style="text-align: center; width: 130px;">Kwota pieniędzy</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">15.11.2017</td>
+<td style="text-align: center; width: 130px;">27.10.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Huawei</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">15.11.2017</td>
+<td style="text-align: center; width: 130px;">05.10.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">03.11.2017</td>
+<td style="text-align: center; width: 130px;">Telefon SONY</td>
+<td style="text-align: center; width: 130px;">Gdańsk Żabianka</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">19.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Garonne</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">19.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Candino</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">19.10.2017</td>
+<td style="text-align: center; width: 130px;"> Laptop Acer</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">19.10.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">17.10.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">15.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Edifice</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">15.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Jordan</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">13/14.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Boccia</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">13.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Pacific</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">12.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Q&amp;Q</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">11.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Daniel Wellington</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">11.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Dilligaf</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">11.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Lorus</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.201</td>
+<td style="text-align: center; width: 130px;">Zegarek DKNY</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Geneva</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Michael Kors</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Osin</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Sekonda</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Adriatica</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Accurist</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Lonbaijia</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Perfect</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek QMAX</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Condor</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timemaster</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Concorde</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Citron</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Distinque</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Mach 1</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Archos</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek D&amp;G</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timex</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Rubicon</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">06/07.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">05.10.2017</td>
+<td style="text-align: center; width: 130px;">ebook AMAZON</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">03.10.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">29.09.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek II K TWOK</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">03.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek damski Citizen</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">26.09.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Garmin</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">24/25.09.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">23.09.2017</td>
+<td style="text-align: center; width: 130px;">Pierścionek koloru złotego</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.11.2017</td>
+<td style="text-align: center; width: 130px;">19.09.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Asus</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">30.10.2017</td>
+<td style="text-align: center; width: 130px;">21.10.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.10.2017</td>
+<td style="text-align: center; width: 130px;">26.10.2017</td>
+<td style="text-align: center; width: 130px;">Telefon komórkowy LG</td>
+<td style="text-align: center; width: 130px;">Muzeum II Wojny Światowej</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.10.2017</td>
+<td style="text-align: center; width: 130px;">26.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Seiko</td>
+<td style="text-align: center; width: 130px;">Muzeum II Wojny Światowej</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.10.2017</td>
+<td style="text-align: center; width: 130px;">26.10.2017</td>
+<td style="text-align: center; width: 130px;">Kolczyk koloru złotego</td>
+<td style="text-align: center; width: 130px;">Muzeum II Wojny Światowej</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">19.10.2017</td>
+<td style="text-align: center; width: 130px;">18.10.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Nokia Lumia </td>
+<td style="text-align: center; width: 130px;">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">11.10.2017</td>
+<td style="text-align: center; width: 130px;">10.10.2017</td>
+<td style="text-align: center; width: 130px;">Kwota pieniędzy</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">19.09.2017</td>
+<td style="text-align: center; width: 130px;">Obrączka koloru złotego</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">18.09.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Fossil</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">17.09.2017</td>
+<td style="text-align: center; width: 130px;"> Łańcuszek koloru złotego</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">17.09.2017</td>
+<td style="text-align: center; width: 130px;">Aparat fotograficzny BENQ</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk<strong></strong></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">15/16.09.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Mustang</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">14.09.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">09.10.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Sekonda</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">09.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Perfect</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">09.10.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Chanel, </td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">10.09.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">03.09.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Gino Rossi</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">03.09.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Skagen</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">01.09.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Accurist</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">30.08.2017</td>
+<td style="text-align: center; width: 130px;">Smartband Huawei</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">30.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">29.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Fossil</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.10.2017</td>
+<td style="text-align: center; width: 130px;">29.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Citizen</td>
+<td style="text-align: center; width: 130px;">
+<p>Port Lotniczy Gdańsk</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">02.10.2017</td>
+<td style="text-align: center; width: 130px;">10.2017</td>
+<td style="text-align: center; width: 130px;">Łańcuszek z zawieszką</td>
+<td style="text-align: center; width: 130px;">
+<p>Gdańsk</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">29.09.2017</td>
+<td style="text-align: center; width: 130px;">22.09.2017</td>
+<td style="text-align: center; width: 130px;">Zestaw Smart House</td>
+<td style="text-align: center; width: 130px;">
+<p>ul. Wajdeloty</p>
+<p>Biedronka</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.09.2017</td>
+<td style="text-align: center; width: 130px;">14.09.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">ul. Witosa <br />Korty Tenisowe</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">11.09.2017</td>
+<td style="text-align: center; width: 130px;">08.09.2017</td>
+<td style="text-align: center; width: 130px;">Hulajnoga</td>
+<td style="text-align: center; width: 130px;">Gdańsk Żabianka</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;"> Telefon Sony</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017<strong></strong></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">Głosnik</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">23/24.08.2017</td>
+<td style="text-align: center; width: 130px;"> iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">23/24.08.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">23/24.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Aspect</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">21.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Festina</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">18.08.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Guess</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">18.08.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Killarney Crystal</td>
+<td style="text-align: center; width: 130px;"><strong></strong>Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">18.08.2017</td>
+<td style="text-align: center; width: 130px;">Kamera</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">17/18.08.2017</td>
+<td style="text-align: center; width: 130px;">iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">17.08.2017</td>
+<td style="text-align: center; width: 130px;">Plecak z tabletem</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">15.08.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">11.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Christ</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">11.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek am:pm</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">10.08.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Amazon</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">10.08.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">10.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Tissot</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">09.08.2017</td>
+<td style="text-align: center; width: 130px;">Tablet microsoft</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">06.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Sekonda</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">06.08.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Anne Klein</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">29/30.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">29/30.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Orient</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">29.07.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.09.2017</td>
+<td style="text-align: center; width: 130px;">28.07.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">14.07.2017</td>
+<td style="text-align: center; width: 130px;">Plecak</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">11.04.2017</td>
+<td style="text-align: center; width: 130px;">Kwota pieniędzy</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">03.07.2017</td>
+<td style="text-align: center; width: 130px;">Kamera Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">25.06.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">23.07.2017</td>
+<td style="text-align: center; width: 130px;">Telefon  Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">12.07.2017</td>
+<td style="text-align: center; width: 130px;">Telefon  Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">14.07.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">22.08.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Sony</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.08.2017</td>
+<td style="text-align: center; width: 130px;">19.08.2017</td>
+<td style="text-align: center; width: 130px;">Telefon  Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.08.2017</td>
+<td style="text-align: center; width: 130px;">21.08.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk Wrzeszcz</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">16.08.2017</td>
+<td style="text-align: center; width: 130px;">15.08.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">16.08.2017</td>
+<td style="text-align: center; width: 130px;">15.08.2017</td>
+<td style="text-align: center; width: 130px;">Telefon LUMIA</td>
+<td style="text-align: center; width: 130px;">Gdańsk Brzeźno</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">11.08.2017</td>
+<td style="text-align: center; width: 130px;">13.07.2017</td>
+<td style="text-align: center; width: 130px;">Laptop Lenovo</td>
+<td style="text-align: center; width: 130px;">Gdańsk Stogi</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.08.2017</td>
+<td style="text-align: center; width: 130px;">10.07.2017</td>
+<td style="text-align: center; width: 130px;">Wózek dziecięcy</td>
+<td style="text-align: center; width: 130px;">Straż Miejska w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">03.08.2017</td>
+<td style="text-align: center; width: 130px;">30.07.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Samsung</td>
+<td style="text-align: center; width: 130px;">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">03.08.2017</td>
+<td style="text-align: center; width: 130px;">29.07.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Huwaei</td>
+<td style="text-align: center; width: 130px;">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">26.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">25/26.07.2017</td>
+<td style="text-align: center; width: 130px;">Plecak</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">25.07.2017</td>
+<td style="text-align: center; width: 130px;">Pierścionek</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">18.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek ROFINA</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">17.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Festina</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">17.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Gant</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">15.07.2017</td>
+<td style="text-align: center; width: 130px;">Plecak</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">14.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek SKAGEN</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">13/14.07.2017</td>
+<td style="text-align: center; width: 130px;">Obrączka</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">11.07.2017</td>
+<td style="text-align: center; width: 130px;"> Pierścionek</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">11.07.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek PERFECT</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">09.07.2017</td>
+<td style="text-align: center; width: 130px;">iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">09.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Calvin Klein</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">10.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek PERFECT</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">09.07.2017</td>
+<td style="text-align: center; width: 130px;">eBook</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">08.07.2017</td>
+<td style="text-align: center; width: 130px;">Bransoletka</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">07/08.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk<strong></strong></td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">05.07.2017</td>
+<td style="text-align: center; width: 130px;"> DVD Player</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">03.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek JUNGHANS</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">01/02.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Citizen</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">01/02.07.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek DKNY</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">01.07.2017</td>
+<td style="text-align: center; width: 130px;">eBook</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">28.06.2017</td>
+<td style="text-align: center; width: 130px;">iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">27.06.2017</td>
+<td style="text-align: center; width: 130px;">Bransoletka</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">26.06.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek BREIL</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">21/22.06.2017</td>
+<td style="text-align: center; width: 130px;"> Gry PS4</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">21/22.06.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek MICHAEL KORS</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20/21.06.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek TIMEX</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">19/20.06.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek ELIXA</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">19/20.06.2017</td>
+<td style="text-align: center; width: 130px;">iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">  Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Swatch</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Sony</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;"> Laptop</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">  Aparat fotograficzny</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">DVD -ROM</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timmaster</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">eBook</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Dysk zewnętrzny</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timex</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">20.05.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Marathon</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.08.2017</td>
+<td style="text-align: center; width: 130px;">16.06.2017</td>
+<td style="text-align: center; width: 130px;">Laptop</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.07.2017</td>
+<td style="text-align: center; width: 130px;">23.07.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Gdańsk Wrzeszcz</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">12.07.2017</td>
+<td style="text-align: center; width: 130px;">08.07.2017</td>
+<td style="text-align: center; width: 130px;">Tablet IPAD</td>
+<td style="text-align: center; width: 130px;">PLG - samolot lini RYANAIR</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">03.07.2017</td>
+<td style="text-align: center; width: 130px;">17.06.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Huawei</td>
+<td style="text-align: center; width: 130px;">Gdańsk, Brzozowa 9c Flying Tiger Copenhagen</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">03.07.2017</td>
+<td style="text-align: center; width: 130px;">25.06.2017</td>
+<td style="text-align: center; width: 130px;">Ipad</td>
+<td style="text-align: center; width: 130px;">Gdańsk kościół <br />Św. Katarzyny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">28.06.2017</td>
+<td style="text-align: center; width: 130px;">25.06.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Smasung S7</td>
+<td style="text-align: center; width: 130px;">Gdańsk ul. Chłopska</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">27.06.2017</td>
+<td style="text-align: center; width: 130px;">26.06.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">15.06.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Reserved</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">13.06.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Swatch</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">10/11.06.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">09.06.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Constant</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">09.06.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Michael Kors</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">09.06.2017</td>
+<td style="text-align: center; width: 130px;">Aparat fotograficzny</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">06.06.2017</td>
+<td style="text-align: center; width: 130px;">Bransoletka</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">05.06.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Cerruti</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">04.06.2017</td>
+<td style="text-align: center; width: 130px;">Atlas</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">03.06.2017</td>
+<td style="text-align: center; width: 130px;"> Zegarek Lorus</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">02.06.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Lenovo</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">30/31.05.2017</td>
+<td style="text-align: center; width: 130px;"> iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">28.05.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">26/27.05.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">21.06.2017</td>
+<td style="text-align: center; width: 130px;">26.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">20.06.2017</td>
+<td style="text-align: center; width: 130px;">01.07.2016</td>
+<td style="text-align: center; width: 130px;">Rower Górski</td>
+<td style="text-align: center; width: 130px;">Gdańsk Wrzeszcz</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">16.06.2017</td>
+<td style="text-align: center; width: 130px;">08.06.2017</td>
+<td style="text-align: center; width: 130px;">Bransoletka PANDORA <br />(4 CHARMSY)</td>
+<td style="text-align: center; width: 130px;">ścieżka rowerowa, przystanek ul. Płocka</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.06.2017</td>
+<td style="text-align: center; width: 130px;">29.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk Morena</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.06.2017</td>
+<td style="text-align: center; width: 130px;">05.06.2017</td>
+<td style="text-align: center; width: 130px;">Kwota pieniędzy</td>
+<td style="text-align: center; width: 130px;">Gdańsk Główny</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">05.06.2017</td>
+<td style="text-align: center; width: 130px;">02.06.2017</td>
+<td style="text-align: center; width: 130px;">Rower Mohawk</td>
+<td style="text-align: center; width: 130px;">Gdańsk Zaspa</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">24/25.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">24/25.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Pulsar</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">22/23.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Adriatica</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">22.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Perfect</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">18.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">Laptop Asus</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">15.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timex</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">13.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">13.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">13.05.2017</td>
+<td style="text-align: center; width: 130px;">Pierścionek</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">13.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Swatch</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">12.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.05.2017</td>
+<td style="text-align: center; width: 130px;">11/12.05.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">28.04.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">09.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">06.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Pierre Ricaud</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">05.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">04.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Furla</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">04.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Fila</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">04.05.2017</td>
+<td style="text-align: center; width: 130px;">Łańcuszek z medalikiem</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">04.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Lorus</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">04.05.2017</td>
+<td style="text-align: center; width: 130px;">Obrączka koloru srebrnego</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">30.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timex</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">30.04.2017</td>
+<td style="text-align: center; width: 130px;">Telefon komórkowy Lava</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">01.05.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Citizen</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Gino Rossi</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Perfect</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">23/24.04.2017</td>
+<td style="text-align: center; width: 130px;">Portfel z kwotą pieniędzy</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">17.05.2017</td>
+<td style="text-align: center; width: 130px;">12.05.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Plac Zebrań Ludowych</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">18.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timex</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">16.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Sekonda</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">13.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Citron</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">13.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Armiton</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">13.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Ice Watch</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">08.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timex</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">08.04.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Tissot</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">30.03.2017</td>
+<td style="text-align: center; width: 130px;">Łańcuszek koloru złotego</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">29.03.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Citizen</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">29.03.2017</td>
+<td style="text-align: center; width: 130px;">Portfel z kwotą pieniędzy</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">27.03.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek DKNY</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">27.03.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Vagary</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">27.03.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">27.03.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Sego</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">23.03.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Hugo</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">Bransoletka męska</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">26.04.2017</td>
+<td style="text-align: center; width: 130px;">21.04.2017</td>
+<td style="text-align: center; width: 130px;">Opaska Fitbit</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.04.2017</td>
+<td style="text-align: center; width: 130px;">21.04.2017</td>
+<td style="text-align: center; width: 130px;">Rower uniwersalny</td>
+<td style="text-align: center; width: 130px;">Straż Miejska</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">20.04.2017</td>
+<td style="text-align: center; width: 130px;">14.02.2017</td>
+<td style="text-align: center; width: 130px;">Woreczek foliowy z zawartością zegarków</td>
+<td style="text-align: center; width: 130px;">Komisariat Policji</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">19.04.2017</td>
+<td style="text-align: center; width: 130px;">04.02.2017</td>
+<td style="text-align: center; width: 130px;">Portfel z kwotą pieniędzy</td>
+<td style="text-align: center; width: 130px;">Pruszcz Gdański - Komisariat Policji</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">19.04.2017</td>
+<td style="text-align: center; width: 130px;">19.06.2016</td>
+<td style="text-align: center; width: 130px;">Rower Górski</td>
+<td style="text-align: center; width: 130px;">Komisariat Policji</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">11.04.2017</td>
+<td style="text-align: center; width: 130px;">07.04.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">11.04.2017</td>
+<td style="text-align: center; width: 130px;">10.03.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Q&amp;Q</td>
+<td style="text-align: center; width: 130px;">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">05.04.2017</td>
+<td style="text-align: center; width: 130px;">05.04.2017</td>
+<td style="text-align: center; width: 130px;">Łańcuszek koloru złotego z medalikiem</td>
+<td style="text-align: center; width: 130px;">Gdańsk Politechnika</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.04.2017</td>
+<td style="text-align: center; width: 130px;">03.04.2017</td>
+<td style="text-align: center; width: 130px;">Tablet LG</td>
+<td style="text-align: center; width: 130px;">Gdańsk Wrzeszcz</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">15.03.2017</td>
+<td style="text-align: center; width: 130px;">Torba podróżna</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">15.03.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">09.03.2017</td>
+<td style="text-align: center; width: 130px;">ebook NOOK</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">03.03.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Tissot</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">27.02.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">26.02.2017</td>
+<td style="text-align: center; width: 130px;">Tablet Kiano</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">26.02.2017</td>
+<td style="text-align: center; width: 130px;">Przenośna konsola</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">26.02.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Armani</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.032017</td>
+<td style="text-align: center; width: 130px;">23.02.2017</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">18.02.2017</td>
+<td style="text-align: center; width: 130px;">ebook</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">15.02.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Perfect</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">13.02.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timex</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">12.02.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.03.2017</td>
+<td style="text-align: center; width: 130px;">12.02.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Media-Tech</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">14.03.2017</td>
+<td style="text-align: center; width: 130px;">11.03.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Huawei</td>
+<td style="text-align: center; width: 130px;">Gdańsk Olszynka</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">02.03.2017</td>
+<td style="text-align: center; width: 130px;">02.03.2017</td>
+<td style="text-align: center; width: 130px;">Wózek Melex</td>
+<td style="text-align: center; width: 130px;">Stadion Energa Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">23.02.2017</td>
+<td style="text-align: center; width: 130px;">22.02.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Gdańsk - Wrzeszcz</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">23.02.2017</td>
+<td style="text-align: center; width: 130px;">11.02.2017</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">Gdańsk - Szadółki</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.02.2017</td>
+<td style="text-align: center; width: 130px;">02.02.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.02.2017</td>
+<td style="text-align: center; width: 130px;">30.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Timemaster</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.02.2017</td>
+<td style="text-align: center; width: 130px;">30.01.2017</td>
+<td style="text-align: center; width: 130px;">Telefon Huawei</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.02.2017</td>
+<td style="text-align: center; width: 130px;">27.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Fosil</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.02.2017</td>
+<td style="text-align: center; width: 130px;">27.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Axcent</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">22.02.2017</td>
+<td style="text-align: center; width: 130px;">27.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek Jacques Lemans</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">09.02.2017</td>
+<td style="text-align: center; width: 130px;">07.02.2017</td>
+<td style="text-align: center; width: 130px;">Kwota pieniędzy</td>
+<td style="text-align: center; width: 130px;">Galeria Bałtycka - osoba fizyczna</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">26.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek SWATCH</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">22.01.2017</td>
+<td style="text-align: center; width: 130px;">IPAD kolor szary</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">14/15.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek damski GINO ROSSI</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">10.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek ROMANSON</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">06/07.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek męski CASIO</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek męski Chamions League</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">Zegarek damski GINO ROSSI</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">29/30.12.2016</td>
+<td style="text-align: center; width: 130px;">Tablet ASUS</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">01.02.2017</td>
+<td style="text-align: center; width: 130px;">28/29.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Festina</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">31.01.2017</td>
+<td style="text-align: center; width: 130px;">31.01.2017</td>
+<td style="text-align: center; width: 130px;">Opaska fitnes FitBit</td>
+<td style="text-align: center; width: 130px;">ul. Gdunwaldzka <br />Osoba fizyczna</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">24.01.2017</td>
+<td style="text-align: center; width: 130px;">18.01.2017</td>
+<td style="text-align: center; width: 130px;">Aparat FUJI w czarnym pokrowcu</td>
+<td style="text-align: center; width: 130px;">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">06.12.2016</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Esprit</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Telefon Nokia</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Telefon Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Obiektyw Canon</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Aparat Lumix</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Tablet Kiano</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">e-book</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Tablet Archos</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Tablet Goclever</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Tablet Asus</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Tablet Samsung</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">iPad</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Wisiorek z zawieszką</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">20.12.2016</td>
+<td style="text-align: center; width: 130px;">Tablet Amazon</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">16.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Secondana</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">14.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Casio</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">11.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Elixa</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">11.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Timex</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">11.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Estrela</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">09.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Adriatica</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">09.12.2016</td>
+<td style="text-align: center; width: 130px;">Telefon Sonny Ericsson</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">06.12.2016</td>
+<td style="text-align: center; width: 130px;">Bransoletka</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">06.12.2016</td>
+<td style="text-align: center; width: 130px;">Koralik koloru złotego</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">06.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek Skagen</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">04.01.2017</td>
+<td style="text-align: center; width: 130px;">03.12.2016</td>
+<td style="text-align: center; width: 130px;">Zegarek TIMEX</td>
+<td style="text-align: center; width: 130px;">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;"><strong></strong>02.01.2017</td>
+<td style="text-align: center; width: 130px;">NN</td>
+<td style="text-align: center; width: 130px;">Telefon iPhone</td>
+<td style="text-align: center; width: 130px;">ul. Lektykarska 3</td>
+</tr>
+<tr>
+<td colspan="5" style="text-align: center; width: 130px;">
+<p style="text-align: center;"><span style="font-family: 'Trebuchet MS', serif;"><span style="font-size: medium;"><strong>Rok 2016</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">29.11.16</td>
+<td width="155">Telefon Samsung</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">29.11.16</td>
+<td width="155">Zegarek Storm</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">29.11.16</td>
+<td width="155">Zegarek Accurist</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">29.11.16</td>
+<td width="155">Zegarek Junghans</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">29.11.16</td>
+<td width="155">Zegarek Casio</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">29.11.16</td>
+<td width="155">Zegarek Lorus</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">29.11.16</td>
+<td width="155">Zegarek Seiko</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">28.11.16</td>
+<td width="155">Telefon Samsung</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">27/28.11.16</td>
+<td width="155">Zegarek Pierre Ricard</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">23.11.16</td>
+<td width="155">Zegarek Seiko</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">21.11.16</td>
+<td width="155">Zegarek Swatch</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">21.11.16</td>
+<td width="155">Zegarek Festina</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">21.11.16</td>
+<td width="155">Zegarek okrągły z łańcuszkiem</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"><span class="_Xbe"></span></td>
+<td style="text-align: center; width: 130px;"><span class="_Xbe">07.12.2016</span></td>
+<td style="text-align: center;" width="364">19.11.16</td>
+<td width="155">Zegarek Constantin</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">07.12.2016</td>
+<td style="text-align: center;" width="364">17.11.16</td>
+<td width="155">Smart watch</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">05.12.2016</td>
+<td style="text-align: center;" width="364">03.12.16</td>
+<td width="155">Telefon IPHONE</td>
+<td width="194">ul. Wyspiańskiego</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">28.11.2016</td>
+<td style="text-align: center;" width="364">27.11.16</td>
+<td width="155">Telefon HUAWEI</td>
+<td width="194">ul. Rajska Osoba fizyczna</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">23.11.2016</td>
+<td style="text-align: center;" width="364">15.11.16</td>
+<td width="155">Obrączka męska z grawerunkiem</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">23.11.2016</td>
+<td style="text-align: center;" width="364">14.11.16</td>
+<td width="155">Zegarek LORUS</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">23.11.2016</td>
+<td style="text-align: center;" width="364">04.11.16</td>
+<td width="155">Zegarek Adriatica</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">23.11.2016</td>
+<td style="text-align: center;" width="364">04.11.16</td>
+<td width="155">Zegarek PULSAR</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">23.11.2016</td>
+<td style="text-align: center;" width="364">04.11.16</td>
+<td width="155">Zegarek FUJI</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">02.11.16</td>
+<td width="155">Ebok KINDLE</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">29.10.16</td>
+<td width="155">Telefon NOKIA czerwono-czarny</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">27/28.10.16</td>
+<td width="155">Router 4G LTE</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">26.10.16</td>
+<td width="155">Zegarek GUESS</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">22.10.16</td>
+<td width="155">Tablet IPAD koloru złotego</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;"><strong></strong>10.11.2016</td>
+<td style="text-align: center;" width="364">22.10.16</td>
+<td width="155">Zegarek MICHAEL KORS</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">18.10.16</td>
+<td width="155">Zegarek POLAR</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">17.10.16</td>
+<td width="155">Zegarek KATE SPADE</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">16.10.16</td>
+<td width="155">Zegarek BULOVA koloru złotego</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">12.10.16</td>
+<td width="155">Zegarek ANNE KLEIN</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">10.10.16</td>
+<td width="155">IPAD w szarym etui</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">09.10.16</td>
+<td width="155">Zegarek ROTARY srebrny</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">09.10.16</td>
+<td width="155">SONY smartfon czarny z rozbitą szybką</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">10.11.2016</td>
+<td style="text-align: center;" width="364">07.10.16</td>
+<td width="155">Zegarek krokomierz FITBIT</td>
+<td width="194">Port Lotniczy Gdańsk</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">9.11.2016</td>
+<td style="text-align: center;" width="364">N N</td>
+<td width="155">IPHON 6,</td>
+<td width="194">ul. Lektykarska 3</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">9.11.2016</td>
+<td style="text-align: center;" width="364"> N N</td>
+<td width="155">IPHON 5</td>
+<td width="194">ul. Lektykarska 3</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">8.11.2016</td>
+<td style="text-align: center;" width="364">04.11.16</td>
+<td width="155">Pieczątka w czerwonej obudowie na nazwisko Kedrak Dariusz</td>
+<td width="194">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">8.11.2016</td>
+<td style="text-align: center;" width="364">26.10.16</td>
+<td width="155">Telefon komórkowy HUAWEI czarny uszkodzony ekran</td>
+<td width="194">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">8.11.2016</td>
+<td style="text-align: center;" width="364">07.11.16</td>
+<td width="155">Zestaw PIPET firmy CAPP specjalistycznych w czarnej teczce plastikowej</td>
+<td width="194">skrzyżowanie ul. Trakt Św. Wojciecha z Małomiejską</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">7.11.2016</td>
+<td style="text-align: center;" width="364">17/18.10.16</td>
+<td width="155">Rower męski EXPLORER  Przechowuje znalazca</td>
+<td width="194">
+<p>Gdańsk skrzyż. ul. Mickiewicza - Kubacza </p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 130px;"></td>
+<td style="text-align: center; width: 130px;">25.10.2016</td>
+<td style="text-align: center;" width="364">19.10.16</td>
+<td width="155">Portfel Real Madrdi z kwotą pieniędzy zł.</td>
+<td width="194">Środki komunikacji miejskiej w Gdańsku</td>
+</tr>
+<tr>
+<td colspan="5" style="text-align: center; width: 130px;">
+<p style="text-align: center;"><span style="font-family: 'Trebuchet MS', serif;"><strong><br /></strong></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="history pull-right"><i class="glyphicon glyphicon-info-sign"></i> metryczka publikacji</div>
+<div style="clear:both;"></div>
+<div id="informacja_o_artykule" class="article-info col-md-12" style="display:none;"></div>
+
+<script type="text/javascript">
+	var flip = 0;  
+	var artykul = 50360;  
+	$(".history").click(function () 
+    	{
+      	$("#informacja_o_artykule").slideToggle( flip++ % 2 == 0, function()
+        	{ 
+        	if ( flip%2==1 ) $("#informacja_o_artykule").load('html/article-info.php','artykul='+artykul); 
+        	});
+      	});         
+</script>
+
+
+		                </article>
+		                <nav class="block list inline">
+		                    		                    
+		                    
+		                </nav>
+		                <nav class="block" style="margin-top:20px">
+		                    		                </nav>  
+		            	</div>
+						 
+        </div>
+    </main>
+    <!--
+    <div id="content" style="display:none;"><div>a</div>
+        
+        
+        <table class="tabelka_szara" style="width: 250px; padding-right: 50px; float: right;">
+<tbody>
+<tr>
+<td style="text-align: center; width: 250px;">poniedziałek</td>
+<td style="text-align: center; width: 250px;">8:00 - 16:00</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 250px;">wtorek</td>
+<td style="text-align: center; width: 250px;">nie przyjmuje</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 250px;">środa</td>
+<td style="text-align: center; width: 250px;">10:00 - 17:00</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 250px;">czwartek</td>
+<td style="text-align: center; width: 250px;">8:00 - 16:00</td>
+</tr>
+<tr>
+<td style="text-align: center; width: 250px;">piątek</td>
+<td style="text-align: center; width: 250px;">nie przyjmuje</td>
+</tr>
+</tbody>
+</table>
+
+        
+    </div>
+    <div id="editor"></div>
+    
+    <span data-run-module="lib/printTo.pdf">+</span>
+    -->
+<footer class="container-fluid">
+    <nav class="container">
+        <div class="row footer">
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <div><div class="bar"><div class="line"></div><h2 class="title">Urząd Miejski</h2></div><ul><li><a href="http://bip.gdansk.pl/link/43351/Informator-urzedowy"><span>Informator urzędowy</span></a></li><li><a href="http://bip.gdansk.pl/link/43354/Ksiazka-telefoniczna"><span>Książka telefoniczna</span></a></li><li class="space"></li><li><a href="http://bip.gdansk.pl/link/43357/Zakres-dzialania-i-wewnetrzna-struktura-wydzialow"><span>Zakres działania i wewnętrzna struktura wydziałów</span></a></li><li><a href="http://bip.gdansk.pl/link/43358/Wydzialy-Urzedu-Miejskiego"><span>Wydziały Urzędu Miejskiego</span></a></li><li><a href="http://bip.gdansk.pl/link/43359/Regulamin-organizacyjny-Urzedu-Miejskiego"><span>Regulamin organizacyjny Urzędu Miejskiego</span></a></li><li><a href="http://bip.gdansk.pl/link/43360/Wykaz-kont-Urzedu-Miejskiego"><span>Wykaz kont Urzędu Miejskiego</span></a></li><li><a href="http://bip.gdansk.pl/link/43361/Co-i-jak-w-Urzedzie-najczesciej-zadawane-pytania"><span>Co i jak w Urzędzie - najczęściej zadawane pytania</span></a></li><li><a href="http://bip.gdansk.pl/link/43362/Zespoly-Obslugi-Mieszkancow"><span>Zespoły Obsługi Mieszkańców</span></a></li><li><a href="http://bip.gdansk.pl/link/45913/Podatki-i-oplaty-lokalne"><span>Podatki i opłaty lokalne</span></a></li><li><a href="http://bip.gdansk.pl/link/43364/Wplaty-na-rzecz-Miasta-dokonywane-bez-oplat-i-prowizji"><span>Wpłaty na rzecz Miasta dokonywane bez opłat i prowizji</span></a></li><li><a href="http://bip.gdansk.pl/link/43365/Jednostki-organizacyjne-miasta"><span>Jednostki organizacyjne miasta</span></a></li><li><a href="http://bip.gdansk.pl/link/43366/Dyzurny-Inzynier-Miasta"><span>Dyżurny Inżynier Miasta</span></a></li></ul></div>
+                </div>
+                <div class="col-md-3">
+                    <div><div class="bar"><div class="line"></div><h2 class="title">Prezydent Miasta</h2></div><ul><li><a href="http://bip.gdansk.pl/link/9624/Kalendarz-Prezydenta"><span>Kalendarz Prezydenta</span></a></li><li><a href="http://bip.gdansk.pl/link/45422/Zaprosili-Prezydenta"><span>Zaprosili Prezydenta</span></a></li><li><a href="http://bip.gdansk.pl/prezydent-miasta/Zakres-Obowiazkow,a,12111"><span>Zakres Obowiązków</span></a></li><li><a href="http://bip.gdansk.pl/link/12123/Oswiadczenie-majatkowe"><span>Oświadczenie majątkowe</span></a></li><li><a href="http://bip.gdansk.pl/prezydent-miasta/Jak-umowic-sie-na-spotkanie-z-Prezydentem,a,12331"><span>Jak umówić się na spotkanie z Prezydentem?</span></a></li><li><a href="http://bip.gdansk.pl/prezydent-miasta/Pelnomocnicy-Prezydenta-Miasta-Gdanska,a,31523"><span>Pełnomocnicy Prezydenta Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/link/40691/Spotkania-z-mieszkancami"><span>Spotkania z mieszkańcami</span></a></li><li><a href="http://bip.gdansk.pl/link/28382/Gdanskie-Rady"><span>Gdańskie Rady</span></a></li><li><a href="http://bip.gdansk.pl/link/62742/Patronat-Prezydenta-Gdanska"><span>Patronat Prezydenta Gdańska</span></a></li></ul></div>
+                </div>
+                <div class="col-md-3">
+                    <div><div class="bar"><div class="line"></div><h2 class="title">Rada Miasta Gdańska</h2></div><ul><li><a href="http://bip.gdansk.pl/link/42298/Aktualnosci"><span>Aktualności</span></a></li><li><a href="http://bip.gdansk.pl/rada-miasta/Terminarz-sesji-Rady-Miasta-Gdanska,a,37426"><span>Terminarz sesji Rady Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/link/37378/Prezydium-Rady-Miasta-Gdanska"><span>Prezydium Rady Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/link/37323/Radni-Miasta-Gdanska-w-kadencji-2014-2018"><span>Radni Miasta Gdańska w kadencji 2014-2018</span></a></li><li><a href="http://bip.gdansk.pl/link/37514/Komisje-Rady-Miasta-Gdanska"><span>Komisje Rady Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/rada-miasta/Kluby-Polityczne-w-Radzie-Miasta-Gdanska,a,37322"><span>Kluby Polityczne w Radzie Miasta Gdańska </span></a></li><li><a href="http://bip.gdansk.pl/link/97112/Publikacja-Interpelacji-radnych-Miasta-Gdanska"><span>Publikacja Interpelacji Radnych Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/link/97113/Publikacja-Zapytan-radnych-Miasta-Gdanska"><span>Publikacja Zapytań Radnych Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/link/22031/Jednostki-Pomocnicze"><span>Jednostki Pomocnicze</span></a></li><li><a href="http://bip.gdansk.pl/link/37327/Rady-Dzielnic"><span>Rady Dzielnic </span></a></li><li><a href="http://bip.gdansk.pl/link/37374/Mlodziezowa-Rada-Miasta-Gdanska"><span>Młodzieżowa Rada Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/rada-miasta/Biuro-Rady-Miasta-Gdanska,a,37328"><span>Biuro Rady Miasta Gdańska</span></a></li><li><a href="http://bip.gdansk.pl/link/37376/Odznaczenia-Rady-Miasta-Gdanska"><span>Odznaczenia Rady Miasta Gdańska</span></a></li><li class="space"></li><li><a href="http://bip.gdansk.pl/link/41200/Interpelacje-i-zapytania"><span>Interpelacje i zapytania</span></a></li><li><a href="http://bip.gdansk.pl/link/37373/Okregi-wyborcze"><span>Okręgi wyborcze</span></a></li><li><a href="http://bip.gdansk.pl/link/77343/Wiadomosci"><span>Wiadomości z gdansk.pl</span></a></li></ul></div>
+                </div>
+                <div class="col-md-3">
+                    <div><div class="bar"><div class="line"></div><h2 class="title">Prawo lokalne</h2></div><ul><li><a href="http://bip.gdansk.pl/prawo-lokalne/Oswiadczenia-majatkowe,a,2612"><span>Oświadczenia majątkowe</span></a></li><li><a href="http://bip.gdansk.pl/prawo-lokalne/Statut-Miasta,a,3138"><span>Statut Miasta</span></a></li><li><a href="http://bip.gdansk.pl/prawo-lokalne/Status-prawny-i-zadania-miasta,a,3781"><span>Status prawny i zadania miasta</span></a></li><li><a href="http://bip.gdansk.pl/prawo-lokalne/Zakres-dzialania-i-wewnetrzna-struktura-wydzialow,a,28231"><span>Zakres działania i wewnętrzna struktura wydziałów</span></a></li><li><a href="http://bip.gdansk.pl/prawo-lokalne/Akty-Prawne,a,1190"><span>Akty Prawne</span></a></li><li><a href="http://bip.gdansk.pl/prawo-lokalne/Regulamin-organizacyjny-Urzedu-Miejskiego,a,9426"><span>Regulamin organizacyjny Urzędu Miejskiego</span></a></li><li><a href="http://bip.gdansk.pl/link/6186/Uchwaly-i-zarzadzenia"><span>Uchwały i zarządzenia</span></a></li><li><a href="http://bip.gdansk.pl/prawo-lokalne/Teksty-ujednolicone-wybranych-aktow-prawnych,a,5759"><span>Teksty ujednolicone wybranych aktów prawnych</span></a></li><li><a href="http://bip.gdansk.pl/prawo-lokalne/Indywidualne-interpretacje-prawa-podatkowego,a,13721"><span>Indywidualne interpretacje prawa podatkowego</span></a></li><li><a href="http://bip.gdansk.pl/link/56596/Podatki-i-oplaty-lokalne"><span>Podatki i opłaty lokalne</span></a></li></ul></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <div><div class="bar"><div class="line"></div><h2 class="title">e-Urząd</h2></div><ul><li><a href="http://bip.gdansk.pl/link/43340/ePUAP-elektroniczna-skrzynka-podawcza"><span>ePUAP - elektroniczna skrzynka podawcza</span></a></li><li><a href="http://bip.gdansk.pl/link/43341/Procedury-urzedowe"><span>Procedury urzędowe</span></a></li><li><a href="http://bip.gdansk.pl/link/43342/Rejestr-pism-przyjetych-do-Urzedu"><span>Rejestr pism przyjętych do Urzędu</span></a></li><li><a href="http://bip.gdansk.pl/link/43348/Rejestracja-pojazdow"><span>Rejestracja pojazdów</span></a></li><li><a href="http://bip.gdansk.pl/link/43347/Wyrobienie-dowodu-odobistego"><span>Wyrobienie dowodu odobistego</span></a></li><li><a href="http://bip.gdansk.pl/link/43349/Prawo-Jazdy-Dowod-Rejestracyjny-sprawdz-czy-jest-juz-wydrukowane"><span>Prawo Jazdy, Dowód Rejestracyjny -<br />sprawdź czy jest już wydrukowane</span></a></li><li><a href="http://bip.gdansk.pl/link/43344/Baza-przedsiebiorcow-osob-fizycznych"><span>Baza przedsiębiorców - osób fizycznych</span></a></li><li class="space"></li><li><a href="http://bip.gdansk.pl/link/43353/Ankieta-Opinia-o-nas"><span>Ankieta "Opinia o nas"</span></a></li></ul></div>
+                </div>
+                <div class="col-md-3">
+                    <div><div class="bar"><div class="line"></div><h2 class="title">ePUAP</h2></div><ul><li><a href="http://bip.gdansk.pl/urzad-miejski/Elektroniczna-skrzynka-podawcza-Urzedu-Miejskiego-w-Gdansku,a,25728"><span>Elektroniczna skrzynka podawcza Urzędu Miejskiego w Gdańsku</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Jak-zlozyc-dokument-w-formie-elektronicznej,a,25729"><span>Jak złożyć dokument w formie elektronicznej?</span></a></li></ul></div>
+                </div>
+                <div class="col-md-3">
+                    <div><div class="bar"><div class="line"></div><h2 class="title">Zespoły Obsługi Mieszkańców</h2></div><ul><li><a href="http://bip.gdansk.pl/urzad-miejski/Zespol-Obslugi-Mieszkancow-Nr-1,a,3142"><span>Zespół Obsługi Mieszkańców Nr 1</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Zespol-Obslugi-Mieszkancow-Nr-2,a,3140"><span>Zespół Obsługi Mieszkańców Nr 2</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Zespol-Obslugi-Mieszkancow-Nr-3,a,3141"><span>Zespół Obsługi Mieszkańców Nr 3</span></a></li><li><a href="http://bip.gdansk.pl/urzad-miejski/Zespol-Obslugi-Mieszkancow-Nr-4,a,26722"><span>Zespół Obsługi Mieszkańców Nr 4</span></a></li></ul></div>
+                </div>
+                <div class="col-md-3">
+                    <div><div class="bar"><div class="line"></div><h2 class="title">Kontakt</h2></div><ul><li><a href="http://bip.gdansk.pl/link/43307/Referat-Prasowy"><span>Referat Prasowy</span></a></li><li><a href="http://bip.gdansk.pl/link/43306/Redakcja-BIP"><span>Redakcja BIP</span></a></li><li><a href="http://bip.gdansk.pl/link/43308/Polityka-prywatnosci"><span>Polityka prywatności</span></a></li></ul></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</footer>
+
+<address class="copyright">
+    <div>TERYT (Krajowy Rejestr Urzędowego Podziału Terytorialnego Kraju): Kod Gminy 2261011 &curren; Nazwa Gminy: Gdańsk &curren; Rodzaj Gminy: Gmina Miejska</div>
+    <div>---</div>
+    <div>Urząd Miejski w Gdańsku</div>
+    <div>ul. Nowe Ogrody 8/12 &curren; 80-803 Gdańsk</div>
+</address>         <div class="cookie" id="zgoda_cookie">         
+         	<div onclick="return ustaw_zgode_Cookie('zgoda_cookie555', 'false')" class="closecookie">X</div>       
+             <div>
+              Szanowni Państwo, nasze serwisy internetowe wykorzystują pliki cookies, aby spełniać lepiej Państwa oczekiwania. Zapisywanie plików cookies można zablokować zmieniając ustawienia przeglądarki. <br />
+                Szczegółowe informacje dotyczące <a href="http://www.gdansk.pl/redakcja/Polityka-Prywatnosci,a,17838" target="_self">cookies »</a>
+            </div>        
+       
+        </div>
+    	
+<script type="text/javascript">
+function ustaw_zgode_Cookie(nazwa, wartosc) 
+	{
+	var waznosc = new Date();
+	waznosc.setMonth(waznosc.getMonth()+12);
+    document.cookie = nazwa + "=" + escape(wartosc) + ((waznosc==null)?"" : ("; expires=" + waznosc.toGMTString()));
+    $('#zgoda_cookie').animate({ height: 'toggle' }, 100);
+	}
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"658496b832","applicationID":"41095801","transactionName":"MldUYEcFXRZVABIIDAsdY0ZcS1oLUAYeTxMNQg==","queueTime":0,"applicationTime":112,"atts":"HhBXFg8fThg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

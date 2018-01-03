@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class LostPropertyOffice {
 
     @Id
-    @Column(name = "offic_ename")
+    @Column(name = "office_name")
     private String officeName;
 
     @Column(name="city")

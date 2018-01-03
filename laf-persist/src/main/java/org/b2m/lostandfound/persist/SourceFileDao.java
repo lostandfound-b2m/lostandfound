@@ -9,9 +9,9 @@ public class SourceFileDao {
     @Id
     private String fileName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    //@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "office_name")
-    private LostPropertyOffice lostPropertyOffice;
+    private String lostPropertyOffice;
 
     @Column(name = "file_date")
     private LocalDate fileDate;
@@ -27,7 +27,7 @@ public class SourceFileDao {
 
     ;
 
-    public SourceFileDao(String fileName, LostPropertyOffice lostPropertyOffice, LocalDate fileDate, String updateChecker, String urlAddress) {
+    public SourceFileDao(String fileName, String lostPropertyOffice, LocalDate fileDate, String updateChecker, String urlAddress) {
         this.fileName = fileName;
         this.lostPropertyOffice = lostPropertyOffice;
         this.fileDate = fileDate;
