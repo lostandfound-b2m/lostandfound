@@ -23,12 +23,12 @@ public class Service {
     //ItemDao myItem = new ItemDao("walizka", dateOfFound4, dateOfFound4, "00-753", "Warszawa", "Warszawa");
 
     /* Funkcje przepisujace obiekty z laf-parsers do obiektow w laf-persist */
-    ItemDao createNewItemDaoFromItem(Item itemFromParser){
+    private ItemDao createNewItemDaoFromItem(Item itemFromParser){
         ItemDao newItemDao = new ItemDao(itemFromParser.getName(), itemFromParser.getFoundDate(), itemFromParser.getReceiveDate(), itemFromParser.getCityCode(), itemFromParser.getFoundPlace(), itemFromParser.getCityName());
         return newItemDao;
     }
 
-    List<ItemDao> createNewItemDaoListFromItemList(List<Item> items) {
+    private List<ItemDao> createNewItemDaoListFromItemList(List<Item> items) {
         List<ItemDao> itemDaoList = new ArrayList<>();
         for (Item item : items) {
             itemDaoList.add(createNewItemDaoFromItem(item));
@@ -37,12 +37,12 @@ public class Service {
     }
 
     /* Troche gowno, trzeba poprawic laf-paresrs */
-    SourceFileDao createNewSourceFileDaoFromSourceFile(SourceFile file) {
+    private SourceFileDao createNewSourceFileDaoFromSourceFile(SourceFile file) {
         SourceFileDao fileDao = new SourceFileDao(file.getName(),file.getOfficeName(),file.getFileDate(),file.getUpdateChecker(),file.getUrl());
         return fileDao;
     }
 
-    List<SourceFileDao> createNewSourceFileDaoListFromSourceFileList(List<SourceFile> files) {
+    private List<SourceFileDao> createNewSourceFileDaoListFromSourceFileList(List<SourceFile> files) {
         List<SourceFileDao> fileDaoList = new ArrayList<>();
         for (SourceFile file : files) {
             fileDaoList.add(createNewSourceFileDaoFromSourceFile(file));
@@ -50,7 +50,7 @@ public class Service {
         return fileDaoList;
     }
     //temporarily without source file
-    List<ItemDao> getRewritedItemsDaoFromParsedItems(LostPropertyOffice lostPropertyOffice,List<Item> items) throws IOException {
+    private List<ItemDao> getRewritedItemsDaoFromParsedItems(LostPropertyOffice lostPropertyOffice,List<Item> items) throws IOException {
 
         //SourceFileDao sourceFileDao = rewriteSourceFileData(sourceFile,lostPropertyOffice);
         List<Item> itemsFromParser = items;
@@ -61,14 +61,14 @@ public class Service {
         return itemsDao;
     }
 
-    SourceFileDao rewriteSourceFileData(SourceFile sourceFile, LostPropertyOffice lostPropertyOffice) {
+    private SourceFileDao rewriteSourceFileData(SourceFile sourceFile, LostPropertyOffice lostPropertyOffice) {
         SourceFileDao sourceFileDao = new SourceFileDao(sourceFile.getName(), lostPropertyOffice, sourceFile.getFileDate(), sourceFile.getUpdateChecker(), sourceFile.getUrl());
         return sourceFileDao;
     }
     List<SourceFile> getSourceFiles(String officeName) {
-        return null;
-    }
+        return  lostPropertyRepository.getSourceFile(officeName);
 
+    }
 
     void addSourceFiles(SourceFile sourceFile) {
         return  lostPropertyRepository.addSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
