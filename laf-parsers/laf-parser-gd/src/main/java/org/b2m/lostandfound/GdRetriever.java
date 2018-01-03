@@ -40,4 +40,9 @@ public class GdRetriever implements Retriever{
         resultList.add(file);
         return resultList;
     }
+
+    @Override
+    public String getOfficeName() {
+        return "Gdańsk";
+    }
 }
