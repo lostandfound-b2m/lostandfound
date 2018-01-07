@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app = "lf" lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Lost&Found</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="angular.js"></script>
+</head>
+
+<body>
+<h1>Lost&Found</h1>
+
+
+<div ng-controller="Hello">
+
+    <p>Wybierz miasto: <select ng-model="city">
+        <option ng-repeat="x in cities">{{x}}</option>
+    </select></p>
+    <p>Czego szukasz? <input type="text" ng-model="desc" ng-model-options="{ debounce: 800 }"></p>
+    <h2>Szukasz <span data-ng-bind="desc"></span> w mieście: {{city}}</h2>
+
+
+
+
+    <table>
+        <tr>
+            <th ng-click="orderByMe('name')">Name</th>
+            <th ng-click="orderByMe('findDate')">Data znalezienia</th>
+            <th ng-click="orderByMe('cityName')">Miejsce</th>
+        </tr>
+        <tr ng-repeat="x in greeting | orderBy:myOrderBy">
+            <td> {{ x.name }} </td>
+            <td> {{x.findDate | date:"dd/MM/yyyy"}}</td>
+            <td> {{x.cityName}} {{x.findPlace}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
