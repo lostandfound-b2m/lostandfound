@@ -3,6 +3,7 @@ package org.b2m.lostandfound;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.b2m.lostandfound.persist.*;
+import org.springframework.stereotype.Component;
 
 import javax.xml.transform.Source;
 import java.io.FileWriter;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.*;
 
+@Component
 public class Service {
 
     private static LostPropertyRepository lostPropertyRepository;

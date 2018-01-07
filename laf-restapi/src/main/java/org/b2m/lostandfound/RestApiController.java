@@ -1,13 +1,9 @@
 package org.b2m.lostandfound;
 
 import org.b2m.lostandfound.persist.ItemDao;
-import org.b2m.lostandfound.persist.LostPropertyOffice;
-import org.springframework.boot.SpringApplication;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +12,19 @@ import java.util.List;
 @SpringBootApplication
 public class RestApiController {
     List<ItemDao> findDaoList ;
-    Service Service = new Service();
+    private final Service Service;
+    @Autowired
+    public RestApiController(org.b2m.lostandfound.Service service) {
+        Service = service;
+    }
+
+
     /** To call this request we have should use following path:
        http://localhost:8080/request?city=cityName&desc=description
        This is GET method and  will list all Items suited to your request
        with given city name and description from database
      */
+    @CrossOrigin(origins = "http://localhost:63342")
     @RequestMapping(value = "/request",
     params = {"city","desc"},
     method = RequestMethod.GET)
@@ -37,7 +40,8 @@ public class RestApiController {
        This is GET method and will list all Items suited to your request
        with given city name from database
      */
-   @RequestMapping(value = "/request",
+    @CrossOrigin(origins = "http://localhost:63342")
+    @RequestMapping(value = "/request",
             params = {"city"},
             method = RequestMethod.GET)
     public List<ItemDao> request(
@@ -45,9 +49,5 @@ public class RestApiController {
         findDaoList = new ArrayList<>();
         findDaoList = Service.returnAllItemsFromOffice(cityName);
         return findDaoList;
-    }
-
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(RestApiController.class, args);
     }
 }

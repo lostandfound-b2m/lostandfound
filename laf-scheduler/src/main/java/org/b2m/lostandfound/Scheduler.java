@@ -26,6 +26,6 @@ public class Scheduler {
                     System.out.println("IOException");
                 }
             }
-        }, 5, TimeUnit.MINUTES);
+        }, 1, TimeUnit.MINUTES);
     }
 }

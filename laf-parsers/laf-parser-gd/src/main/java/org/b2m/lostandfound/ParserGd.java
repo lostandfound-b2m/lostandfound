@@ -15,10 +15,15 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class ParserGd {
 
     private Document document;
 
+    /**
+     *  Constructor used by laf-scheduler module, connects with given url and saves content of the page
+     *  @param url java.net.URL to Gdansk office website
+     */
     public ParserGd(URL url) {
         try {
             document = Jsoup.connect(url.toString()).get();
@@ -28,6 +33,10 @@ public class ParserGd {
         }
     }
 
+    /**
+     *  Constructor used mainly for test purposes. Argument should be a path to the HTML file
+     *  @param string path to the HTML file kept locally
+     */
     public ParserGd(String string) {
         File file = new File(string);
         try {
@@ -37,7 +46,10 @@ public class ParserGd {
             document = null;
         }
     }
-
+    /**
+     *  Returns the list of all Items found in document.
+     *  @return list of all Items found on Gdansk office site
+     */
     public List<Item> getItemList() {
         List<Item> allItems = new LinkedList<>();
         Elements content = document.getElementsByClass("article");
@@ -62,7 +74,11 @@ public class ParserGd {
         }
         return allItems;
     }
-
+    /**
+     *  Parses String to Date format. Detects invalid date formats and manages them or discards.
+     *  @param input date in form of string
+     *  @return date in Date format
+     */
     private Date getDate(String input) {
         Date date;
         if (input.length()>10) {

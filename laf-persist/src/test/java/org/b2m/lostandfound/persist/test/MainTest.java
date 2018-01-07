@@ -12,7 +12,7 @@ public class MainTest {
         TestDao test = new TestDao();
 
         LostPropertyOffice warsawLostPropertyOffice = test.createLostPropertyOffice("Warsaw","Warszawa","502402103","ztmWarszawa@gmail.com","00-753");
-        LostPropertyOffice krakowLostPropertyOffice = test.createLostPropertyOffice("Krakow","Kraków","602452703","ztmKrakow@gmail.com","00-521");
+        LostPropertyOffice krakowLostPropertyOffice = test.createLostPropertyOffice("Krakow","Krakow","602452703","ztmKrakow@gmail.com","00-521");
         LostPropertyOffice gdanskLostPropertyOffice = test.createLostPropertyOffice("Gdańsk","Gdańsk","602452703","ztmGdansk@gmail.com","00-521");
 
         List<ItemDao> itemList = test.createItemList(warsawLostPropertyOffice);
@@ -28,7 +28,7 @@ public class MainTest {
             System.out.println(item.getFindDate());
             System.out.println(item.getCityName());
         }
-
+        itemList = null;
         itemList = dao.returnAllItemsFromOffice("Warszawa");
         System.out.println("All items.");
         for (ItemDao item : itemList) {

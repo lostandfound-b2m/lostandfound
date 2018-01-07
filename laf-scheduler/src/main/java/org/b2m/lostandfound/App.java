@@ -1,4 +1,5 @@
 package org.b2m.lostandfound;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.IOException;
 

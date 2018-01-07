@@ -22,6 +22,7 @@
     <module>laf-restapi</module>
     <module>laf-service</module>
     <module>laf-scheduler</module>
+    <module>laf-gui</module>
   </modules>
   
   <build>
