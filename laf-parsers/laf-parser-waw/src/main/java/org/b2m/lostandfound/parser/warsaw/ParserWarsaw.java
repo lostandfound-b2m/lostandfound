@@ -96,15 +96,14 @@ public class ParserWarsaw {
         try {
             currentDate = format.parse(dateString);
         } catch (ParseException e) {
-            //e.printStackTrace();
-            format = new SimpleDateFormat("yyyy");
-            currentDate = format.parse("0000");
+
+            currentDate = null;
 
         }
         return currentDate;
     }
 
-    public void getLostItemsFromParser() throws IOException, ParseException {
+    public List<Item> getLostItemsFromParser() throws IOException, ParseException {
 
         List<Item> itemsFromParser = new ArrayList<>();
         for (Row currentRow : worksheet) {
@@ -112,7 +111,7 @@ public class ParserWarsaw {
             itemsFromParser.add(newItem);
             System.out.println(newItem);
         }
-        //return itemsFromParser;
+        return itemsFromParser;
     }
 
 }

@@ -13,7 +13,7 @@ public class AppTest {
     public static void main(String args[]) throws ParseException, IOException, NullPointerException {
         try {
             ParserWarsaw parserWarsaw = new ParserWarsaw();
-            parserWarsaw.getLostItemsFromParser();
+            List<Item> itemList = parserWarsaw.getLostItemsFromParser();
         } catch (NullPointerException e) {
         }
 

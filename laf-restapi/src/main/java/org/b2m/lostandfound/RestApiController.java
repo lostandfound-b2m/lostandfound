@@ -1,6 +1,6 @@
 package org.b2m.lostandfound;
 
-import org.b2m.lostandfound.persist.ItemDao;
+import org.b2m.lostandfound.persist.ItemInRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @SpringBootApplication
 public class RestApiController {
-    List<ItemDao> findDaoList ;
+    List<ItemInRepository> findDaoList ;
     private final Service Service;
     @Autowired
     public RestApiController(org.b2m.lostandfound.Service service) {
@@ -28,7 +28,7 @@ public class RestApiController {
     @RequestMapping(value = "/request",
     params = {"city","desc"},
     method = RequestMethod.GET)
-    public List<ItemDao> request(
+    public List<ItemInRepository> request(
             @RequestParam(value = "city") String cityName,
             @RequestParam(value = "desc") String descName) {
         findDaoList = new ArrayList<>();
@@ -44,7 +44,7 @@ public class RestApiController {
     @RequestMapping(value = "/request",
             params = {"city"},
             method = RequestMethod.GET)
-    public List<ItemDao> request(
+    public List<ItemInRepository> request(
             @RequestParam(value = "city") String cityName) {
         findDaoList = new ArrayList<>();
         findDaoList = Service.returnAllItemsFromOffice(cityName);

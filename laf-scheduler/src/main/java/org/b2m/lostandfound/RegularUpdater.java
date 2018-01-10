@@ -27,7 +27,7 @@ public class RegularUpdater {
         boolean isFileStillAvailable;
 
 
-        //SourceFileDao was removed from office's site or updated
+        //SourceFileInRepository was removed from office's site or updated
         for (SourceFile fileInDatabase : filesInDatabase) {
             isFileStillAvailable = false;
             for (SourceFile file : filesFromRetriever){
@@ -46,7 +46,7 @@ public class RegularUpdater {
             }
         }
 
-        //SourceFileDao is listed on office's site but we don't have it in database yet
+        //SourceFileInRepository is listed on office's site but we don't have it in database yet
         for (SourceFile file : filesFromRetriever) {
             if (!filesInDatabase.contains(file)) {
                 newFiles.add(file);

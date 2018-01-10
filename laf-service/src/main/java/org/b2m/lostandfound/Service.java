@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import org.b2m.lostandfound.persist.*;
 import org.springframework.stereotype.Component;
 
-import javax.xml.transform.Source;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -22,50 +21,50 @@ public class Service {
     }
 
     //Date dateOfFound4 = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
-    //ItemDao myItem = new ItemDao("walizka", dateOfFound4, dateOfFound4, "00-753", "Warszawa", "Warszawa");
+    //ItemInRepository myItem = new ItemInRepository("walizka", dateOfFound4, dateOfFound4, "00-753", "Warszawa", "Warszawa");
 
     /* Funkcje przepisujace obiekty z laf-parsers do obiektow w laf-persist */
-    private ItemDao createNewItemDaoFromItem(Item itemFromParser){
-        ItemDao newItemDao = new ItemDao(itemFromParser.getName(), itemFromParser.getFoundDate(), itemFromParser.getReceiveDate(), itemFromParser.getCityCode(), itemFromParser.getFoundPlace(), itemFromParser.getCityName());
-        return newItemDao;
+    private ItemInRepository createNewItemDaoFromItem(Item itemFromParser){
+        ItemInRepository newItemInRepository = new ItemInRepository(itemFromParser.getName(), itemFromParser.getFoundDate(), itemFromParser.getReceiveDate(), itemFromParser.getCityCode(), itemFromParser.getFoundPlace(), itemFromParser.getCityName(),findLostPropertyOffice(itemFromParser.getCityName()));
+        return newItemInRepository;
     }
 
-    private List<ItemDao> createNewItemDaoListFromItemList(List<Item> items) {
-        List<ItemDao> itemDaoList = new ArrayList<>();
+    private List<ItemInRepository> createNewItemDaoListFromItemList(List<Item> items) {
+        List<ItemInRepository> itemInRepositoryList = new ArrayList<>();
         for (Item item : items) {
-            itemDaoList.add(createNewItemDaoFromItem(item));
+            itemInRepositoryList.add(createNewItemDaoFromItem(item));
         }
-        return itemDaoList;
+        return itemInRepositoryList;
     }
 
-    /* Troche gowno, trzeba poprawic laf-paresrs */
-    private SourceFileDao createNewSourceFileDaoFromSourceFile(SourceFile file) {
-        SourceFileDao fileDao = new SourceFileDao(file.getName(),file.getOfficeName(),file.getFileDate(),file.getUpdateChecker(),file.getUrl());
+
+    private SourceFileInRepository createNewSourceFileDaoFromSourceFile(SourceFile file) {
+        SourceFileInRepository fileDao = new SourceFileInRepository(file.getName(),file.getOfficeName(),file.getFileDate(),file.getUpdateChecker(),file.getUrl());
         return fileDao;
     }
 
-    private List<SourceFileDao> createNewSourceFileDaoListFromSourceFileList(List<SourceFile> files) {
-        List<SourceFileDao> fileDaoList = new ArrayList<>();
+    private List<SourceFileInRepository> createNewSourceFileDaoListFromSourceFileList(List<SourceFile> files) {
+        List<SourceFileInRepository> fileDaoList = new ArrayList<>();
         for (SourceFile file : files) {
             fileDaoList.add(createNewSourceFileDaoFromSourceFile(file));
         }
         return fileDaoList;
     }
     //temporarily without source file
-    private List<ItemDao> getRewritedItemsDaoFromParsedItems(LostPropertyOffice lostPropertyOffice,List<Item> items) throws IOException {
+    private List<ItemInRepository> getRewritedItemsDaoFromParsedItems(LostPropertyOffice lostPropertyOffice, List<Item> items) throws IOException {
 
-        //SourceFileDao sourceFileDao = rewriteSourceFileData(sourceFile,lostPropertyOffice);
+        //SourceFileInRepository sourceFileDao = rewriteSourceFileData(sourceFile,lostPropertyOffice);
         List<Item> itemsFromParser = items;
-        List<ItemDao> itemsDao = new ArrayList<>();
+        List<ItemInRepository> itemsDao = new ArrayList<>();
         for (Item itemFromParser : itemsFromParser) {
             itemsDao.add(createNewItemDaoFromItem(itemFromParser));
         }
         return itemsDao;
     }
 
-    private SourceFileDao rewriteSourceFileData(SourceFile sourceFile, String lostPropertyOffice) {
-        SourceFileDao sourceFileDao = new SourceFileDao(sourceFile.getName(), lostPropertyOffice, sourceFile.getFileDate(), sourceFile.getUpdateChecker(), sourceFile.getUrl());
-        return sourceFileDao;
+    private SourceFileInRepository rewriteSourceFileData(SourceFile sourceFile, String lostPropertyOffice) {
+        SourceFileInRepository sourceFileInRepository = new SourceFileInRepository(sourceFile.getName(), lostPropertyOffice, sourceFile.getFileDate(), sourceFile.getUpdateChecker(), sourceFile.getUrl());
+        return sourceFileInRepository;
     }
     List<SourceFile> getSourceFiles(String officeName) {
         //return  lostPropertyRepository.getSourceFile(officeName);
@@ -86,7 +85,6 @@ public class Service {
     void deleteSourceFile(SourceFile sourceFile) {
         //return  lostPropertyRepository.deleteSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile));
     }
-
     void deleteSourceFile(List<SourceFile> sourceFileList) {
         for (SourceFile file : sourceFileList) {
             deleteSourceFile(file);
@@ -118,7 +116,7 @@ public class Service {
     void addItems(List<Item> itemList) {
         addItemsDao(createNewItemDaoListFromItemList(itemList));
     }
-    void addItemsDao(List<ItemDao> itemList) {
+    void addItemsDao(List<ItemInRepository> itemList) {
         lostPropertyRepository.addLostItems(itemList);
     }
 
@@ -130,7 +128,7 @@ public class Service {
         deleteItemsDao(createNewItemDaoListFromItemList(itemList));
     }
 
-    void deleteItemsDao(List<ItemDao> itemList) {
+    void deleteItemsDao(List<ItemInRepository> itemList) {
         lostPropertyRepository.deleteLostItems(itemList);
     }
 
@@ -138,16 +136,19 @@ public class Service {
         lostPropertyRepository.deleteLostPropertyOffice(officeName);
     }
 
-    public List<ItemDao> findByItemDescription(String itemDescription, String cityName) {
+    public List<ItemInRepository> findByItemDescription(String itemDescription, String cityName) {
         return lostPropertyRepository.findByItemDescription(itemDescription,cityName);
     }
 
-    List<ItemDao> returnAllItemsFromOffice(String office){
+    List<ItemInRepository> returnAllItemsFromOffice(String office){
         return  lostPropertyRepository.returnAllItemsFromOffice(office);
     }
 
-    List<ItemDao> findItems(String itemDescription, String cityName) {
+    List<ItemInRepository> findItems(String itemDescription, String cityName) {
         return lostPropertyRepository.findByItemDescription(itemDescription,cityName);
+    }
+    LostPropertyOffice findLostPropertyOffice(String cityName){
+        return lostPropertyRepository.findLostPropertyOffice(cityName);
     }
 
 

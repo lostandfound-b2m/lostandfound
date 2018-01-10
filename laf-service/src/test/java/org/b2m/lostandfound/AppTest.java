@@ -1,6 +1,6 @@
 package org.b2m.lostandfound;
 
-import org.b2m.lostandfound.persist.ItemDao;
+import org.b2m.lostandfound.persist.ItemInRepository;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
 
 import java.io.IOException;
@@ -18,9 +18,9 @@ public class AppTest {
         Service daoService = new Service();
         LostPropertyOffice Warsaw = new LostPropertyOffice("Warsaw", "biuro ztm warszawa", "502402103", "ztmWarszawa@gmail.com", "00-753");
         Date dateOfFound1 = new SimpleDateFormat("yyyyMMdd").parse("20171002");
-        ItemDao item1 = new ItemDao("zegarek", dateOfFound1, "00-753", "Warszawa", Warsaw);
-        List<ItemDao> items = new ArrayList<>();
+        ItemInRepository item1 = new ItemInRepository("zegarek", dateOfFound1, "00-753", "Warszawa", Warsaw);
+        List<ItemInRepository> items = new ArrayList<>();
         items.add(item1);
-        //daoService.addItems((List<ItemDao>) items);
+        //daoService.addItems((List<ItemInRepository>) items);
     }
 }

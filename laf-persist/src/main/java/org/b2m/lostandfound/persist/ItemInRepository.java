@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "lostitem")
-public class ItemDao {
+public class ItemInRepository {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
@@ -16,7 +16,7 @@ public class ItemDao {
 
     //@ManyToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name = "file_name")
-    //private SourceFileDao sourceFileDao;
+    //private SourceFileInRepository sourceFileDao;
 
     @Column(name = "name")
     private String name;
@@ -39,10 +39,10 @@ public class ItemDao {
     @Column(name = "office_name")
     private String officeName;
 
-    public ItemDao() {
+    public ItemInRepository() {
     }
 
-    public ItemDao(String name, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName) {
+    public ItemInRepository(String name, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName, LostPropertyOffice lostPropertyOffice) {
 
         this.name = name;
         this.dateFound = dateFound;
@@ -51,10 +51,11 @@ public class ItemDao {
         this.placeFound = placeFound;
         this.cityName = cityName;
         this.officeName = cityName;
+        this.lostPropertyOffice = lostPropertyOffice;
         //this.sourceFileDao = sourceFileDao;
     }
 
-    public ItemDao(String name, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
+    public ItemInRepository(String name, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
         this.name = name;
         this.dateFound = dateFound;
         this.cityCode = cityCode;
@@ -91,7 +92,7 @@ public class ItemDao {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ItemDao item = (ItemDao) o;
+        ItemInRepository item = (ItemInRepository) o;
 
         if (name != null ? !name.equals(item.name) : item.name != null)
             return false;

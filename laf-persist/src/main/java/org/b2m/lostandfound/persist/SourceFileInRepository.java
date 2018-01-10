@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "source_file")
-public class SourceFileDao {
+public class SourceFileInRepository {
     @Id
     private String fileName;
 
@@ -22,12 +22,12 @@ public class SourceFileDao {
     @Column(name = "url_address")
     private String urlAddress;
 
-    public SourceFileDao() {
+    public SourceFileInRepository() {
     }
 
     ;
 
-    public SourceFileDao(String fileName, String lostPropertyOffice, LocalDate fileDate, String updateChecker, String urlAddress) {
+    public SourceFileInRepository(String fileName, String lostPropertyOffice, LocalDate fileDate, String updateChecker, String urlAddress) {
         this.fileName = fileName;
         this.lostPropertyOffice = lostPropertyOffice;
         this.fileDate = fileDate;

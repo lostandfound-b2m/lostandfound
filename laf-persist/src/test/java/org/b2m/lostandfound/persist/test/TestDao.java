@@ -1,6 +1,6 @@
 package org.b2m.lostandfound.persist.test;
 
-import org.b2m.lostandfound.persist.ItemDao;
+import org.b2m.lostandfound.persist.ItemInRepository;
 import org.b2m.lostandfound.persist.LostPropertyOffice;
 
 import java.text.ParseException;
@@ -15,7 +15,7 @@ public class TestDao {
 
     }
 
-    public List<ItemDao> createItemList(LostPropertyOffice lostPropertyOffice) throws ParseException {
+    public List<ItemInRepository> createItemList(LostPropertyOffice lostPropertyOffice) throws ParseException {
 
        /* LocalDate dateOfFound1 = LocalDate.of(2017, 10, 2);
         LocalDate dateOfFound2 = LocalDate.of(2017, 1, 20);
@@ -30,15 +30,15 @@ public class TestDao {
         Date dateOfFound5 = new SimpleDateFormat("yyyyMMdd").parse("20170901");
 
 
-        ItemDao item1 = new ItemDao("zegarek", dateOfFound1, "00-753", "Warszawa", lostPropertyOffice);
-        ItemDao item2 = new ItemDao("zegarek", dateOfFound2, "00-753", "Warszawa", lostPropertyOffice);
-        ItemDao item3 = new ItemDao("plecak", dateOfFound3, "00-753", "Warszawa", lostPropertyOffice);
-        ItemDao item4 = new ItemDao("walizka", dateOfFound4, "00-753", "Warszawa", lostPropertyOffice);
-        ItemDao item5 = new ItemDao("kurtka", dateOfFound5, "00-753", "Warszawa", lostPropertyOffice);
-        ItemDao item6 = new ItemDao("kurtka", dateOfFound2, "00-753", "Krakow", lostPropertyOffice);
+        ItemInRepository item1 = new ItemInRepository("zegarek", dateOfFound1, "00-753", "Warszawa", lostPropertyOffice);
+        ItemInRepository item2 = new ItemInRepository("zegarek", dateOfFound2, "00-753", "Warszawa", lostPropertyOffice);
+        ItemInRepository item3 = new ItemInRepository("plecak", dateOfFound3, "00-753", "Warszawa", lostPropertyOffice);
+        ItemInRepository item4 = new ItemInRepository("walizka", dateOfFound4, "00-753", "Warszawa", lostPropertyOffice);
+        ItemInRepository item5 = new ItemInRepository("kurtka", dateOfFound5, "00-753", "Warszawa", lostPropertyOffice);
+        ItemInRepository item6 = new ItemInRepository("kurtka", dateOfFound2, "00-753", "Krakow", lostPropertyOffice);
 
 
-        List<ItemDao> newItems = new ArrayList<>();
+        List<ItemInRepository> newItems = new ArrayList<>();
         //tworzymy liste przedmiotow(ktora normalnie zostanie zwrocona z parsera)
         newItems.add(item1);
         newItems.add(item2);

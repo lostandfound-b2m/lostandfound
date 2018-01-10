@@ -1,20 +1,28 @@
 package org.b2m.lostandfound.persist;
 
+import com.sun.org.apache.bcel.internal.classfile.SourceFile;
+
 import java.util.List;
 
 public interface LostPropertyRepository {
 
-    void addLostItems(List<ItemDao> lostItemDaos);
+    void addLostItems(List<ItemInRepository> lostItemInRepositories);
+
+    void addSourceFile(SourceFileInRepository sourceFileInRepository);
 
     void addLostPropertyOffice(LostPropertyOffice office);
 
-    List<ItemDao> findByItemDescription(String itemDescription, String cityName);
+    List<ItemInRepository> findByItemDescription(String itemDescription, String cityName);
 
-    List<ItemDao> returnAllItemsFromOffice(String office);
+    LostPropertyOffice findLostPropertyOffice(String cityName);
+
+    List<ItemInRepository> returnAllItemsFromOffice(String office);
 
     void deleteLostPropertyOffice(String officeName);
 
-    void deleteLostItems(List<ItemDao> items);
+    void deleteLostItems(List<ItemInRepository> items);
+
+    //void deleteSourceFile(SourceFileInRepository sourceFileInRepository);
 
 }
 
