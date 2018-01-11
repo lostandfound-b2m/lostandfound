@@ -17,5 +17,12 @@
     <module>laf-parser-gd</module>
     <module>laf-parser-common</module>
   </modules>
-  
+  <dependencies>
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.8.3</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 </project>

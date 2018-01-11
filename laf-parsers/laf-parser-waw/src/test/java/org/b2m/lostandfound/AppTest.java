@@ -1,7 +1,6 @@
 package org.b2m.lostandfound;
 
-import org.b2m.lostandfound.parser.warsaw.ParserWarsaw;
-
+import javax.xml.transform.Source;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
@@ -11,12 +10,18 @@ import java.util.List;
  */
 public class AppTest {
     public static void main(String args[]) throws ParseException, IOException, NullPointerException {
-        try {
+        /*try {
             ParserWarsaw parserWarsaw = new ParserWarsaw();
             List<Item> itemList = parserWarsaw.getLostItemsFromParser();
-        } catch (NullPointerException e) {
+        } catch (NullPointerException e) {*/
+
+        WawRetriever retriever = new WawRetriever();
+        List<SourceFile> files = retriever.retrieveFiles();
+        System.out.println(files.get(0).getName());
+        System.out.println(files.get(0).getUrl());
+
+        List<Item> items = retriever.retrieveItemsFromFiles(files);
+        System.out.println(items.get(5).getName());
         }
 
     }
-
-}

@@ -9,6 +9,7 @@ public class Scheduler {
     public void update() throws IOException {
         Retriever retrieverGd = new GdRetriever();
         Retriever retrieverKrk = new KrkRetriever();
+        Retriever retrieverWaw = new WawRetriever();
         Service service = new Service();
         RegularUpdater updaterGd = new RegularUpdater(retrieverGd, service);
         RegularUpdater updaterKrk = new RegularUpdater(retrieverKrk, service);
@@ -21,6 +22,7 @@ public class Scheduler {
                     //updaterKrk.doScheduledUpdate();
                     service.addItems(service.simpleGetList(retrieverGd));
                     service.addItems(service.simpleGetList(retrieverKrk));
+                    service.addItems(service.simpleGetList(retrieverWaw));
                 }
                 catch (IOException e) {
                     System.out.println("IOException");

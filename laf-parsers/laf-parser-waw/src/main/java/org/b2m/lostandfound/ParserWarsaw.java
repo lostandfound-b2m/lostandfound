@@ -1,11 +1,10 @@
-package org.b2m.lostandfound.parser.warsaw;
+package org.b2m.lostandfound;
 
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.b2m.lostandfound.Item;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,7 +22,7 @@ import java.util.Locale;
 public class ParserWarsaw {
 
     private InputStream inputStream;
-    private String FILE_NAME = "C:\\Users\\Michał61\\Desktop\\ProjektEiti\\laf-parsers\\laf-parser-waw\\src\\main\\resources\\warsaw.xls";
+    private String FILE_NAME = "src/main/resources/warsaw.xls";
     FileInputStream excelFile;
     HSSFWorkbook workbook;
     HSSFSheet worksheet;
@@ -44,6 +43,8 @@ public class ParserWarsaw {
 
     public ParserWarsaw(String url) throws IOException {
         inputStream = new URL(url).openStream();
+        workbook = new HSSFWorkbook(inputStream);
+        worksheet = workbook.getSheetAt(0);
     }
 
     boolean isCellNULL(Cell currentCell) {
@@ -55,8 +56,8 @@ public class ParserWarsaw {
 
     public Date getFoundDateFromFile(Row currentRow) throws IOException, ParseException, NullPointerException {
         dateFoundCell = currentRow.getCell(1);
-        if (isCellNULL(dateFoundCell))
-            throw new NullPointerException("Pusta komorka");
+        //if (isCellNULL(dateFoundCell))
+        //    throw new NullPointerException("Pusta komorka");
 
         return returnDateFromString(dateFoundCell.toString());
 
@@ -65,8 +66,8 @@ public class ParserWarsaw {
 
     public Date getDateReceivedFromFile(Row currentRow) throws IOException, ParseException {
         dateReceivedCell = currentRow.getCell(2);
-        if (isCellNULL(dateReceivedCell))
-            throw new NullPointerException("Pusta komorka");
+        //if (isCellNULL(dateReceivedCell))
+        //    throw new NullPointerException("Pusta komorka");
 
         return returnDateFromString(dateReceivedCell.toString());
 
@@ -74,8 +75,8 @@ public class ParserWarsaw {
 
     public String getItemDescriptionFromFile(Row currentRow) throws IOException {
         itemDescriptionCell = currentRow.getCell(3);
-        if (isCellNULL(itemDescriptionCell))
-            new NullPointerException("Pusta komorka");
+        //if (isCellNULL(itemDescriptionCell))
+        //    new NullPointerException("Pusta komorka");
 
         return itemDescriptionCell.toString();
 
@@ -83,8 +84,8 @@ public class ParserWarsaw {
 
     public String getFoundPlaceFromFile(Row currentRow) throws IOException {
         placeFoundCell = currentRow.getCell(4);
-        if (isCellNULL(placeFoundCell))
-            throw new NullPointerException("Pusta komorka");
+        //if (isCellNULL(placeFoundCell))
+        //    throw new NullPointerException("Pusta komorka");
 
         return placeFoundCell.toString();
 
@@ -107,9 +108,13 @@ public class ParserWarsaw {
 
         List<Item> itemsFromParser = new ArrayList<>();
         for (Row currentRow : worksheet) {
-            Item newItem = new Item(getItemDescriptionFromFile(currentRow), getFoundDateFromFile(currentRow), getDateReceivedFromFile(currentRow), "02-798", getFoundPlaceFromFile(currentRow), "Warszawa");
+            Item newItem = new Item();
+            try {
+                newItem = new Item(getItemDescriptionFromFile(currentRow), getFoundDateFromFile(currentRow), getDateReceivedFromFile(currentRow), "02-798", getFoundPlaceFromFile(currentRow), "Warszawa");
+            }
+            catch (NullPointerException e) {
+            }
             itemsFromParser.add(newItem);
-            System.out.println(newItem);
         }
         return itemsFromParser;
     }
