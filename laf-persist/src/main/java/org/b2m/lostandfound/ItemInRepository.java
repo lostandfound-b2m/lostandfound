@@ -87,6 +87,10 @@ public class ItemInRepository {
         return cityName;
     }
 
+    public String getOfficeName() {return officeName; }
+
+    public LostPropertyOffice getLostPropertyOffice() { return lostPropertyOffice; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
