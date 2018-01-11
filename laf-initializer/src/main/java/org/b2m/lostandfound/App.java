@@ -16,8 +16,8 @@ public class App {
         Scheduler scheduler = new Scheduler();
         scheduler.update();
 
+
         /*Start REST Api */
         SpringApplication.run(RestApiController.class, args);
-
     }
 }

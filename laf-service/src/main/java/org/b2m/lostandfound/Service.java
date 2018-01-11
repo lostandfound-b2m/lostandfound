@@ -157,9 +157,6 @@ public class Service {
 
     /* A series of simpleGetList- functions that return List<Item> of all items
      * found on given office's website or write this List to Json file
-     *
-     * NIE TYKAC MI TEGO!!!!!!! potem pewnie trzeba bedzie wywalic bo to bedzie gdzie indziej
-     * ale na razie zostawic
      */
     public void simpleGetListAndSaveInJson(Retriever retriever) throws IOException {
         List<SourceFile> files = retriever.retrieveFiles();

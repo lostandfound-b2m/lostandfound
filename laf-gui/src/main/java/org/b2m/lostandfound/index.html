@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Lost&Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <script src="angular.js"></script>
 </head>
 
 <body>
-<h1>Lost&Found</h1>
+<h1 class="container">Lost&Found</h1>
 
 
-<div ng-controller="Hello">
+<div ng-controller="Hello" class="container">
 
     <p>Wybierz miasto: <select ng-model="city">
         <option ng-repeat="x in cities">{{x}}</option>
@@ -31,9 +33,9 @@
         </tr>
         <tr ng-repeat="x in greeting | orderBy:myOrderBy">
             <td> {{ x.name }} </td>
-            <td> {{x.findDate | date:"dd/MM/yyyy"}}</td>
+            <td> {{x.dateFound | date:"dd/MM/yyyy"}}</td>
             <td> {{x.cityName}} </td>
-            <td> {{x.findPlace}} </td>
+            <td> {{x.placeFound}} </td>
         </tr>
     </table>
 </div>

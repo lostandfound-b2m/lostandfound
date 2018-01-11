@@ -10,21 +10,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WawRetriever implements Retriever {
-    public List<Item> retrieveItemsFromFiles(List<SourceFile> files) throws IOException {
+    public List<Item> retrieveItemsFromFiles(List<SourceFile> files) {
         List<Item> items = new ArrayList<>();
         if (files == null) {
             System.out.println("Pliki nie zostaly pobrane");
-            return null;
+            return items;
         }
         for (SourceFile file : files) {
             System.out.println("WawRetriever works");
             try {
                 items.addAll(new ParserWarsaw(file.getUrl()).getLostItemsFromParser());
             }
-            catch (java.text.ParseException e) {
+            catch (java.text.ParseException|IOException|NullPointerException e) {
                 e.printStackTrace();
-            }
-            catch (NullPointerException e) {
             }
         }
         return items;
