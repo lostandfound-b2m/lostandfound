@@ -143,6 +143,10 @@ public class Service {
         return  lostPropertyRepository.returnAllItemsFromOffice(office);
     }
 
+    List<ItemInRepository> returnAllItems(){
+        return  lostPropertyRepository.returnAllItems();
+    }
+
     List<ItemInRepository> findItems(String itemDescription, String cityName) {
         return lostPropertyRepository.findByItemDescription(itemDescription,cityName);
     }

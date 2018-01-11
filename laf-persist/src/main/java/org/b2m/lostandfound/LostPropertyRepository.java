@@ -18,6 +18,8 @@ public interface LostPropertyRepository {
 
     List<ItemInRepository> returnAllItemsFromOffice(String office);
 
+    List<ItemInRepository> returnAllItems();
+
     void deleteLostPropertyOffice(String officeName);
 
     void deleteLostItems(List<ItemInRepository> items);

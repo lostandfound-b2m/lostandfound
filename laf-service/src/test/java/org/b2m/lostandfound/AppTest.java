@@ -1,7 +1,5 @@
 package org.b2m.lostandfound;
 
-import org.b2m.lostandfound.persist.ItemInRepository;
-import org.b2m.lostandfound.persist.LostPropertyOffice;
 
 import java.io.IOException;
 import java.text.ParseException;

@@ -49,4 +49,13 @@ public class RestApiController {
         findDaoList = Service.returnAllItemsFromOffice(cityName);
         return findDaoList;
     }
+
+    @CrossOrigin(origins = "http://localhost:63342")
+    @RequestMapping(value = "/request",
+            method = RequestMethod.GET)
+    public List<ItemInRepository> request() {
+        findDaoList = new ArrayList<>();
+        findDaoList = Service.returnAllItems();
+        return findDaoList;
+    }
 }
