@@ -19,6 +19,12 @@ public class AppTest {
         ItemInRepository item1 = new ItemInRepository("zegarek", dateOfFound1, "00-753", "Warszawa", Warsaw);
         List<ItemInRepository> items = new ArrayList<>();
         items.add(item1);
+        WawRetriever wawRetriever = new WawRetriever();
+        List<Item> itemswaw = daoService.simpleGetList(wawRetriever);
+        for (Item it : itemswaw) {
+            System.out.println(it.getName());
+        }
+        daoService.simpleGetListAndSaveInJson(wawRetriever);
         //daoService.addItems((List<ItemInRepository>) items);
     }
 }

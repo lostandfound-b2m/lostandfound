@@ -26,12 +26,14 @@
         <tr>
             <th ng-click="orderByMe('name')">Name</th>
             <th ng-click="orderByMe('findDate')">Data znalezienia</th>
-            <th ng-click="orderByMe('cityName')">Miejsce</th>
+            <th ng-click="orderByMe('cityName')">Miasto</th>
+            <th ng-click="orderByMe('findPlace')">Miejsce</th>
         </tr>
         <tr ng-repeat="x in greeting | orderBy:myOrderBy">
             <td> {{ x.name }} </td>
             <td> {{x.findDate | date:"dd/MM/yyyy"}}</td>
-            <td> {{x.cityName}} {{x.findPlace}}</td>
+            <td> {{x.cityName}} </td>
+            <td> {{x.findPlace}} </td>
         </tr>
     </table>
 </div>

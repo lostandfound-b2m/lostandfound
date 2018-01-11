@@ -85,7 +85,11 @@ public class ParserKrk {
                     itemName = temp.substring(0, matcher.start() );
                     findDate = getDate(temp.substring(matcher.start(), matcher.end()));
                 }
-                itemName=itemName.trim();
+                try {
+                    itemName = itemName.trim();
+                }
+                catch (NullPointerException e)
+                {}
             }
             if(itemName != null && cityCode!=null)
                 allItems.add(new Item(itemName, findDate, cityCode, "Kraków"));

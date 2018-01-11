@@ -12,6 +12,10 @@ import java.util.List;
 public class WawRetriever implements Retriever {
     public List<Item> retrieveItemsFromFiles(List<SourceFile> files) throws IOException {
         List<Item> items = new ArrayList<>();
+        if (files == null) {
+            System.out.println("Pliki nie zostaly pobrane");
+            return null;
+        }
         for (SourceFile file : files) {
             System.out.println("WawRetriever works");
             try {
@@ -19,6 +23,8 @@ public class WawRetriever implements Retriever {
             }
             catch (java.text.ParseException e) {
                 e.printStackTrace();
+            }
+            catch (NullPointerException e) {
             }
         }
         return items;

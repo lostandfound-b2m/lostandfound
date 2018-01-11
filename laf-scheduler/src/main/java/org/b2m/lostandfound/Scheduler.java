@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Scheduler {
 
-    public void update() throws IOException {
+    public void update() {
         Retriever retrieverGd = new GdRetriever();
         Retriever retrieverKrk = new KrkRetriever();
         Retriever retrieverWaw = new WawRetriever();
@@ -18,11 +18,10 @@ public class Scheduler {
             public void run() {
                 System.out.println("Scheduler starts now");
                 try {
-                    //updaterGd.doScheduledUpdate();
-                    //updaterKrk.doScheduledUpdate();
+                    service.addItems(service.simpleGetList(retrieverWaw));
                     service.addItems(service.simpleGetList(retrieverGd));
                     service.addItems(service.simpleGetList(retrieverKrk));
-                    service.addItems(service.simpleGetList(retrieverWaw));
+
                 }
                 catch (IOException e) {
                     System.out.println("IOException");

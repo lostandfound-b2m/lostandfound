@@ -114,7 +114,9 @@ public class ParserWarsaw {
             }
             catch (NullPointerException e) {
             }
-            itemsFromParser.add(newItem);
+            if (newItem.getName() != null) {
+                itemsFromParser.add(newItem);
+            }
         }
         return itemsFromParser;
     }
