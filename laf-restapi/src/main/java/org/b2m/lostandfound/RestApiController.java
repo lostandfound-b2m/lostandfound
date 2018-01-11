@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @RestController
@@ -27,12 +28,16 @@ public class RestApiController {
     @RequestMapping(value = "/request",
     params = {"city","desc"},
     method = RequestMethod.GET)
-    public List<ItemInRepository> request(
+    public List<ItemInRest> request(
             @RequestParam(value = "city") String cityName,
             @RequestParam(value = "desc") String descName) {
         findDaoList = new ArrayList<>();
         findDaoList = Service.findItems(descName,cityName);
-        return findDaoList;
+        List<ItemInRest> itemInRestList = new LinkedList<>();
+        for (ItemInRepository itemInRepository: findDaoList) {
+            itemInRestList.add(new ItemInRest(itemInRepository));
+        }
+        return itemInRestList;
     }
     /** To call this request we have should use following path:
        http://localhost:8080/request?city=cityName
@@ -43,19 +48,27 @@ public class RestApiController {
     @RequestMapping(value = "/request",
             params = {"city"},
             method = RequestMethod.GET)
-    public List<ItemInRepository> request(
+    public List<ItemInRest> request(
             @RequestParam(value = "city") String cityName) {
         findDaoList = new ArrayList<>();
         findDaoList = Service.returnAllItemsFromOffice(cityName);
-        return findDaoList;
+        List<ItemInRest> itemInRestList = new LinkedList<>();
+        for (ItemInRepository itemInRepository: findDaoList) {
+            itemInRestList.add(new ItemInRest(itemInRepository));
+        }
+        return itemInRestList;
     }
 
     @CrossOrigin(origins = "http://localhost:63342")
     @RequestMapping(value = "/request",
             method = RequestMethod.GET)
-    public List<ItemInRepository> request() {
+    public List<ItemInRest> request() {
         findDaoList = new ArrayList<>();
         findDaoList = Service.returnAllItems();
-        return findDaoList;
+        List<ItemInRest> itemInRestList = new LinkedList<>();
+        for (ItemInRepository itemInRepository: findDaoList) {
+            itemInRestList.add(new ItemInRest(itemInRepository));
+        }
+        return itemInRestList;
     }
 }
