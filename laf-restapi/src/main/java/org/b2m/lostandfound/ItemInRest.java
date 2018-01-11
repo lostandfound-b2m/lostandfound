@@ -49,5 +49,35 @@ public class ItemInRest {
                 '}';
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public Date getDateFound() {
+        return dateFound;
+    }
+
+    public Date getDateReceived() {
+        return dateReceived;
+    }
+
+    public String getCityCode() {
+        return cityCode;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public String getPlaceFound() {
+        return placeFound;
+    }
+
+    public String getOfficeName() {
+        return officeName;
+    }
+
+    public LostPropertyOffice getLostPropertyOffice() {
+        return lostPropertyOffice;
+    }
 }
