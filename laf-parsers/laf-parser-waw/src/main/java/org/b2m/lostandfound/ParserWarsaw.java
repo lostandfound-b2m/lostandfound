@@ -81,7 +81,7 @@ public class ParserWarsaw {
         for (Row currentRow : worksheet) {
             Item newItem = new Item();
             try {
-                newItem = new Item(getItemDescriptionFromFile(currentRow), getFoundDateFromFile(currentRow), getDateReceivedFromFile(currentRow), "02-798", getFoundPlaceFromFile(currentRow), "");
+                newItem = new Item(getItemDescriptionFromFile(currentRow), getFoundDateFromFile(currentRow), getDateReceivedFromFile(currentRow), "", getFoundPlaceFromFile(currentRow), "Warszawa");
             }
             catch (NullPointerException e) {
             }
