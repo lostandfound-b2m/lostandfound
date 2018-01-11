@@ -1,4 +1,4 @@
-package org.b2m.lostandfound.persist;
+package org.b2m.lostandfound;
 
 import com.sun.org.apache.bcel.internal.classfile.SourceFile;
 

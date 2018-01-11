@@ -1,6 +1,5 @@
 package org.b2m.lostandfound;
 
-import org.b2m.lostandfound.persist.ItemInRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;

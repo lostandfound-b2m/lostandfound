@@ -12,9 +12,9 @@
         <property name="dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping class="org.b2m.lostandfound.persist.ItemInRepository"/>
-        <mapping class="org.b2m.lostandfound.persist.LostPropertyOffice" />
-        <mapping class="org.b2m.lostandfound.persist.SourceFileInRepository"/>
+        <mapping class="org.b2m.lostandfound.ItemInRepository"/>
+        <mapping class="org.b2m.lostandfound.LostPropertyOffice" />
+        <mapping class="org.b2m.lostandfound.SourceFileInRepository"/>
 
     </session-factory>
 </hibernate-configuration>
