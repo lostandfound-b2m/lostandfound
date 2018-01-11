@@ -13,15 +13,18 @@ public class AppTest {
         /*try {
             ParserWarsaw parserWarsaw = new ParserWarsaw();
             List<Item> itemList = parserWarsaw.getLostItemsFromParser();
-        } catch (NullPointerException e) {*/
+        } catch (NullPointerException e)*/
 
-        WawRetriever retriever = new WawRetriever();
-        List<SourceFile> files = retriever.retrieveFiles();
-        System.out.println(files.get(0).getName());
-        System.out.println(files.get(0).getUrl());
+            WawRetriever retriever = new WawRetriever();
+            List<SourceFile> files = retriever.retrieveFiles();
+            System.out.println(files.get(0).getName());
+            System.out.println(files.get(0).getUrl());
 
-        List<Item> items = retriever.retrieveItemsFromFiles(files);
-        System.out.println(items.get(5).getName());
-        }
+            List<Item> items = retriever.retrieveItemsFromFiles(files);
+            System.out.println(items.get(0).getName());
+            System.out.println(items.get(1).getName());
+
 
     }
+}
+

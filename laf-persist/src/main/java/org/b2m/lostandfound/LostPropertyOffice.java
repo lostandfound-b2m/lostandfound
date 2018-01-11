@@ -57,10 +57,14 @@ public class LostPropertyOffice {
         return email;
     }
 
+    @Override
     public String toString() {
-        return getOfficeName();
+        return "LostPropertyOffice{" +
+                "officeName='" + officeName + '\'' +
+                ", city='" + city + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
-
-
-
 }

@@ -36,10 +36,7 @@ public class ParserWarsaw {
         excelFile = new FileInputStream(new File(FILE_NAME));
         workbook = new HSSFWorkbook(excelFile);
         worksheet = workbook.getSheetAt(0);
-
     }
-
-    ;
 
     public ParserWarsaw(String url) throws IOException {
         inputStream = new URL(url).openStream();
@@ -47,48 +44,24 @@ public class ParserWarsaw {
         worksheet = workbook.getSheetAt(0);
     }
 
-    boolean isCellNULL(Cell currentCell) {
-        if (currentCell == null)
-            return true;
-        else
-            return false;
-    }
-
     public Date getFoundDateFromFile(Row currentRow) throws IOException, ParseException, NullPointerException {
         dateFoundCell = currentRow.getCell(1);
-        //if (isCellNULL(dateFoundCell))
-        //    throw new NullPointerException("Pusta komorka");
-
         return returnDateFromString(dateFoundCell.toString());
-
-
     }
 
     public Date getDateReceivedFromFile(Row currentRow) throws IOException, ParseException {
         dateReceivedCell = currentRow.getCell(2);
-        //if (isCellNULL(dateReceivedCell))
-        //    throw new NullPointerException("Pusta komorka");
-
         return returnDateFromString(dateReceivedCell.toString());
-
     }
 
     public String getItemDescriptionFromFile(Row currentRow) throws IOException {
         itemDescriptionCell = currentRow.getCell(3);
-        //if (isCellNULL(itemDescriptionCell))
-        //    new NullPointerException("Pusta komorka");
-
         return itemDescriptionCell.toString();
-
     }
 
     public String getFoundPlaceFromFile(Row currentRow) throws IOException {
         placeFoundCell = currentRow.getCell(4);
-        //if (isCellNULL(placeFoundCell))
-        //    throw new NullPointerException("Pusta komorka");
-
         return placeFoundCell.toString();
-
     }
 
     public Date returnDateFromString(String dateString) throws ParseException {
@@ -99,18 +72,16 @@ public class ParserWarsaw {
         } catch (ParseException e) {
 
             currentDate = null;
-
         }
         return currentDate;
     }
 
     public List<Item> getLostItemsFromParser() throws IOException, ParseException {
-
         List<Item> itemsFromParser = new ArrayList<>();
         for (Row currentRow : worksheet) {
             Item newItem = new Item();
             try {
-                newItem = new Item(getItemDescriptionFromFile(currentRow), getFoundDateFromFile(currentRow), getDateReceivedFromFile(currentRow), "02-798", getFoundPlaceFromFile(currentRow), "Warszawa");
+                newItem = new Item(getItemDescriptionFromFile(currentRow), getFoundDateFromFile(currentRow), getDateReceivedFromFile(currentRow), "02-798", getFoundPlaceFromFile(currentRow), "");
             }
             catch (NullPointerException e) {
             }
@@ -118,6 +89,10 @@ public class ParserWarsaw {
                 itemsFromParser.add(newItem);
             }
         }
+        //usuwanie opisow
+        itemsFromParser.remove(0);
+        itemsFromParser.remove(0);
+
         return itemsFromParser;
     }
 
