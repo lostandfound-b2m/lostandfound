@@ -13,7 +13,7 @@ public class Scheduler {
         Service service = new Service();
         RegularUpdater updaterGd = new RegularUpdater(retrieverGd, service);
         RegularUpdater updaterKrk = new RegularUpdater(retrieverKrk, service);
-        Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
+        Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                 System.out.println("Scheduler starts now");
@@ -27,6 +27,6 @@ public class Scheduler {
                     System.out.println("IOException");
                 }
             }
-        }, 1, TimeUnit.MINUTES);
+        }, 0,2, TimeUnit.MINUTES);
     }
 }
