@@ -77,7 +77,4 @@ public class ItemInRest {
         return officeName;
     }
 
-    public LostPropertyOffice getLostPropertyOffice() {
-        return lostPropertyOffice;
-    }
 }

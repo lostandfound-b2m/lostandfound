@@ -19,7 +19,7 @@
   <dependencies>
     <dependency>
     <groupId>org.b2m.lostandfound</groupId>
-    <artifactId>laf-service</artifactId>
+    <artifactId>laf-restapi</artifactId>
     <version>${project.version}</version>
   </dependency>
 
