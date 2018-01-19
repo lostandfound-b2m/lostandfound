@@ -17,15 +17,5 @@
       <artifactId>laf-service</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <version>1.5.8.RELEASE</version>
-    </dependency>
-      <dependency>
-          <groupId>org.b2m.lostandfound</groupId>
-          <artifactId>laf-restapi</artifactId>
-          <version>0.1-SNAPSHOT</version>
-      </dependency>
   </dependencies>
 </project>

@@ -32,11 +32,6 @@
       <artifactId>laf-persist</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.b2m.lostandfound</groupId>
-      <artifactId>laf-parser-common</artifactId>
-      <version>${project.version}</version>
-    </dependency>
     <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
     <dependency>
       <groupId>com.google.code.gson</groupId>

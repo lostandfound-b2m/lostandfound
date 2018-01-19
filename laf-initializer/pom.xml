@@ -21,7 +21,7 @@
     <groupId>org.b2m.lostandfound</groupId>
     <artifactId>laf-restapi</artifactId>
     <version>${project.version}</version>
-  </dependency>
+    </dependency>
 
     <dependency>
       <groupId>org.b2m.lostandfound</groupId>
@@ -30,32 +30,10 @@
     </dependency>
 
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-
-    <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.0.1</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <version>1.5.8.RELEASE</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure -->
