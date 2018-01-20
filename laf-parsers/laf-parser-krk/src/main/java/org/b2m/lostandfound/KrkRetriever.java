@@ -21,7 +21,11 @@ public class KrkRetriever implements Retriever {
     public List<Item> retrieveItemsFromFiles(List<SourceFile> files) throws IOException{
         List<Item> items = new ArrayList<>();
         for (SourceFile file : files) {
-            items.addAll(new ParserKrk(new URL(file.getUrl())).getItemList());
+            List<Item> itemsFromFile = new ParserKrk(new URL(file.getUrl())).getItemList();
+            for (Item item : itemsFromFile) {
+                item.setFile(file);
+            }
+            items.addAll(itemsFromFile);
         }
         return items;
     }
@@ -76,7 +80,7 @@ public class KrkRetriever implements Retriever {
         int nr = 0;
         for (Element label : labels) {
             if (Objects.equals(label.text(), "Data aktualizacji:")) {
-                fileToBeFound.setUpdateChecker(infos.get(nr).text());
+                fileToBeFound.setUpdateChecker(Integer.toString(infos.get(nr).text().hashCode()));
             }
             ++nr;
         }

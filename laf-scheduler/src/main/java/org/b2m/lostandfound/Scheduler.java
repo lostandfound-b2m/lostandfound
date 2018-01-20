@@ -13,15 +13,18 @@ public class Scheduler {
         Service service = new Service();
         RegularUpdater updaterGd = new RegularUpdater(retrieverGd, service);
         RegularUpdater updaterKrk = new RegularUpdater(retrieverKrk, service);
+        RegularUpdater updaterWaw = new RegularUpdater(retrieverWaw, service);
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                 System.out.println("Scheduler starts now");
                 try {
-                    service.addItems(service.simpleGetList(retrieverWaw));
-                    service.addItems(service.simpleGetList(retrieverGd));
-                    service.addItems(service.simpleGetList(retrieverKrk));
-
+                    //service.addItems(service.simpleGetList(retrieverWaw));
+                    //service.addItems(service.simpleGetList(retrieverGd));
+                    //service.addItems(service.simpleGetList(retrieverKrk));
+                    updaterGd.doScheduledUpdate();
+                    updaterKrk.doScheduledUpdate();
+                    updaterWaw.doScheduledUpdate();
                 }
                 catch (IOException e) {
                     System.out.println("IOException");

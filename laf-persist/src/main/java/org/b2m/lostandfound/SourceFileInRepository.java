@@ -7,14 +7,12 @@ import java.time.LocalDate;
 @Table(name = "source_file")
 public class SourceFileInRepository {
     @Id
+    @Column(name = "filename")
     private String fileName;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "office_name")
-    private String lostPropertyOffice;
-
-    @Column(name = "file_date")
-    private LocalDate fileDate;
+    private LostPropertyOffice lostPropertyOffice;
 
     @Column(name = "update_checker")
     private String updateChecker;
@@ -25,14 +23,16 @@ public class SourceFileInRepository {
     public SourceFileInRepository() {
     }
 
-    ;
 
-    public SourceFileInRepository(String fileName, String lostPropertyOffice, LocalDate fileDate, String updateChecker, String urlAddress) {
+    public SourceFileInRepository(String fileName, LostPropertyOffice lostPropertyOffice, String updateChecker, String urlAddress) {
         this.fileName = fileName;
         this.lostPropertyOffice = lostPropertyOffice;
-        this.fileDate = fileDate;
         this.updateChecker = updateChecker;
         this.urlAddress = urlAddress;
     }
 
+    public String getUrl() {return urlAddress;}
+    public String getName() {return fileName;}
+    public String getUpdateChecker() {return updateChecker;}
+    public LostPropertyOffice getOffice() {return lostPropertyOffice;}
 }

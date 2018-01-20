@@ -6,6 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,13 +18,14 @@ public class WawRetriever implements Retriever {
             return items;
         }
         for (SourceFile file : files) {
-            System.out.println("WawRetriever works");
+            List<Item> itemsFromFile = new ArrayList<>();
             try {
-                items.addAll(new ParserWarsaw(file.getUrl()).getLostItemsFromParser());
+                itemsFromFile = new ParserWarsaw(file.getUrl()).getLostItemsFromParser();
+            } catch (IOException e) {return null;};
+            for (Item item : itemsFromFile) {
+                item.setFile(file);
             }
-            catch (java.text.ParseException|IOException|NullPointerException e) {
-                e.printStackTrace();
-            }
+            items.addAll(itemsFromFile);
         }
         return items;
     }

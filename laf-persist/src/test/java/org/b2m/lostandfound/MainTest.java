@@ -13,7 +13,7 @@ public class MainTest {
         LostPropertyOffice gdanskLostPropertyOffice = test.createLostPropertyOffice("Gdańsk","Gdańsk","602452703","ztmGdansk@gmail.com","00-521");
 
         LostPropertyDao dao = new LostPropertyDao();
-        dao.addLostPropertyOffice(warsawLostPropertyOffice);
+       dao.addLostPropertyOffice(warsawLostPropertyOffice);
         dao.addLostPropertyOffice(krakowLostPropertyOffice);
         dao.addLostPropertyOffice(gdanskLostPropertyOffice);
 
@@ -45,7 +45,16 @@ public class MainTest {
         //dao.deleteLostItems(itemList);
         //dao.deleteLostPropertyOffice(warsawLostPropertyOffice);
 */
-
-
+    SourceFileInRepository f1 = new SourceFileInRepository("a",krakowLostPropertyOffice,"c","d") ;
+    dao.addSourceFile(f1);
+    List<SourceFileInRepository> files = dao.getSourceFiles("Kraków");
+    List<ItemInRepository> itemList = test.createItemList(krakowLostPropertyOffice,f1);
+    System.out.println(files);
+    dao.addLostItems(itemList);
+    System.out.println(dao.getItemsListedOnSourceFile(f1));
+    dao.deleteItemsListedOnSourceFile(f1);
+    System.out.println(dao.getItemsListedOnSourceFile(f1));
+    System.out.println(f1.getName());
+    System.out.println(files.get(0).getName());
     }
 }

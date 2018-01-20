@@ -14,9 +14,9 @@ public class ItemInRepository {
     @JoinColumn(name = "office")
     private LostPropertyOffice lostPropertyOffice;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name = "file_name")
-    //private SourceFileInRepository sourceFileDao;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "file_name")
+    private SourceFileInRepository sourceFile;
 
     @Column(name = "name")
     private String name;
@@ -36,9 +36,6 @@ public class ItemInRepository {
     @Column(name = "place_found")
     private String placeFound;
 
-    @Column(name = "office_name")
-    private String officeName;
-
     public ItemInRepository() {
     }
 
@@ -50,9 +47,20 @@ public class ItemInRepository {
         this.cityCode = cityCode;
         this.placeFound = placeFound;
         this.cityName = cityName;
-        this.officeName = cityName;
         this.lostPropertyOffice = lostPropertyOffice;
         //this.sourceFileDao = sourceFileDao;
+    }
+
+    public ItemInRepository(String name, Date dateFound, Date dateReceived, String cityCode, String placeFound, String cityName, LostPropertyOffice lostPropertyOffice, SourceFileInRepository sourceFile) {
+
+        this.name = name;
+        this.dateFound = dateFound;
+        this.dateReceived = dateReceived;
+        this.cityCode = cityCode;
+        this.placeFound = placeFound;
+        this.cityName = cityName;
+        this.lostPropertyOffice = lostPropertyOffice;
+        this.sourceFile = sourceFile;
     }
 
     public ItemInRepository(String name, Date dateFound, String cityCode, String cityName, LostPropertyOffice lostPropertyOffice) {
@@ -87,9 +95,11 @@ public class ItemInRepository {
         return cityName;
     }
 
-    public String getOfficeName() {return officeName; }
-
     public LostPropertyOffice getLostPropertyOffice() { return lostPropertyOffice; }
+
+    public SourceFileInRepository getSourceFile() {
+        return sourceFile;
+    }
 
     @Override
     public boolean equals(Object o) {

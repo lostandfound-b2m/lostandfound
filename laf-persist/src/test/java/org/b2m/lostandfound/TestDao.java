@@ -13,7 +13,7 @@ public class TestDao {
 
     }
 
-    public List<ItemInRepository> createItemList(LostPropertyOffice lostPropertyOffice) throws ParseException {
+    public List<ItemInRepository> createItemList(LostPropertyOffice lostPropertyOffice, SourceFileInRepository file) throws ParseException {
 
        /* LocalDate dateOfFound1 = LocalDate.of(2017, 10, 2);
         LocalDate dateOfFound2 = LocalDate.of(2017, 1, 20);
@@ -28,12 +28,10 @@ public class TestDao {
         Date dateOfFound5 = new SimpleDateFormat("yyyyMMdd").parse("20170901");
 
 
-        ItemInRepository item1 = new ItemInRepository("zegarek", dateOfFound1, "00-753", "Warszawa", lostPropertyOffice);
-        ItemInRepository item2 = new ItemInRepository("zegarek", dateOfFound2, "00-753", "Warszawa", lostPropertyOffice);
-        ItemInRepository item3 = new ItemInRepository("plecak", dateOfFound3, "00-753", "Warszawa", lostPropertyOffice);
-        ItemInRepository item4 = new ItemInRepository("walizka", dateOfFound4, "00-753", "Warszawa", lostPropertyOffice);
-        ItemInRepository item5 = new ItemInRepository("kurtka", dateOfFound5, "00-753", "Warszawa", lostPropertyOffice);
-        ItemInRepository item6 = new ItemInRepository("kurtka", dateOfFound2, "00-753", "Krakow", lostPropertyOffice);
+        ItemInRepository item1 = new ItemInRepository("zegarek", dateOfFound1, dateOfFound1, "00-753", "Warszawa", lostPropertyOffice.getOfficeName(), lostPropertyOffice, file);
+        ItemInRepository item2 = new ItemInRepository("zegarek", dateOfFound1, dateOfFound1, "00-753", "Warszawa", lostPropertyOffice.getOfficeName(), lostPropertyOffice, file);
+        ItemInRepository item3 = new ItemInRepository("zegarek", dateOfFound1, dateOfFound1, "00-753", "Warszawa", lostPropertyOffice.getOfficeName(), lostPropertyOffice, file);
+
 
 
         List<ItemInRepository> newItems = new ArrayList<>();
@@ -41,9 +39,7 @@ public class TestDao {
         newItems.add(item1);
         newItems.add(item2);
         newItems.add(item3);
-        newItems.add(item4);
-        newItems.add(item5);
-        newItems.add(item6);
+
 
         return newItems;
 

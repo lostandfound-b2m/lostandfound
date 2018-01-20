@@ -24,7 +24,13 @@ public interface LostPropertyRepository {
 
     void deleteLostItems(List<ItemInRepository> items);
 
-    //void deleteSourceFile(SourceFileInRepository sourceFileInRepository);
+    List<SourceFileInRepository> getSourceFiles(String officeName);
+
+    List<ItemInRepository> getItemsListedOnSourceFile(SourceFileInRepository file);
+
+    void deleteItemsListedOnSourceFile(SourceFileInRepository file);
+
+    void deleteSourceFile(SourceFileInRepository sourceFileInRepository);
 
 }
 

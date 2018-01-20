@@ -76,16 +76,58 @@ public class LostPropertyDao implements LostPropertyRepository {
         closeCurrentSessionwithTransaction();
     }
 
+    public List<SourceFileInRepository> getSourceFiles(String officeName) {
+        openCurrentSessionwithTransaction();
+        LostPropertyOffice lostPropertyOffice =(LostPropertyOffice) getCurrentSession()
+                .createQuery("FROM LostPropertyOffice WHERE city = :lostPropertyOffice")
+                .setParameter("lostPropertyOffice", officeName)
+                .uniqueResult();
+        List<SourceFileInRepository> items = (List<SourceFileInRepository>) getCurrentSession()
+                .createQuery("FROM SourceFileInRepository WHERE lostPropertyOffice = :lostPropertyOffice")
+                .setParameter("lostPropertyOffice", lostPropertyOffice)
+                .list();
+        closeCurrentSessionwithTransaction();
+        return items;
+    }
+
+    public List<ItemInRepository> getItemsListedOnSourceFile(SourceFileInRepository file) {
+        openCurrentSessionwithTransaction();
+        List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession()
+                .createQuery("FROM ItemInRepository WHERE sourceFile = :sourceFile")
+                .setParameter("sourceFile", file)
+                .list();
+        closeCurrentSessionwithTransaction();
+        return items;
+    }
+
+    public void deleteItemsListedOnSourceFile(SourceFileInRepository file) {
+        openCurrentSessionwithTransaction();
+        List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession()
+                .createQuery("FROM ItemInRepository WHERE sourceFile = :sourceFile")
+                .setParameter("sourceFile", file)
+                .list();
+        for (ItemInRepository item : items) {
+            delete(item);
+        }
+        closeCurrentSessionwithTransaction();
+    }
+
     public List<ItemInRepository> findByItemDescription(String itemDescription, String cityName) {
         openCurrentSessionwithTransaction();
-        List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession().createQuery("FROM ItemInRepository WHERE name = :name AND cityName = :lostPropertyOffice").setParameter("name", itemDescription).setParameter("lostPropertyOffice", cityName).list();
+        List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession()
+                .createQuery("FROM ItemInRepository WHERE name = :name AND cityName = :lostPropertyOffice")
+                .setParameter("name", itemDescription).setParameter("lostPropertyOffice", cityName)
+                .list();
         closeCurrentSessionwithTransaction();
         return items;
 
     }
     public LostPropertyOffice findLostPropertyOffice(String cityName) {
         openCurrentSessionwithTransaction();
-        LostPropertyOffice lostPropertyOffice =(LostPropertyOffice) getCurrentSession().createQuery("FROM LostPropertyOffice WHERE city = :lostPropertyOffice").setParameter("lostPropertyOffice", cityName).uniqueResult();
+        LostPropertyOffice lostPropertyOffice =(LostPropertyOffice) getCurrentSession()
+                .createQuery("FROM LostPropertyOffice WHERE city = :lostPropertyOffice")
+                .setParameter("lostPropertyOffice", cityName)
+                .uniqueResult();
         closeCurrentSessionwithTransaction();
         return lostPropertyOffice;
 
@@ -93,17 +135,23 @@ public class LostPropertyDao implements LostPropertyRepository {
 
     public List<ItemInRepository> returnAllItemsFromOffice(String officeName) {
         openCurrentSessionwithTransaction();
-        //LostPropertyOffice office = (LostPropertyOffice) getCurrentSession().createQuery("FROM LostPropertyOffice WHERE office_name = :officeName").setParameter("officeName",officeName);
-        List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession().createQuery("FROM ItemInRepository WHERE cityName = :officeName").setParameter("officeName", officeName).list();
+        LostPropertyOffice lostPropertyOffice =(LostPropertyOffice) getCurrentSession()
+                .createQuery("FROM LostPropertyOffice WHERE officeName = :lostPropertyOffice")
+                .setParameter("lostPropertyOffice", officeName)
+                .uniqueResult();
+        List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession()
+                .createQuery("FROM ItemInRepository WHERE lostPropertyOffice = :lostPropertyOffice")
+                .setParameter("lostPropertyOffice", lostPropertyOffice)
+                .list();
         closeCurrentSessionwithTransaction();
         return items;
-
     }
 
     public List<ItemInRepository> returnAllItems() {
         openCurrentSessionwithTransaction();
-        //LostPropertyOffice office = (LostPropertyOffice) getCurrentSession().createQuery("FROM LostPropertyOffice WHERE office_name = :officeName").setParameter("officeName",officeName);
-        List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession().createQuery("FROM ItemInRepository").list();
+        List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession()
+                .createQuery("FROM ItemInRepository")
+                .list();
         closeCurrentSessionwithTransaction();
         return items;
 
@@ -111,7 +159,9 @@ public class LostPropertyDao implements LostPropertyRepository {
 
     public void deleteLostPropertyOffice(String officeName) {
         openCurrentSessionwithTransaction();
-        LostPropertyOffice office = (LostPropertyOffice) getCurrentSession().createQuery("FROM LostPropertyOffice WHERE officeName = :officeName").setParameter("officeName",officeName);
+        LostPropertyOffice office = (LostPropertyOffice) getCurrentSession()
+                .createQuery("FROM LostPropertyOffice WHERE officeName = :officeName")
+                .setParameter("officeName",officeName);
         delete(office);
         closeCurrentSessionwithTransaction();
     }

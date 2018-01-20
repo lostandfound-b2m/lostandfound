@@ -13,7 +13,11 @@ public class GdRetriever implements Retriever{
     public List<Item> retrieveItemsFromFiles(List<SourceFile> files) throws IOException {
         List<Item> items = new ArrayList<>();
         for (SourceFile file : files) {
-            items.addAll(new ParserGd(new URL(file.getUrl())).getItemList());
+            List<Item> itemsFromFile = new ParserGd(new URL(file.getUrl())).getItemList();
+            for (Item item : itemsFromFile) {
+                item.setFile(file);
+            }
+            items.addAll(itemsFromFile);
         }
         return items;
     }

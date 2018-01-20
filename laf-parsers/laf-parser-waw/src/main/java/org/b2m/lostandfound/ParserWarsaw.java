@@ -44,27 +44,28 @@ public class ParserWarsaw {
         worksheet = workbook.getSheetAt(0);
     }
 
-    public Date getFoundDateFromFile(Row currentRow) throws IOException, ParseException, NullPointerException {
+    public Date getFoundDateFromFile(Row currentRow) {
         dateFoundCell = currentRow.getCell(1);
         return returnDateFromString(dateFoundCell.toString());
+
     }
 
-    public Date getDateReceivedFromFile(Row currentRow) throws IOException, ParseException {
+    public Date getDateReceivedFromFile(Row currentRow) {
         dateReceivedCell = currentRow.getCell(2);
         return returnDateFromString(dateReceivedCell.toString());
     }
 
-    public String getItemDescriptionFromFile(Row currentRow) throws IOException {
+    public String getItemDescriptionFromFile(Row currentRow) {
         itemDescriptionCell = currentRow.getCell(3);
         return itemDescriptionCell.toString();
     }
 
-    public String getFoundPlaceFromFile(Row currentRow) throws IOException {
+    public String getFoundPlaceFromFile(Row currentRow) {
         placeFoundCell = currentRow.getCell(4);
         return placeFoundCell.toString();
     }
 
-    public Date returnDateFromString(String dateString) throws ParseException {
+    public Date returnDateFromString(String dateString) {
         Date currentDate;
         DateFormat format = new SimpleDateFormat("dd-MMMM-yyyy", new Locale("pl", "PL"));
         try {
@@ -76,7 +77,7 @@ public class ParserWarsaw {
         return currentDate;
     }
 
-    public List<Item> getLostItemsFromParser() throws IOException, ParseException {
+    public List<Item> getLostItemsFromParser() {
         List<Item> itemsFromParser = new ArrayList<>();
         for (Row currentRow : worksheet) {
             Item newItem = new Item();

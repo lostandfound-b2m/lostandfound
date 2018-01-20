@@ -12,10 +12,13 @@ public class SourceFile {
     private String name;
     private String updateChecker;
     private String officeName;
-    private LocalDate fileDate;
 
-    public LocalDate getFileDate() {
-        return fileDate;
+    SourceFile() {};
+    SourceFile(String url, String name, String updateChecker, String officeName) {
+        this.url = url;
+        this.name = name;
+        this.updateChecker = updateChecker;
+        this.officeName = officeName;
     }
     public String getUrl() {return url;}
     public void setUrl(String url) {

@@ -19,7 +19,6 @@ public class ItemInRest {
         cityCode = itemInRepository.getCityCode();
         cityName = itemInRepository.getCityName();
         placeFound = itemInRepository.getFindPlace();
-        officeName = itemInRepository.getOfficeName();
         lostPropertyOffice = itemInRepository.getLostPropertyOffice();
     }
 

@@ -11,6 +11,7 @@ public class Item {
     private String  foundPlace;
     private String  cityName;
     private String officeName;
+    private SourceFile file;
 
     public Item() {
     }
@@ -27,6 +28,17 @@ public class Item {
         this.foundPlace = foundPlace;
         this.cityName = cityName;
         this.officeName = cityName;
+    }
+
+    public Item(String name, Date foundDate, Date receiveDate, String cityCode, String foundPlace, String cityName, SourceFile file) {
+        this.name = name;
+        this.foundDate = foundDate;
+        this.receiveDate = receiveDate;
+        this.cityCode = cityCode;
+        this.foundPlace = foundPlace;
+        this.cityName = cityName;
+        this.officeName = cityName;
+        this.file=file;
     }
 
     public Item(String name, Date foundDate, String cityCode, String cityName) {
@@ -60,6 +72,10 @@ public class Item {
     public String getCityName() {
         return cityName;
     }
+
+    public SourceFile getFile() {return file; }
+
+    public void setFile(SourceFile file) { this.file = file; }
 
     @Override
     public String toString() {
