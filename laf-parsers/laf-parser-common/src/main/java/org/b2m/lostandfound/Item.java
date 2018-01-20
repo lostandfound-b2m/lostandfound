@@ -75,6 +75,8 @@ public class Item {
 
     public SourceFile getFile() {return file; }
 
+    public String getOfficeName() {return officeName;}
+
     public void setFile(SourceFile file) { this.file = file; }
 
     @Override

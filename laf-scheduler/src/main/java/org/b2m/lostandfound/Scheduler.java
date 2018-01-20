@@ -30,6 +30,6 @@ public class Scheduler {
                     System.out.println("IOException");
                 }
             }
-        }, 0,2, TimeUnit.MINUTES);
+        }, 0,1, TimeUnit.MINUTES);
     }
 }

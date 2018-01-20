@@ -27,7 +27,7 @@ public class Service {
         ItemInRepository newItemInRepository = new ItemInRepository(itemFromParser.getName(),
                 itemFromParser.getFoundDate(), itemFromParser.getReceiveDate(), itemFromParser.getCityCode(),
                 itemFromParser.getFoundPlace(), itemFromParser.getCityName(),
-                findLostPropertyOffice(itemFromParser.getCityName()),
+                findLostPropertyOffice(itemFromParser.getOfficeName()),
                 createNewSourceFileDaoFromSourceFile(itemFromParser.getFile()));
         return newItemInRepository;
     }
@@ -41,10 +41,12 @@ public class Service {
     }
 
     private Item createNewItemFromItemDao(ItemInRepository itemInRepository){
+        System.out.println(itemInRepository.getFile());
+        SourceFile file = createNewSourceFileFromSourceFileDao(itemInRepository.getSourceFile());
         Item item = new Item(itemInRepository.getName(), itemInRepository.getFindDate(),
                 itemInRepository.getReceiveDate(), itemInRepository.getCityCode(), itemInRepository.getFindPlace(),
                 itemInRepository.getLostPropertyOffice().getOfficeName(),
-                createNewSourceFileFromSourceFileDao(itemInRepository.getSourceFile()));
+                file);
         return item;
     }
 
@@ -64,8 +66,7 @@ public class Service {
     }
 
     private SourceFile createNewSourceFileFromSourceFileDao(SourceFileInRepository file) {
-        SourceFile sourceFile = new SourceFile(file.getUrl(),file.getName(),file.getUpdateChecker(),file.getOffice().getOfficeName());
-        return sourceFile;
+        return new SourceFile(file.getUrl(),file.getName(),file.getUpdateChecker(),file.getOffice().getOfficeName());
     }
 
     private List<SourceFileInRepository> createNewSourceFileDaoListFromSourceFileList(List<SourceFile> files) {
@@ -110,8 +111,7 @@ public class Service {
     }
 
     List<Item> getItemsListedOnSourceFile(SourceFile sourceFile) {
-        return  createNewItemListFromItemListDao(
-                lostPropertyRepository.getItemsListedOnSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile)));
+        return createNewItemListFromItemListDao(lostPropertyRepository.getItemsListedOnSourceFile(createNewSourceFileDaoFromSourceFile(sourceFile)));
     }
 
     List<Item> getItemsListedOnSourceFile(List<SourceFile> sourceFileList) {

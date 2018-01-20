@@ -52,9 +52,7 @@ public class MainTest {
     System.out.println(files);
     dao.addLostItems(itemList);
     System.out.println(dao.getItemsListedOnSourceFile(f1));
-    dao.deleteItemsListedOnSourceFile(f1);
-    System.out.println(dao.getItemsListedOnSourceFile(f1));
-    System.out.println(f1.getName());
-    System.out.println(files.get(0).getName());
+    dao.deleteLostItems(itemList);
+    System.out.println("A teraz: " + dao.getItemsListedOnSourceFile(f1));
     }
 }

@@ -30,16 +30,12 @@ public class WawRetriever implements Retriever {
         return items;
     }
 
-    public List<SourceFile> retrieveFiles() {
+    public List<SourceFile> retrieveFiles() throws IOException {
         String url = "https://bip.warszawa.pl/Menu_przedmiotowe/ogloszenia/rzeczy_znalezione/default.htm";
         List<SourceFile> resultList = new ArrayList<>();
         Document doc;
-        try {
-            doc = Jsoup.connect(url).get();
-        }
-        catch (IOException e) {
-            return null;
-        }
+        doc = Jsoup.connect(url).get();
+
         Element content = doc.getElementById("plc_Htmlplaceholdercontrol2");
 
         /* Looking for URLs with regex */

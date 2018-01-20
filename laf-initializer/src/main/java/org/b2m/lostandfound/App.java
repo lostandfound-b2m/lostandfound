@@ -13,9 +13,12 @@ public class App {
         LostPropertyOffice gdOffice = new LostPropertyOffice("Gdańsk", "Gdańsk", "05-056", "567654567", "gd@gd.com.pl");
 
         Service service = new Service();
-        service.addLostPropertyOffice(wawOffice);
-        service.addLostPropertyOffice(krkOffice);
-        service.addLostPropertyOffice(gdOffice);
+        if (service.findLostPropertyOffice("Warszawa") == null)
+            service.addLostPropertyOffice(wawOffice);
+        if (service.findLostPropertyOffice("Kraków") == null)
+            service.addLostPropertyOffice(krkOffice);
+        if (service.findLostPropertyOffice("Gdańsk") == null)
+            service.addLostPropertyOffice(gdOffice);
         /*Start scheduler*/
         Scheduler scheduler = new Scheduler();
         scheduler.update();

@@ -14,8 +14,14 @@ public class RegularUpdater {
         this.daoService=daoService;
     }
     void doScheduledUpdate() throws IOException{
-        System.out.println("Scheduled update for " + retriever.getOfficeName() + " starts " );
-        List<SourceFile> filesFromRetriever = retriever.retrieveFiles();
+        System.out.println("---Scheduled update for " + retriever.getOfficeName() + " starts--- " );
+        List<SourceFile> filesFromRetriever;
+        try {
+            filesFromRetriever = retriever.retrieveFiles();
+        } catch (IOException e) {
+            System.out.println("  Connection error, aborting update" );
+            return;
+        }
         List<SourceFile> filesInDatabase = daoService.getSourceFiles(retriever.getOfficeName());
         List<SourceFile> newFiles = new ArrayList<>();
         List<SourceFile> filesToBeUpdated = new ArrayList<>();
@@ -35,7 +41,6 @@ public class RegularUpdater {
                     if (!file.getUpdateChecker().equals(fileInDatabase.getUpdateChecker())) {
                         filesInDatabaseToBeUpdated.add(fileInDatabase);
                         filesToBeUpdated.add(file);
-                        System.out.println(fileInDatabase.getName() + " " + fileInDatabase.getUpdateChecker() + " " + fileInDatabase.getUpdateChecker());
                     }
                     else {
                         isFileStillAvailable = true;
@@ -62,6 +67,7 @@ public class RegularUpdater {
         }
         itemsToBeAnalized = retriever.retrieveItemsFromFiles(filesToBeUpdated);
         itemsInDatabaseToBeAnalized = daoService.getItemsListedOnSourceFile(filesInDatabaseToBeUpdated);
+
         for (Item item : itemsToBeAnalized) {
             if (!itemsInDatabaseToBeAnalized.contains(item)) {
                 itemsToAdd.add(item);
@@ -73,9 +79,8 @@ public class RegularUpdater {
         itemsToBeDeleted.addAll(itemsInDatabaseToBeAnalized);
         // Items from new files are added ti itemsToAdd list
         itemsToAdd.addAll(retriever.retrieveItemsFromFiles(newFiles));
-        System.out.println("No. of deleted files: " + filesToBeDeletedFromDatabase.size());
-        System.out.println("No of items to be deleted: " + itemsToBeDeleted.size());
-        System.out.println("No. of new files: " + newFiles.size());
+        System.out.println("  No. of deleted files: " + filesToBeDeletedFromDatabase.size());
+        System.out.println("  No. of new files: " + newFiles.size());
         // Unnecessary Items and SourceFiles removed
         daoService.deleteItemsListedOnSourceFile(filesToBeDeletedFromDatabase);
         daoService.deleteItems(itemsToBeDeleted);

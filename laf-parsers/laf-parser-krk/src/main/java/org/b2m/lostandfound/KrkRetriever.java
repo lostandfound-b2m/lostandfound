@@ -30,16 +30,13 @@ public class KrkRetriever implements Retriever {
         return items;
     }
 
-   public List<SourceFile> retrieveFiles() {
+   public List<SourceFile> retrieveFiles() throws IOException{
        String url = "https://www.bip.krakow.pl/?dok_id=19964";
        List<SourceFile> resultList = new ArrayList<>();
        Document doc;
-       try {
-           doc = Jsoup.connect(url).get();
-       }
-       catch (IOException e) {
-           return null;
-       }
+
+       doc = Jsoup.connect(url).get();
+
        Element content = doc.getElementById("mainDiv");
 
        /* Looking for URLs with regex */

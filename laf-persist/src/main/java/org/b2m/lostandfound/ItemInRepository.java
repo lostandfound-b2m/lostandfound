@@ -101,6 +101,8 @@ public class ItemInRepository {
         return sourceFile;
     }
 
+    public SourceFileInRepository getFile() {return sourceFile;}
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

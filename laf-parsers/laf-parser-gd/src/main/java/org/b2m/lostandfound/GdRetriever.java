@@ -22,7 +22,7 @@ public class GdRetriever implements Retriever{
         return items;
     }
 
-    public List<SourceFile> retrieveFiles() {
+    public List<SourceFile> retrieveFiles() throws  IOException {
         String url = "http://bip.gdansk.pl/urzad-miejski/Informacje-biura-rzeczy-znalezionych,a,50360";
         List<SourceFile> resultList = new ArrayList<>();
         SourceFile file = new SourceFile();
@@ -31,13 +31,7 @@ public class GdRetriever implements Retriever{
         file.setOfficeName("Gdańsk");
         Document doc = null;
         /* updateChecker in this case is a hashCode of the content of the office's site */
-        try {
         doc = Jsoup.connect(url).get();
-        }
-        catch(IOException e) {
-            e.printStackTrace();
-            return null;
-        }
         Elements content = doc.getElementsByClass("article");
         file.setUpdateChecker(Integer.toString(content.hashCode()));
 
