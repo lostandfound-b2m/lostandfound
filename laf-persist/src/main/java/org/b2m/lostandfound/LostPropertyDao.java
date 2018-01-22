@@ -13,7 +13,7 @@ import java.util.List;
  * Klasa LostPropertyDao jest implementacją interfejsu LostPropertyRepository, korzystamy w niej z Hibernate'a
  * który zapewnia translację danych pomiędzy relacyjną bazą danych a światem obiektowym. W funkcjach zwracających
  * obiekty lub listy obiektów używamy Hibernate Query Language (HQL)  - obiektowego języka zapytań.
- * 
+ *
  */
 
 public class LostPropertyDao implements LostPropertyRepository {
@@ -120,8 +120,8 @@ public class LostPropertyDao implements LostPropertyRepository {
     public List<ItemInRepository> findByItemDescription(String itemDescription, String cityName) {
         openCurrentSessionwithTransaction();
         List<ItemInRepository> items = (List<ItemInRepository>) getCurrentSession()
-                .createQuery("FROM ItemInRepository WHERE name = :name AND cityName = :lostPropertyOffice")
-                .setParameter("name", itemDescription).setParameter("lostPropertyOffice", cityName)
+                .createQuery("FROM ItemInRepository WHERE name like :name AND cityName = :lostPropertyOffice")
+                .setParameter("name", "%"+itemDescription+"%").setParameter("lostPropertyOffice", cityName)
                 .list();
         closeCurrentSessionwithTransaction();
         return items;
