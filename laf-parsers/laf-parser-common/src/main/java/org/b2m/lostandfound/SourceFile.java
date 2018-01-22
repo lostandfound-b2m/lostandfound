@@ -3,9 +3,9 @@ package org.b2m.lostandfound;
 import java.time.LocalDate;
 
 /**
- * Class for keeping URLs to PDF files found on Krakow L&F Office (PdfFilesRetriever Class),
- * along with file name and last update date. Those attributes can be used later
- * to check if file was updated since last time we parsed data from it.
+ * Klasa przechowująca informacje o pliku znalezionym na stronie danego biura:
+ * linku do pliku, nazwy pliku, checksumy umożliwiającej później zweryfikowanie, czy
+ * plik został zaktualizowany oraz nazwy biura, które udostępnia ten plik.
  */
 public class SourceFile {
     private String url;

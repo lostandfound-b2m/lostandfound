@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Klasa jest odpowiedzialna za analizę różnic między plikami SourceFile przechowywanymi
+ * w bazie danych, a plikami znajdującymi się aktualnie na stronie biura.
+ */
 public class RegularUpdater {
     Retriever retriever;
     Service daoService;
@@ -13,7 +16,13 @@ public class RegularUpdater {
         this.retriever=retriever;
         this.daoService=daoService;
     }
-    void doScheduledUpdate() throws IOException{
+
+    /**
+     * Umożliwia pobranie i zapis do bazy danych informacji o znalezionych przedmiotach umieszczonych
+     * jedynie w nowych plikach, oraz usunięcie informacji o przedmiotach, które już
+     * nie figurują na stronie biura.
+     */
+    void doScheduledUpdate() {
         System.out.println("---Scheduled update for " + retriever.getOfficeName() + " starts--- " );
         List<SourceFile> filesFromRetriever;
         try {
@@ -65,7 +74,12 @@ public class RegularUpdater {
                 newFiles.add(file);
             }
         }
-        itemsToBeAnalized = retriever.retrieveItemsFromFiles(filesToBeUpdated);
+        try {
+            itemsToBeAnalized = retriever.retrieveItemsFromFiles(filesToBeUpdated);
+        } catch (IOException e) {
+            System.out.println("  Connection error, aborting update" );
+            return;
+        }
         itemsInDatabaseToBeAnalized = daoService.getItemsListedOnSourceFile(filesInDatabaseToBeUpdated);
 
         for (Item item : itemsToBeAnalized) {
@@ -78,7 +92,12 @@ public class RegularUpdater {
         }
         itemsToBeDeleted.addAll(itemsInDatabaseToBeAnalized);
         // Items from new files are added ti itemsToAdd list
-        itemsToAdd.addAll(retriever.retrieveItemsFromFiles(newFiles));
+        try {
+            itemsToAdd.addAll(retriever.retrieveItemsFromFiles(newFiles));
+        } catch (IOException e) {
+            System.out.println("  Connection error, aborting update" );
+            return;
+        }
         System.out.println("  No. of deleted files: " + filesToBeDeletedFromDatabase.size());
         System.out.println("  No. of new files: " + newFiles.size());
         // Unnecessary Items and SourceFiles removed
