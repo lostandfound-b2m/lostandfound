@@ -9,7 +9,12 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
 import java.util.List;
-
+/**
+ * Klasa LostPropertyDao jest implementacją interfejsu LostPropertyRepository, korzystamy w niej z Hibernate'a
+ * który zapewnia translację danych pomiędzy relacyjną bazą danych a światem obiektowym. W funkcjach zwracających
+ * obiekty lub listy obiektów używamy Hibernate Query Language (HQL)  - obiektowego języka zapytań.
+ * 
+ */
 
 public class LostPropertyDao implements LostPropertyRepository {
 

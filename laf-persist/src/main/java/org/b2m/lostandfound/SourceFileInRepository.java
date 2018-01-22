@@ -2,7 +2,12 @@ package org.b2m.lostandfound;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-
+/**
+ * Klasa SourceFileInRepository jest odpowiednikiem klasy SourceFile wykorzystywanej w parserach
+ * do której przepisujemy dane. W tej klasie wykorzystujemy Java Persistence API – oficjalny standard
+ * mapowania obiektowo-relacyjnego który umożliwia operowanie na obiektach zwanych encjami,oraz zapisywanie
+ * wyników operacji do relacyjnej bazy danych.
+ */
 @Entity
 @Table(name = "source_file")
 public class SourceFileInRepository {

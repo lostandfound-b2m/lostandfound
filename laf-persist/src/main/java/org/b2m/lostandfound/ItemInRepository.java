@@ -2,7 +2,12 @@ package org.b2m.lostandfound;
 
 import javax.persistence.*;
 import java.util.Date;
-
+/**
+ * Klasa ItemInRepository jest odpowiednikiem klasy Item wykorzystywanej w parserach do której przepisujemy
+ * dane. W tej klasie wykorzystujemy Java Persistence API – oficjalny standard mapowania obiektowo-relacyjnego
+ * który umożliwia operowanie na obiektach zwanych encjami,oraz zapisywania wyników operacji do relacyjnej bazy
+ * danych.
+ */
 @Entity
 @Table(name = "lostitem")
 public class ItemInRepository {

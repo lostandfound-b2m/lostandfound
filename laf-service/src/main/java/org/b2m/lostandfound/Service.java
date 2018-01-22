@@ -8,7 +8,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.*;
-
+/**
+ * Klasa Service jest warstwą łączącą, zapewnia dostęp do wszystkich operacji zdefiniowanych przez DAO,
+ * dodatkowych funkcji przepisywania danych między obiektami, oraz operacji z modułów parsujących dane.
+ *
+ */
 @Component
 public class Service {
 
@@ -19,10 +23,11 @@ public class Service {
         lostPropertyRepository = new LostPropertyDao();
     }
 
-    //Date dateOfFound4 = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
-    //ItemInRepository myItem = new ItemInRepository("walizka", dateOfFound4, dateOfFound4, "00-753", "Warszawa", "Warszawa");
-
-    /* Funkcje przepisujace obiekty z laf-parsers do obiektow w laf-persist */
+    /**
+     * Funkcja tworzy nowy obiekt ItemInRepository przepisując dane z obiektu Item, który posiada dane z parsera.
+     * @param itemFromParser obiekt reprezentujący przedmiot z danymi z parsera
+     * @return nowy obiekt
+     */
     private ItemInRepository createNewItemDaoFromItem(Item itemFromParser){
         ItemInRepository newItemInRepository = new ItemInRepository(itemFromParser.getName(),
                 itemFromParser.getFoundDate(), itemFromParser.getReceiveDate(), itemFromParser.getCityCode(),
@@ -32,6 +37,11 @@ public class Service {
         return newItemInRepository;
     }
 
+    /**
+     * Funkcja tworzy listę obiektów ItemInRepository na podstawie listy obiektów z parsera.
+     * @param items obiekty Item z parsera
+     * @return lista nowych obiektów
+     */
     private List<ItemInRepository> createNewItemDaoListFromItemList(List<Item> items) {
         List<ItemInRepository> itemInRepositoryList = new ArrayList<>();
         for (Item item : items) {
@@ -40,6 +50,11 @@ public class Service {
         return itemInRepositoryList;
     }
 
+    /**
+     * Funkcja tworzy nowy obiekt Item na podstawie danych z obieku ItemInRepository.
+     * @param itemInRepository obiekt ItemInRepository z DAO
+     * @return nowy obiekt
+     */
     private Item createNewItemFromItemDao(ItemInRepository itemInRepository){
         System.out.println(itemInRepository.getFile());
         SourceFile file = createNewSourceFileFromSourceFileDao(itemInRepository.getSourceFile());
@@ -50,6 +65,11 @@ public class Service {
         return item;
     }
 
+    /**
+     * Funkcja tworzy listę obiektów Item na podstawie listy obiektów z DAO.
+     * @param itemsInRepository lista obiektów ItemInRepository z DAO
+     * @return lista nowych obiektów
+     */
     private List<Item> createNewItemListFromItemListDao(List<ItemInRepository> itemsInRepository) {
         List<Item> items = new ArrayList<>();
         for (ItemInRepository item : itemsInRepository) {
@@ -58,17 +78,32 @@ public class Service {
         return items;
     }
 
-
+    /**
+     * Funkcja tworzy nowy obiekt SourceFileInRepository na podstawie obiektu SourceFile.
+     * @param file plik źródłowy
+     * @return nowy plik źródłowy
+     */
     private SourceFileInRepository createNewSourceFileDaoFromSourceFile(SourceFile file) {
         LostPropertyOffice office = lostPropertyRepository.findLostPropertyOffice(file.getOfficeName());
         SourceFileInRepository fileDao = new SourceFileInRepository(file.getName(),office,file.getUpdateChecker(),file.getUrl());
         return fileDao;
     }
 
+    /**
+     * Funkcja tworzy nowy obiekt SourceFile na podstawie obiektu SourceFileInRepository.
+     * @param file plik źródłowy
+     * @return nowy plik źródłowy
+     */
     private SourceFile createNewSourceFileFromSourceFileDao(SourceFileInRepository file) {
         return new SourceFile(file.getUrl(),file.getName(),file.getUpdateChecker(),file.getOffice().getOfficeName());
     }
 
+    /**
+     * Funkcja tworzy listę plików źródłowych SourceFileInRepository na podstawie listy plików źródłowych
+     * SourceFile
+     * @param files lista plików SourceFile
+     * @return lista nowych plików źródłowych
+     */
     private List<SourceFileInRepository> createNewSourceFileDaoListFromSourceFileList(List<SourceFile> files) {
         List<SourceFileInRepository> fileDaoList = new ArrayList<>();
         for (SourceFile file : files) {
@@ -77,6 +112,12 @@ public class Service {
         return fileDaoList;
     }
 
+    /**
+     * Funkcja tworzy listę plików źródłowych SourceFile na podstawie listy plików źródłowych
+     * SourceFileInRepository
+     * @param files lista plików SourceFileInRepository
+     * @return lista nowych plików źródłowych
+     */
     private List<SourceFile> createNewSourceFileListFromSourceFileDaoList(List<SourceFileInRepository> files) {
         List<SourceFile> sourceFiles = new ArrayList<>();
         for (SourceFileInRepository file : files) {
@@ -134,6 +175,7 @@ public class Service {
     void addItems(List<Item> itemList) {
         addItemsDao(createNewItemDaoListFromItemList(itemList));
     }
+
     void addItemsDao(List<ItemInRepository> itemList) {
         lostPropertyRepository.addLostItems(itemList);
     }

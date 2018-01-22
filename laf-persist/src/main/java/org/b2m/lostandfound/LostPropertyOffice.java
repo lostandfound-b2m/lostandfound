@@ -4,8 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-
+/**
+ * Klasa LostPropertyOffice zawiera informacje o biurze rzeczy znalezionych. W tej klasie wykorzystujemy Java
+ * Persistence API – oficjalny standard mapowania obiektowo-relacyjnego który umożliwia operowanie na obiektach
+ * zwanych encjami,oraz zapisywania wyników operacji do relacyjnej bazy danych.
+ */
 @Entity(name = "LostPropertyOffice")
 @Table(name = "lost_property_office")
 public class LostPropertyOffice {
