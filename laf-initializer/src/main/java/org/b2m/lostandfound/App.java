@@ -1,10 +1,14 @@
 package org.b2m.lostandfound;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+/**
+ * Klasa App służy do inicjalizacji całego serwisu, Po jej wywołaniu zostają najpierw dodane biura rzeczy znalezionych,
+ * a następnie zostaje wystawiony Rest Api oraz scheduler do regularnego sprawdzania czy dane w biurach nie zostały
+ * zaktualizowane. Tag {@code @SpringBootApplication} pozwala łatwo wystawić RestApi przy pomocy Spring Boot.
+ */
 public class App {
     public static void main(String[] args) {
         /* Add offices to database */

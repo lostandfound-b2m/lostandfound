@@ -17,19 +17,38 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Ta klasa wykorzystuje framework Apache PDFBox który pozwana na pobranie treści zawartej w pliku formatu PDF.
+ */
 public class ParserKrk {
+
     private InputStream inputStream;
 
+    /**
+     * Ten konstrukor służy do dynamicznego pobierania zawartości dokumentu PDF czyli bezpośrednio z link url
+     * @param url Obiekt klasy URL który przekazuje link pod którym znajduje się zapisany na stronie dokument
+     * @throws IOException Wyjątek wyrzucany w przypadku gdy nie uda się otworzyć strumienia do input stream.
+     */
     public ParserKrk(URL url) throws IOException {
         inputStream = url.openStream();
     }
 
+    /**
+     * Ten konstruktor jest jedynie wykorzystywany do statycznego pobierania danych w testach w celu weryfikacji poprawności działania parsera
+     * @param string Przekazana jest tutaj ścieżka do pliku
+     * @throws IOException Wyjątek wyrzucany w przypadku gdy nie uda się otworzyć strumienia do input stream.
+     */
     public ParserKrk(String string) throws IOException {
         File file = new File(string);
         inputStream = new FileInputStream(file);
     }
 
-
+    /**
+     * Jest to prywatna metoda która korzystając z PDFBox pobiera cały tekst zawarty w dokumencie do dalszego przetwarzania
+     * @param inputStream Przekazywany jest przez ten parametr strumień wejściowy
+     * @return Zwracany jest String zawierający całość tekstu zawartego w pliku PDF
+     * @throws IOException Wyjątek jest wyrzucany w przypadku gdy nie udało się pobrać tekstu
+     */
     private String getFromFile(InputStream inputStream) throws IOException {
         String output;
         PDDocument document = PDDocument.load(inputStream);
@@ -39,11 +58,20 @@ public class ParserKrk {
         return output;
     }
 
+    /**
+     * Jest to jedyna publiczna metoda w klasie która służy do wywołania prywatnej metody która wyciąga potrzebne dane z całego jednego Stringa
+     * @return Lista przedmiotów uzyskana z całej zwartości dokumentu
+     * @throws IOException Wyjatek wyrzucany gdy wyrzuca go metoda getAllItems
+     */
     public List<Item> getItemList() throws IOException {
         return getAllItems(getFromFile(inputStream));
     }
 
-
+    /**
+     * Ta metoda przegląda cały tekst pobrany z pliku i wybiera dane potrzebne do utworzenia listy przedmiotów
+     * @param inputPDF Jest to String który zawiera cały tekst z dokumentu
+     * @return Lista wszystkich przedmiotów
+     */
     private List<Item> getAllItems(String inputPDF) {
         List<Item> allItems = new LinkedList<>();
         int i = 0, beginOfLine = 0, endOfLine = 0, endOfText = 0, endOfTemp = 0;
@@ -97,6 +125,11 @@ public class ParserKrk {
         return allItems;
     }
 
+    /**
+     * Ta metoda parsuje datę zapisaną w różnych formach do obiektu klasy Date
+     * @param input Łańuch znaków zawierający datę
+     * @return Obiekt klasy Date powstały po parsowaniu
+     */
     private Date getDate(String input) {
         Date date;
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");

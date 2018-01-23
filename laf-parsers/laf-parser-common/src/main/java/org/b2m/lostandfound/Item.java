@@ -3,6 +3,10 @@ package org.b2m.lostandfound;
 
 import java.util.Date;
 
+/**
+ * Jest to klasa która jest wykorzystywana do przechowywania informacji o pojedynczym zgubionym przedmiocie.
+ * Jest wykorzystywana w parserach gdzie zostają przypiane wartości sparsowane. Jest prostszą klasą będąca obiektem typu POJO.
+ */
 public class Item {
     private String  name;
     private Date foundDate;

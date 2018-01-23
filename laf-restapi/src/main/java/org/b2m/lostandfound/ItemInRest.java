@@ -2,6 +2,11 @@ package org.b2m.lostandfound;
 
 import java.util.Date;
 
+/**
+ * Jest to odpowiednik klasy Item wykorzystywanej w parserach do której przepisujemy dane. Ta klasa nie różni sie prawie
+ * niczym o klasy Item, ale posiada konstruktor kopiujący który pozwana przeypisać dane z obiektu klasy ItemInRepository
+ * oraz pozwala na rozszerzenie funkcjonalności w przyszłości
+ */
 public class ItemInRest {
     private String name;
     private Date dateFound;
@@ -12,6 +17,10 @@ public class ItemInRest {
     private String officeName;
     private LostPropertyOffice lostPropertyOffice;
 
+    /**
+     * Jest to konstruktor kopiujący z obiektu klasy ItemInRepository
+     * @param itemInRepository Przekazywany obiekt klasy
+     */
     public ItemInRest(ItemInRepository itemInRepository) {
         name = itemInRepository.getName();
         dateFound = itemInRepository.getFindDate();
